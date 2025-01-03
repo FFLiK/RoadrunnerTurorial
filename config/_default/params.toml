@@ -98,6 +98,7 @@ mainSections = ["docs"]
   highlightBroken = false # true or false (default)
 
 # Images (@thulite/images)
+# Images (@thulite/images)
 [thulite_images]
   [thulite_images.defaults]
     decoding = "async" # sync, async, or auto (default)

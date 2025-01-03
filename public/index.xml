@@ -10,74 +10,74 @@
     <lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/1-about/example-guide/</link>
+      <title>로드러너에 대하여</title>
+      <link>http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/1-about/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/</guid>
+      <description>&lt;p&gt;Road Runner는 &lt;a href=&#34;https://www.firstinspires.org/robotics/ftc&#34;&gt;FTC 로봇 대회&lt;/a&gt;를 위해 설계된 모션 플래닝 라이브러리입니다. 주로 자율 주행 로봇의 움직임을 위해 사용되며, 복잡한 경로 생성 및 추적을 가능하게 하고 속도와 가속도를 정밀하게 제어할 수 있습니다. 이를 통해 로봇이 더 정밀하고 고급 경로 추적 기능을 가질 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/10-turntesttuning/example-guide/</link>
+      <title>자주 묻는 질문 (FAQ)</title>
+      <link>http://localhost:1313/docs/1-about-roadrunner/%EC%9E%90%EC%A3%BC-%EB%AC%BB%EB%8A%94-%EC%A7%88%EB%AC%B8-faq/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/10-turntesttuning/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/1-about-roadrunner/%EC%9E%90%EC%A3%BC-%EB%AC%BB%EB%8A%94-%EC%A7%88%EB%AC%B8-faq/</guid>
+      <description>&lt;h2 id=&#34;1-pure-pursuit와의-차이점&#34;&gt;&lt;strong&gt;1. Pure Pursuit와의 차이점&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Road Runner와 Pure Pursuit는 자주 비교되지만, 본질적으로 매우 다른 도구입니다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pure Pursuit&lt;/strong&gt;: 비홀로노믹(Non-Holonomic) 드라이브 트레인을 위한 경로 추적 알고리즘으로, &amp;ldquo;룩어헤드 포인트(Look-Ahead Point)&amp;ldquo;를 사용해 다차원 경로를 따릅니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Road Runner&lt;/strong&gt;: Ramsete, 가이드 벡터 필드 등 여러 경로 추적 알고리즘을 지원하며, 속도와 가속도를 제어하는 모션 프로파일링 기능을 포함합니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;특히, Pure Pursuit는 가속도 제어가 없기 때문에 데드 휠 오도메트리 설치가 필수입니다. 또한, FTC 로봇 대부분이 홀로노믹(메카넘) 드라이브를 사용하기 때문에 Pure Pursuit는 잘 맞지 않는 경우가 많습니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/11-localizationtest/example-guide/</link>
+      <title>시작하기 전에</title>
+      <link>http://localhost:1313/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/11-localizationtest/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/</guid>
+      <description>&lt;div class=&#34;callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/alert-triangle svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-alert-triangle&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M12 9v4&#34; /&gt;&#xA;  &lt;path d=&#34;M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z&#34; /&gt;&#xA;  &lt;path d=&#34;M12 16h.01&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;주의&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/12-followerpidtuner/example-guide/</link>
+      <title>설치 및 준비</title>
+      <link>http://localhost:1313/docs/3-installation/%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A4%80%EB%B9%84/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/12-followerpidtuner/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/3-installation/%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A4%80%EB%B9%84/</guid>
+      <description>&lt;p&gt;Road Runner 라이브러리를 설치하는 방법에는 두 가지가 있습니다.&lt;/p&gt;&#xA;&lt;div class=&#34;callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/alert-triangle svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-alert-triangle&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M12 9v4&#34; /&gt;&#xA;  &lt;path d=&#34;M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z&#34; /&gt;&#xA;  &lt;path d=&#34;M12 16h.01&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;주의&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/13-splinetest/example-guide/</link>
+      <title>개요</title>
+      <link>http://localhost:1313/docs/4-tuning/%EA%B0%9C%EC%9A%94/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/13-splinetest/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/4-tuning/%EA%B0%9C%EC%9A%94/</guid>
+      <description>&lt;p&gt;시작하기 전에, 각 단계에서 무엇을 하는지 이해하는 것이 중요합니다.&lt;/p&gt;&#xA;&lt;div class=&#34;callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/rocket svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-rocket&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3&#34; /&gt;&#xA;  &lt;path d=&#34;M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3&#34; /&gt;&#xA;  &lt;path d=&#34;M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;팁&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/14-trajectoriesoverview/example-guide/</link>
+      <title>드라이브 상수 설정 (Drive Constant)</title>
+      <link>http://localhost:1313/docs/4-tuning/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%83%81%EC%88%98-%EC%84%A4%EC%A0%95-drive-constant/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/14-trajectoriesoverview/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/4-tuning/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%83%81%EC%88%98-%EC%84%A4%EC%A0%95-drive-constant/</guid>
+      <description>&lt;div class=&#34;callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/rocket svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-rocket&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3&#34; /&gt;&#xA;  &lt;path d=&#34;M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3&#34; /&gt;&#xA;  &lt;path d=&#34;M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;팁&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/15-trajectorybuilderfunctionlist/example-guide/</link>
+      <title>데드 휠 설정 (Dead Wheels)</title>
+      <link>http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/15-trajectorybuilderfunctionlist/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/</guid>
+      <description>&lt;div class=&#34;callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/alert-octagon svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-alert-octagon&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z&#34; /&gt;&#xA;  &lt;path d=&#34;M12 8v4&#34; /&gt;&#xA;  &lt;path d=&#34;M12 16h.01&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;경고&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/16-makerguide/example-guide/</link>
+      <title>주행 피드포워드 조율 (Driving Feedforward Tuner)</title>
+      <link>http://localhost:1313/docs/4-tuning/%EC%A3%BC%ED%96%89-%ED%94%BC%EB%93%9C%ED%8F%AC%EC%9B%8C%EB%93%9C-%EC%A1%B0%EC%9C%A8-driving-feedforward-tuner/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/16-makerguide/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/4-tuning/%EC%A3%BC%ED%96%89-%ED%94%BC%EB%93%9C%ED%8F%AC%EC%9B%8C%EB%93%9C-%EC%A1%B0%EC%9C%A8-driving-feedforward-tuner/</guid>
+      <description>&lt;img alt=&#34;diagram&#34; class=&#34;diagram diagram-kroki diagram-kroki-plantuml&#34; id=&#34;h-rh-cb-kroki-0&#34; src=&#34;http://localhost:1313/_10235469678620711340.svg&#34;&gt;&lt;p&gt;현재 단계는 &lt;strong&gt;주행 피드포워드 조율&lt;/strong&gt; 단계입니다.&lt;/p&gt;&#xA;&lt;p&gt;피드포워드 컨트롤러를 정확히 튜닝하는 것은 경로를 따라 정확히 이동하기 위해 필수적입니다.&#xA;피드포워드 컨트롤러의 튜닝이 부정확하면 이후 과정에서 오류가 발생할 수 있습니다.&#xA;Roadrunner Quickstart에는 자동 튜너와 수동 튜너가 포함되어 있지만,&#xA;많은 사용자가 자동 튜너가 최적의 결과를 제공하지 않는다고 느낍니다.&#xA;특히 자동 튜너는 &lt;code&gt;kA&lt;/code&gt; 값을 제대로 계산하지 못할 가능성이 큽니다.&#xA;하지만 자동 튜너를 실행해 보고 얻은 수치를 사용하는 것은 개인의 자유이며,&#xA;수동으로 값을 얻고자 할지라도, 자동 튜너로 수치를 얻고, 이후 수동으로 값을 조정하는 것을 추천합니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/17-trajectorysequence/example-guide/</link>
+      <title>주행 속도 PID 조율 (Driving Velocity PID Tuner)</title>
+      <link>http://localhost:1313/docs/4-tuning/%EC%A3%BC%ED%96%89-%EC%86%8D%EB%8F%84-pid-%EC%A1%B0%EC%9C%A8-driving-velocity-pid-tuner/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/17-trajectorysequence/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/4-tuning/%EC%A3%BC%ED%96%89-%EC%86%8D%EB%8F%84-pid-%EC%A1%B0%EC%9C%A8-driving-velocity-pid-tuner/</guid>
+      <description>&lt;img alt=&#34;diagram&#34; class=&#34;diagram diagram-kroki diagram-kroki-plantuml&#34; id=&#34;h-rh-cb-kroki-0&#34; src=&#34;http://localhost:1313/_8381636580440980473.svg&#34;&gt;&lt;p&gt;현재 단계는 &lt;strong&gt;주행 피드포워드 조율&lt;/strong&gt; 단계입니다.&lt;/p&gt;&#xA;&lt;p&gt;이 내용은 추후에 추가합니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/18-advancedtips/example-guide/</link>
+      <title>직진 테스트 (Straight Test)</title>
+      <link>http://localhost:1313/docs/4-tuning/%EC%A7%81%EC%A7%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-straight-test/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/18-advancedtips/example-guide/</guid>
-      <description>&lt;p&gt;Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/4-tuning/%EC%A7%81%EC%A7%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-straight-test/</guid>
+      <description>&lt;img alt=&#34;diagram&#34; class=&#34;diagram diagram-kroki diagram-kroki-plantuml&#34; id=&#34;h-rh-cb-kroki-0&#34; src=&#34;http://localhost:1313/_4379547960681791084.svg&#34;&gt;&lt;p&gt;현재 단계는 &lt;strong&gt;직진 테스트&lt;/strong&gt; 단계입니다.&lt;/p&gt;&#xA;&lt;div class=&#34;callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/alert-triangle svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-alert-triangle&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M12 9v4&#34; /&gt;&#xA;  &lt;path d=&#34;M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z&#34; /&gt;&#xA;  &lt;path d=&#34;M12 16h.01&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;주의&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

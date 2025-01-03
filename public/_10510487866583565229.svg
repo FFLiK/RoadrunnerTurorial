@@ -1,0 +1,38 @@
+<svg version="1.1" baseProfile="full" width="289.0" height="211.0" viewbox="0 0 289 211" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >@startuml
+	left to right direction
+	skinparam packageStyle rectangle
+	skinparam monochrome true
+	actor customer
+	actor clerk
+	rectangle checkout {
+	  customer -- (checkout)
+	  (checkout) .&gt; (payment) : include
+	  (help) .&gt; (checkout) : extends
+	  (checkout) -- clerk
+	}
+	@enduml</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="211.0" width="289.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E" text-align="left">
+				<text x="0.0" y="13.5" stroke="none">@startuml</text>
+				<text x="0.0" y="28.5" stroke="none">left to right direction</text>
+				<text x="0.0" y="43.5" stroke="none">skinparam packageStyle rectangle</text>
+				<text x="0.0" y="58.5" stroke="none">skinparam monochrome true</text>
+				<text x="0.0" y="73.5" stroke="none">actor customer</text>
+				<text x="0.0" y="88.5" stroke="none">actor clerk</text>
+				<text x="0.0" y="103.5" stroke="none">rectangle checkout {</text>
+				<text x="0.0" y="118.5" stroke="none">customer -- (checkout)</text>
+				<text x="0.0" y="133.5" stroke="none">(checkout) .&gt; (payment) : include</text>
+				<text x="0.0" y="148.5" stroke="none">(help) .&gt; (checkout) : extends</text>
+				<text x="0.0" y="163.5" stroke="none">(checkout) -- clerk</text>
+				<text x="0.0" y="178.5" stroke="none">}</text>
+				<text x="0.0" y="193.5" stroke="none">@enduml</text>
+				
+			</g>
+		</g>
+	</g>
+</svg>

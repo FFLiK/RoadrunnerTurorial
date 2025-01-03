@@ -16,3 +16,9 @@
   font-weight: 500;
   src: url('../fonts/noto-sans-kr-v36-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+img {
+  height: auto;
+  max-width: 100%;
+  padding: 20px;
+}

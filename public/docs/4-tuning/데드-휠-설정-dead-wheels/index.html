@@ -1,0 +1,1645 @@
+<!doctype html>
+<html lang="ko" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.9f5988b9e5fb9479b991c1aed846502bf1e12a480e62210cac5a7947b5cb3dfefb411076b600fc388eb3830839b15d438851913cfdb68d824cc2bdff9c48025d.css" integrity="sha512-n1mIueX7lHm5kcGu2EZQK/HhKkgOYiEMrFp5R7XLPf77QRB2tgD8OI6zgwg5sV1DiFGRPP22jYJMwr3/nEgCXQ==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/">
+
+  <link rel="canonical" href="http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/">
+
+
+<title>데드 휠 설정 (Dead Wheels)  |  Roadrunner Tutorial</title>
+<meta name="description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/">
+  <meta property="og:site_name" content="Roadrunner Tutorial">
+  <meta property="og:title" content="데드 휠 설정 (Dead Wheels)">
+  <meta property="og:description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+  <meta property="og:locale" content="ko">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-09-07T16:04:48+02:00">
+    <meta property="article:modified_time" content="2023-09-07T16:04:48+02:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="데드 휠 설정 (Dead Wheels)">
+  <meta name="twitter:description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Roadrunner Tutorial",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/",
+       "name": "Docs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/4-tuning/",
+       "name": "시스템 조율",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "데드 휠 설정 ( Dead Wheels)",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+</head>
+
+  
+  <body class="single section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">Roadrunner Tutorial</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>로드러너란?</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+  </li>
+
+  <li>
+      <a href="/docs/1-about-roadrunner/%EC%9E%90%EC%A3%BC-%EB%AC%BB%EB%8A%94-%EC%A7%88%EB%AC%B8-faq/">자주 묻는 질문 (FAQ)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>시작하기 전에</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/">시작하기 전에</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>설치 (Installation)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/3-installation/%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A4%80%EB%B9%84/">설치 및 준비</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>시스템 조율 (Tuning)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/4-tuning/%EA%B0%9C%EC%9A%94/">개요</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%83%81%EC%88%98-%EC%84%A4%EC%A0%95-drive-constant/">드라이브 상수 설정 (Drive Constant)</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/">데드 휠 설정 (Dead Wheels)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%A3%BC%ED%96%89-%ED%94%BC%EB%93%9C%ED%8F%AC%EC%9B%8C%EB%93%9C-%EC%A1%B0%EC%9C%A8-driving-feedforward-tuner/">주행 피드포워드 조율 (Driving Feedforward Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%A3%BC%ED%96%89-%EC%86%8D%EB%8F%84-pid-%EC%A1%B0%EC%9C%A8-driving-velocity-pid-tuner/">주행 속도 PID 조율 (Driving Velocity PID Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%A7%81%EC%A7%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-straight-test/">직진 테스트 (Straight Test)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EA%B2%BD%EB%A1%9C-%ED%8F%AD-%EC%A1%B0%EC%9C%A8-track-width-tuner/">경로 폭 조율 (Track Width Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%ED%9A%8C%EC%A0%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A1%B0%EC%9C%A8-turn-test-tuning/">회전 테스트 조율 (Turn Test Tuning)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EB%A1%9C%EC%BB%AC%EB%9D%BC%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-localization-test/">로컬라이제이션 테스트 (Localization Test)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%ED%8C%94%EB%A1%9C%EC%9B%8C-pid-%EC%A1%B0%EC%9C%A8-follower-pid-tuner/">팔로워 PID 조율 (Follower PID Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%8A%A4%ED%94%8C%EB%9D%BC%EC%9D%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8-spline-test/">스플라인 테스트 (Spline Test)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>경로 설정 (Trajectory)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/5-trajectory/%EA%B0%9C%EC%9A%94/">개요</a>
+  </li>
+
+  <li>
+      <a href="/docs/5-trajectory/trajectorybuilder-%ED%95%A8%EC%88%98-%EB%AA%A9%EB%A1%9D/">TrajectoryBuilder 함수 목록</a>
+  </li>
+
+  <li>
+      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+  </li>
+
+  <li>
+      <a href="/docs/5-trajectory/%EA%B2%BD%EB%A1%9C-%EC%84%9C%EC%97%B4-%EC%A0%95%ED%95%98%EA%B8%B0-trajectory-sequence/">경로 서열 정하기 (Trajectory Sequence)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>팁 (Advanced Tips)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/6-advanced-tips/%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EC%A0%95%EB%B3%B4/">추가적인 정보</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>도구 (Tools)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/7-tools/meepmeep/">MeepMeep</a>
+  </li>
+
+  <li>
+      <a href="/docs/7-tools/roadrunner-gui/">RoadRunner GUI</a>
+  </li>
+
+  <li>
+      <a href="/docs/7-tools/davids-rrpathvisualizer/">David&#39;s RRPathVisualizer</a>
+  </li>
+
+  <li>
+      <a href="/docs/7-tools/rrpathgen/">RRPathGen</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>추가 리소스</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/8-further-resources/%EC%B6%94%EA%B0%80-%EB%A6%AC%EC%86%8C%EC%8A%A4/">추가 리소스</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Roadrunner Tutorial</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/FFLiK/RoadrunnerTurorial"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel"></h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden"></label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="" aria-label="" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center"></p>
+        <p class="search-no-recent message d-none mt-3 text-center"></p>
+        <p class="search-no-results message d-none mt-3 text-center"> for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>로드러너란?</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+  </li>
+
+  <li>
+      <a href="/docs/1-about-roadrunner/%EC%9E%90%EC%A3%BC-%EB%AC%BB%EB%8A%94-%EC%A7%88%EB%AC%B8-faq/">자주 묻는 질문 (FAQ)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>시작하기 전에</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/">시작하기 전에</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>설치 (Installation)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/3-installation/%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A4%80%EB%B9%84/">설치 및 준비</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>시스템 조율 (Tuning)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/4-tuning/%EA%B0%9C%EC%9A%94/">개요</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%83%81%EC%88%98-%EC%84%A4%EC%A0%95-drive-constant/">드라이브 상수 설정 (Drive Constant)</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/">데드 휠 설정 (Dead Wheels)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%A3%BC%ED%96%89-%ED%94%BC%EB%93%9C%ED%8F%AC%EC%9B%8C%EB%93%9C-%EC%A1%B0%EC%9C%A8-driving-feedforward-tuner/">주행 피드포워드 조율 (Driving Feedforward Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%A3%BC%ED%96%89-%EC%86%8D%EB%8F%84-pid-%EC%A1%B0%EC%9C%A8-driving-velocity-pid-tuner/">주행 속도 PID 조율 (Driving Velocity PID Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%A7%81%EC%A7%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-straight-test/">직진 테스트 (Straight Test)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EA%B2%BD%EB%A1%9C-%ED%8F%AD-%EC%A1%B0%EC%9C%A8-track-width-tuner/">경로 폭 조율 (Track Width Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%ED%9A%8C%EC%A0%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A1%B0%EC%9C%A8-turn-test-tuning/">회전 테스트 조율 (Turn Test Tuning)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EB%A1%9C%EC%BB%AC%EB%9D%BC%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-localization-test/">로컬라이제이션 테스트 (Localization Test)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%ED%8C%94%EB%A1%9C%EC%9B%8C-pid-%EC%A1%B0%EC%9C%A8-follower-pid-tuner/">팔로워 PID 조율 (Follower PID Tuner)</a>
+  </li>
+
+  <li>
+      <a href="/docs/4-tuning/%EC%8A%A4%ED%94%8C%EB%9D%BC%EC%9D%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8-spline-test/">스플라인 테스트 (Spline Test)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>경로 설정 (Trajectory)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/5-trajectory/%EA%B0%9C%EC%9A%94/">개요</a>
+  </li>
+
+  <li>
+      <a href="/docs/5-trajectory/trajectorybuilder-%ED%95%A8%EC%88%98-%EB%AA%A9%EB%A1%9D/">TrajectoryBuilder 함수 목록</a>
+  </li>
+
+  <li>
+      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+  </li>
+
+  <li>
+      <a href="/docs/5-trajectory/%EA%B2%BD%EB%A1%9C-%EC%84%9C%EC%97%B4-%EC%A0%95%ED%95%98%EA%B8%B0-trajectory-sequence/">경로 서열 정하기 (Trajectory Sequence)</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>팁 (Advanced Tips)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/6-advanced-tips/%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EC%A0%95%EB%B3%B4/">추가적인 정보</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>도구 (Tools)</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/7-tools/meepmeep/">MeepMeep</a>
+  </li>
+
+  <li>
+      <a href="/docs/7-tools/roadrunner-gui/">RoadRunner GUI</a>
+  </li>
+
+  <li>
+      <a href="/docs/7-tools/davids-rrpathvisualizer/">David&#39;s RRPathVisualizer</a>
+  </li>
+
+  <li>
+      <a href="/docs/7-tools/rrpathgen/">RRPathGen</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>추가 리소스</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/8-further-resources/%EC%B6%94%EA%B0%80-%EB%A6%AC%EC%86%8C%EC%8A%A4/">추가 리소스</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#오도메트리를-2개-사용하는-경우-two-wheel-odometry">오도메트리를 2개 사용하는 경우 (Two-Wheel Odometry)</a>
+      <ul>
+        <li><a href="#회전당-틱-수-tpr--바퀴-반지름--기어비-설정">회전당 틱 수 (TPR) / 바퀴 반지름 / 기어비 설정</a></li>
+        <li><a href="#수직수평-xy-설정">수직/수평 X/Y 설정</a></li>
+        <li><a href="#엔코더-방향-설정">엔코더 방향 설정</a></li>
+        <li><a href="#하드웨어-id-확인">하드웨어 ID 확인</a></li>
+        <li><a href="#imu-설정">IMU 설정</a></li>
+        <li><a href="#imu-속도-축-설정">IMU 속도 축 설정</a></li>
+        <li><a href="#samplemecanumdrive에서-로컬라이저localizer-설정하기">SampleMecanumDrive에서 로컬라이저(Localizer) 설정하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#오도메트리를-3개-사용하는-경우-three-wheel-odometry">오도메트리를 3개 사용하는 경우 (Three-Wheel Odometry)</a>
+      <ul>
+        <li><a href="#회전당-틱-수-tpr--바퀴-반지름--기어비-설정-1">회전당 틱 수 (TPR) / 바퀴 반지름 / 기어비 설정</a></li>
+        <li><a href="#측면-거리-lateral-distance와-전방-오프셋-forward-offset-설정">측면 거리 (Lateral Distance)와 전방 오프셋 (Forward Offset) 설정</a></li>
+        <li><a href="#엔코더-방향-설정-1">엔코더 방향 설정</a></li>
+        <li><a href="#samplemecanumdrive에서-로컬라이저localizer-설정하기-1">SampleMecanumDrive에서 로컬라이저(Localizer) 설정하기</a></li>
+        <li><a href="#imu-제거">IMU 제거</a></li>
+      </ul>
+    </li>
+    <li><a href="#조율-tuning---오도메트리-두-개를-사용하는-경우-two-wheel-odometry">조율 (Tuning) - 오도메트리 두 개를 사용하는 경우 (Two-Wheel Odometry)</a>
+      <ul>
+        <li><a href="#바퀴-반지름-조정">바퀴 반지름 조정</a></li>
+        <li><a href="#재확인">재확인</a></li>
+        <li><a href="#조율-tuning---오도메트리-세-개를-사용하는-경우-three-wheel-odometry">조율 (Tuning) - 오도메트리 세 개를 사용하는 경우 (Three-Wheel Odometry)</a></li>
+        <li><a href="#바퀴-반지름-조정-1">바퀴 반지름 조정</a></li>
+        <li><a href="#측면-거리-lateral-distance-조율">측면 거리 (Lateral Distance) 조율</a></li>
+      </ul>
+    </li>
+    <li><a href="#문제-해결-troubleshooting">문제 해결 (Troubleshooting)</a>
+      <ul>
+        <li><a href="#대시보드와-로봇-움직임-불일치-문제-해결">대시보드와 로봇 움직임 불일치 문제 해결:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>데드 휠 설정 (Dead Wheels)</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#오도메트리를-2개-사용하는-경우-two-wheel-odometry">오도메트리를 2개 사용하는 경우 (Two-Wheel Odometry)</a>
+      <ul>
+        <li><a href="#회전당-틱-수-tpr--바퀴-반지름--기어비-설정">회전당 틱 수 (TPR) / 바퀴 반지름 / 기어비 설정</a></li>
+        <li><a href="#수직수평-xy-설정">수직/수평 X/Y 설정</a></li>
+        <li><a href="#엔코더-방향-설정">엔코더 방향 설정</a></li>
+        <li><a href="#하드웨어-id-확인">하드웨어 ID 확인</a></li>
+        <li><a href="#imu-설정">IMU 설정</a></li>
+        <li><a href="#imu-속도-축-설정">IMU 속도 축 설정</a></li>
+        <li><a href="#samplemecanumdrive에서-로컬라이저localizer-설정하기">SampleMecanumDrive에서 로컬라이저(Localizer) 설정하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#오도메트리를-3개-사용하는-경우-three-wheel-odometry">오도메트리를 3개 사용하는 경우 (Three-Wheel Odometry)</a>
+      <ul>
+        <li><a href="#회전당-틱-수-tpr--바퀴-반지름--기어비-설정-1">회전당 틱 수 (TPR) / 바퀴 반지름 / 기어비 설정</a></li>
+        <li><a href="#측면-거리-lateral-distance와-전방-오프셋-forward-offset-설정">측면 거리 (Lateral Distance)와 전방 오프셋 (Forward Offset) 설정</a></li>
+        <li><a href="#엔코더-방향-설정-1">엔코더 방향 설정</a></li>
+        <li><a href="#samplemecanumdrive에서-로컬라이저localizer-설정하기-1">SampleMecanumDrive에서 로컬라이저(Localizer) 설정하기</a></li>
+        <li><a href="#imu-제거">IMU 제거</a></li>
+      </ul>
+    </li>
+    <li><a href="#조율-tuning---오도메트리-두-개를-사용하는-경우-two-wheel-odometry">조율 (Tuning) - 오도메트리 두 개를 사용하는 경우 (Two-Wheel Odometry)</a>
+      <ul>
+        <li><a href="#바퀴-반지름-조정">바퀴 반지름 조정</a></li>
+        <li><a href="#재확인">재확인</a></li>
+        <li><a href="#조율-tuning---오도메트리-세-개를-사용하는-경우-three-wheel-odometry">조율 (Tuning) - 오도메트리 세 개를 사용하는 경우 (Three-Wheel Odometry)</a></li>
+        <li><a href="#바퀴-반지름-조정-1">바퀴 반지름 조정</a></li>
+        <li><a href="#측면-거리-lateral-distance-조율">측면 거리 (Lateral Distance) 조율</a></li>
+      </ul>
+    </li>
+    <li><a href="#문제-해결-troubleshooting">문제 해결 (Troubleshooting)</a>
+      <ul>
+        <li><a href="#대시보드와-로봇-움직임-불일치-문제-해결">대시보드와 로봇 움직임 불일치 문제 해결:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>데드 휠을 사용하지 않는 경우, 이 섹션은 건너뛰세요.</p>
+
+    </div>
+  </div>
+</div>
+
+
+<img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-0" src="/_903190081980370227.svg"><p>현재 단계는 <strong>드라이브 상수 설정</strong> 단계입니다.</p>
+<p>구성은 데드 휠이 2개인지 3개인지에 따라 달라집니다. 차이를 모르겠다면 <a href="/#what-is-the-difference-between-two-and-three-wheel-odometry">FAQ</a>를 참고하세요.</p>
+<ul>
+<li>두 개의 데드 휠을 사용하는 경우, <a href="#%ec%98%a4%eb%8f%84%eb%a9%94%ed%8a%b8%eb%a6%ac%eb%a5%bc-2%ea%b0%9c-%ec%82%ac%ec%9a%a9%ed%95%98%eb%8a%94-%ea%b2%bd%ec%9a%b0-two-wheel-odometry">Two-Wheel Odometry</a> 섹션만 읽으세요.</li>
+<li>세 개의 데드 휠을 사용하는 경우, <a href="#%ec%98%a4%eb%8f%84%eb%a9%94%ed%8a%b8%eb%a6%ac%eb%a5%bc-3%ea%b0%9c-%ec%82%ac%ec%9a%a9%ed%95%98%eb%8a%94-%ea%b2%bd%ec%9a%b0-three-wheel-odometry">Three-Wheel Odometry</a> 섹션만 읽으세요.</li>
+</ul>
+<hr>
+<h2 id="오도메트리를-2개-사용하는-경우-two-wheel-odometry">오도메트리를 2개 사용하는 경우 (Two-Wheel Odometry)<a href="#오도메트리를-2개-사용하는-경우-two-wheel-odometry" class="anchor" aria-hidden="true">#</a> </h2>
+<p>두 휠 구성을 사용하는 경우, 방향(heading) 소스로 자이로스코프를 사용합니다. 기본적으로 REV Hub의 내장 BNO055 자이로스코프가 사용됩니다.</p>
+<p>다른 자이로스코프를 사용하려면, <code>SampleMecanumDrive.java</code> 파일에서 선언하고 <code>getRawExternalHeading()</code> 함수를 오버라이드하세요.</p>
+<p><a href="https://github.com/NoahBres/road-runner-quickstart/blob/master/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/TwoWheelTrackingLocalizer.java">이 파일</a>을 다운로드한 후, <code>TeamCode</code> 폴더에 저장하세요. 파일 정리를 위해 <code>StandardTrackingWheelLocalizer.java</code> 파일 근처에 저장하는 것을 추천합니다.</p>
+<p>다운로드한 <code>TwoWheelTrackingLocalizer.java</code> 파일을 열어 수정하세요.</p>
+<hr>
+<h3 id="회전당-틱-수-tpr--바퀴-반지름--기어비-설정">회전당 틱 수 (TPR) / 바퀴 반지름 / 기어비 설정<a href="#회전당-틱-수-tpr--바퀴-반지름--기어비-설정" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* TwoWheelTrackingLocalizer.java 파일의 37-39번째 줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">TICKS_PER_REV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">WHEEL_RADIUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 인치 단위</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">GEAR_RATIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">출력</span><span class="p">(</span><span class="n">바퀴</span><span class="w"> </span><span class="n">속도</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">입력</span><span class="p">(</span><span class="n">엔코더</span><span class="w"> </span><span class="n">속도</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong><code>TICKS_PER_REV</code></strong>: 엔코더가 한 바퀴 회전할 때 계산하는 &ldquo;틱&rdquo; 수입니다. 엔코더 사양은 제조사 웹사이트에서 확인하세요. <code>Counts Per Revolution</code> 또는 <code>CPR</code> 항목을 참고하세요. REV Through Bore Encoder의 경우 <code>TICKS_PER_REV</code> 값은 <code>8192</code>입니다.</li>
+<li><strong><code>WHEEL_RADIUS</code></strong>: 데드 바퀴의 반지름입니다. 지름이 아닌 반지름 값을 입력하세요.</li>
+<li><strong><code>GEAR_RATIO</code></strong>: 출력(바퀴 속도)과 입력(엔코더 속도)의 비율입니다. 엔코더에 기어비를 설정하지 않았다면 <code>1</code>로 설정하세요.</li>
+</ul>
+<hr>
+<h3 id="수직수평-xy-설정">수직/수평 X/Y 설정<a href="#수직수평-xy-설정" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* TwoWheelTrackingLocalizer.java 파일의 41-45번째 줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PARALLEL_X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 수평 X, X는 전후 방향</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PARALLEL_Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 수평 Y, Y는 좌우 방향</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PERPENDICULAR_X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 수직 X, X는 전후 방향</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PERPENDICULAR_Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">수직</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Y는</span><span class="w"> </span><span class="n">좌우</span><span class="w"> </span><span class="n">방향</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>수직 및 수평 바퀴의 X/Y 좌표를 입력하세요. X축은 전후 방향, Y축은 좌우 방향입니다.
+이는 로봇 공학 및 항공 분야에서 일반적인 표준입니다.</p>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoQAA8AAph8J4wC7ADDC7MiPgAA/s3QEwO4RJ9H3dcA6iLtg3azKfxgLT7W/MBIocFbH//BNcAAAA=="
+        data-srcset="/images/dead-wheels/andrew-bot-wheel-location-quarter_hu13115605199662446350.webp 480w,/images/dead-wheels/andrew-bot-wheel-location-quarter_hu10219195509447577446.webp 576w,/images/dead-wheels/andrew-bot-wheel-location-quarter_hu1228123435535913619.webp 714w"
+        data-sizes="auto"
+    src="/images/dead-wheels/andrew-bot-wheel-location-quarter_hu8152679389362271329.jpg"
+    width="714"
+    height="648"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="로봇 하단 뷰. Y 방향은 좌측에서 우측으로 증가. X 방향은 상단으로 증가."
+    class="lazyload blur-up"
+  ><figcaption>17508 Rising Tau의 2019/20 Skystone 로봇</figcaption>
+</figure>
+<hr>
+<h3 id="엔코더-방향-설정">엔코더 방향 설정<a href="#엔코더-방향-설정" class="anchor" aria-hidden="true">#</a> </h3>
+<p>경우에 따라 <code>Encoder.setDirection(Encoder.Direction.REVERSE)</code>를 사용해 엔코더의 방향을 반전시켜야 합니다.</p>
+<p>예시:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* TwoWheelTrackingLocalizer.java 파일의 60-63줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">parallelEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;parallelEncoder&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">perpendicularEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;perpendicularEncoder&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// TODO: Encoder.setDirection(Encoder.Direction.REVERSE)로 엔코더를 반대로 설정하세요.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 예시) 수직 엔코더의 방향을 반대로 설정해야 하는 경우:</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w"></span><span class="n">perpendicularEncoder</span><span class="p">.</span><span class="na">setDirection</span><span class="p">(</span><span class="n">Encoder</span><span class="p">.</span><span class="na">Direction</span><span class="p">.</span><span class="na">REVERSE</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Rev Through Bore 엔코더를 사용하는 경우 아래 내용을 반드시 참조하세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<p><strong>Rev Through Bore 엔코더 주의사항</strong></p>
+<p>REV Through Bore 엔코더를 사용하는 경우, 속도가 32767 cps (counts per second)를 초과하면
+정수 오버플로우가 발생할 수 있습니다. 이는 REV Hub 펌웨어가 속도 데이터를 16비트 정수로 전송하기 때문입니다.
+이를 해결하려면 <code>getRawVelocity()</code> 대신 <code>getCorrectedVelocity()</code>를 사용하세요.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* TwoWheelTrackingLocalizer.java 파일의 86-95줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getWheelVelocities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//TODO : 인코더 속도가 초당 32767 카운트를 초과할 경우, Encoder.getRawVelocity()를 Encoder.getCorrectedVelocity()로 변경하여 보정 메서드를 활성화하세요.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">parallelEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">()),</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">perpendicularEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="하드웨어-id-확인">하드웨어 ID 확인<a href="#하드웨어-id-확인" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* TwoWheelTrackingLocalizer.java 파일의 60-61줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">parallelEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;parallelEncoder&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">perpendicularEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;perpendicularEncoder&#34;</span><span class="p">));</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>여기서 사용한 ID가 REV Hub 설정의 ID와 일치하는지 확인하세요.</p>
+<hr>
+<h3 id="imu-설정">IMU 설정<a href="#imu-설정" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* SampleMecanumDrive.java 파일의 134-137줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;imu&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">Parameters</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">Parameters</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">parameters</span><span class="p">.</span><span class="na">angleUnit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">AngleUnit</span><span class="p">.</span><span class="na">RADIANS</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imu</span><span class="p">.</span><span class="na">initialize</span><span class="p">(</span><span class="n">parameters</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>IMU가 <code>SampleMecanumDrive.java</code> 클래스에서 초기화되어 있는지 확인하세요. Quickstart를 다운로드했으며 REV Hub IMU를 사용 중이라면 변경할 필요가 없습니다. 외부 자이로를 사용하는 경우, 이 섹션을 수정하세요.</p>
+<hr>
+<h3 id="imu-속도-축-설정">IMU 속도 축 설정<a href="#imu-속도-축-설정" class="anchor" aria-hidden="true">#</a> </h3>
+<p><code>SampleMecanumDrive.java</code> 파일 하단의 <code>getExternalHeadingVelocity</code> 함수에서 함수가 IMU가 회전하는 축을 구성에 맞게 반환하는지 확인하세요.
+파일에 제공된 ASCII 다이어그램을 참조하여 어떤 축을 선택해야 하는지 확인할 수 있습니다.
+REV Hub가 평평하게 장착되어 있으면 로봇은 Z축을 중심으로 회전합니다.
+모터 포트가 위 또는 아래를 향하고 있는 쪽에 있으면 로봇은 Y축을 중심으로 회전합니다.
+서보 포트가 위 또는 아래를 향하고 있으면 로봇이 X축을 중심으로 회전합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* SampleMecanumDrive.java 파일의 399-419줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Double</span><span class="w"> </span><span class="nf">getExternalHeadingVelocity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// TODO: 설정에 맞게 이 값을 변경해야 합니다</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//                           | Z 축</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//                           |</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//     (모터 포트 측면)       |   / X 축</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//                       ____|__/____</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//          Y 축       / *   | /    /|   (IO 측면)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//          _________ /______|/    //      I2C</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//                   /___________ //     디지털</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//                  |____________|/      아날로그</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//                 (서보 포트 측면)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 양의 X 축은 USB 포트가 있는 방향을 가리킵니다.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 축 회전 속도를 필요에 따라 조정하세요.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// REV Hub/Control Hub가 평평한 표면에 놓여 있다고 가정하면</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 기본 설정은 Z 축을 기준으로 회전합니다.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line hl"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="n">imu</span><span class="p">.</span><span class="na">getAngularVelocity</span><span class="p">().</span><span class="na">zRotationRate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="samplemecanumdrive에서-로컬라이저localizer-설정하기">SampleMecanumDrive에서 로컬라이저(Localizer) 설정하기<a href="#samplemecanumdrive에서-로컬라이저localizer-설정하기" class="anchor" aria-hidden="true">#</a> </h3>
+<p>로컬라이저 구성을 완료한 후, 다시 <code>SampleMecanumDrive.java</code> 파일로 돌아갑니다.</p>
+<p>약 168번째 줄을 확인하세요. &ldquo;<code>// TODO: if desired, use setLocalizer() to change the localization method</code>&ldquo;라는 주석을 찾을 수 있을 것입니다.</p>
+<p>이 주석 아래에 다음 줄을 추가하세요:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 약 168번째 줄 - SampleMecanumDrive.java */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// TODO: if desired, use setLocalizer() to change the localization method</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// for instance, setLocalizer(new ThreeTrackingWheelLocalizer(...));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w"></span><span class="n">setLocalizer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TwoWheelTrackingLocalizer</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">));</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>이렇게 로컬라이저을 완료할 수 있습니다.</p>
+<hr>
+<h2 id="오도메트리를-3개-사용하는-경우-three-wheel-odometry">오도메트리를 3개 사용하는 경우 (Three-Wheel Odometry)<a href="#오도메트리를-3개-사용하는-경우-three-wheel-odometry" class="anchor" aria-hidden="true">#</a> </h2>
+<p>세 바퀴 오도메트리 설정을 선택한 경우, 헤딩(heading)의 소스로 두 개의 평행 바퀴를 사용하게 됩니다.</p>
+<p><code>StandardTrackingWheelLocalizer.java</code> 파일을 엽니다.</p>
+<h3 id="회전당-틱-수-tpr--바퀴-반지름--기어비-설정-1">회전당 틱 수 (TPR) / 바퀴 반지름 / 기어비 설정<a href="#회전당-틱-수-tpr--바퀴-반지름--기어비-설정-1" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* StandardTrackingWheelLocalizer.java - 30~32번째 줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">TICKS_PER_REV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">WHEEL_RADIUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 인치 단위</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">GEAR_RATIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">출력</span><span class="p">(</span><span class="n">바퀴</span><span class="p">)</span><span class="w"> </span><span class="n">속도</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">입력</span><span class="p">(</span><span class="n">엔코더</span><span class="p">)</span><span class="w"> </span><span class="n">속도</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong><code>TICKS_PER_REV</code></strong>: 인코더가 한 바퀴 회전 시 카운트하는 &ldquo;틱(tick)&ldquo;의 개수입니다. 인코더 사양은 제조사의 사이트에서 확인할 수 있습니다. <code>Counts Per Revolution</code>(CPR) 값을 찾으세요. 예를 들어, REV Through Bore Encoder의 경우 <code>TICKS_PER_REV</code>는 <code>8192</code>입니다.</li>
+<li><strong><code>WHEEL_RADIUS</code></strong>: 데드 휠의 반지름입니다. 반드시 반지름(radius)을 사용하고 직경(diameter)을 사용하지 않도록 주의하세요.</li>
+<li><strong><code>GEAR_RATIO</code></strong>: 출력(바퀴) 속도와 입력(엔코더) 속도의 비율입니다. 엔코더에 기어를 사용하지 않는 경우 <code>1</code>로 유지하세요.</li>
+</ul>
+<hr>
+<h3 id="측면-거리-lateral-distance와-전방-오프셋-forward-offset-설정">측면 거리 (Lateral Distance)와 전방 오프셋 (Forward Offset) 설정<a href="#측면-거리-lateral-distance와-전방-오프셋-forward-offset-설정" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* StandardTrackingWheelLocalizer.java - 34~35번째 줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">LATERAL_DISTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// 인치 단위, 좌우 바퀴 간 거리</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">FORWARD_OFFSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">4</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">인치</span><span class="w"> </span><span class="n">단위</span><span class="p">,</span><span class="w"> </span><span class="n">중심</span><span class="w"> </span><span class="n">축에서</span><span class="w"> </span><span class="n">전면</span><span class="w"> </span><span class="n">바퀴까지의</span><span class="w"> </span><span class="n">오프셋</span><span class="w"> </span><span class="n">거리</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong><code>LATERAL_DISTANCE</code></strong>: 좌우 바퀴 간의 거리입니다.</li>
+<li><strong><code>FORWARD_OFFSET</code></strong>: 회전 중심에서 중앙 휠까지의 거리입니다.
+<ul>
+<li>중앙 휠이 바퀴보다 앞에 있다면 양수, 뒤에 있다면 음수 값을 사용합니다.</li>
+</ul>
+</li>
+</ul>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAA8AAph8JwBYdhhhfSZaAAD&#43;zdAS9JlnQQyDsyRpzgU8SzRIGXS9PeSrvsghu&#43;ZEHvRAAAA="
+        data-srcset="/images/dead-wheels/andrew-bot-forward-offset-quarter_hu14308376124263918731.webp 480w,/images/dead-wheels/andrew-bot-forward-offset-quarter_hu4137416765175810810.webp 576w,/images/dead-wheels/andrew-bot-forward-offset-quarter_hu14326153350746239102.webp 714w"
+        data-sizes="auto"
+    src="/images/dead-wheels/andrew-bot-forward-offset-quarter_hu8645880809225695512.jpg"
+    width="714"
+    height="648"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="로봇 하단 뷰. Y축은 왼쪽에서 오른쪽으로 증가하며, X축은 위쪽으로 증가합니다."
+    class="lazyload blur-up"
+  ><figcaption>17508 Rising Tau의 2019/20 Skystone 로봇</figcaption>
+</figure>
+<hr>
+<h3 id="엔코더-방향-설정-1">엔코더 방향 설정<a href="#엔코더-방향-설정-1" class="anchor" aria-hidden="true">#</a> </h3>
+<p>경우에 따라 <code>Encoder.setDirection(Encoder.Direction.REVERSE)</code>를 사용해 엔코더의 방향을 반전시켜야 합니다.</p>
+<p>예시:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* StandardTrackingWheelLocalizer.java - 46~63번째 줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">leftEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;leftEncoder&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">rightEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;rightEncoder&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">frontEncoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Encoder</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotorEx</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;frontEncoder&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// TODO: 인코더 방향을 바꿀 때는 &#34;Encoder.setDirection(Encoder.Direction.REVERSE)&#34;를 사용.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 예시) 중앙 인코더를 반전시켜야 할 경우:</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w"></span><span class="n">frontEncoder</span><span class="p">.</span><span class="na">setDirection</span><span class="p">(</span><span class="n">Encoder</span><span class="p">.</span><span class="na">Direction</span><span class="p">.</span><span class="na">REVERSE</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>이 코드를 통해 엔코더의 방향을 올바르게 설정할 수 있습니다.</p>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Rev Through Bore 엔코더를 사용하는 경우 아래 내용을 반드시 참조하세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<p><strong>Rev Through Bore 엔코더 주의사항</strong></p>
+<p>REV Through Bore 엔코더를 사용하는 경우, 속도가 32767 cps (counts per second)를 초과하면
+정수 오버플로우가 발생할 수 있습니다. 이는 REV Hub 펌웨어가 속도 데이터를 16비트 정수로 전송하기 때문입니다.
+이를 해결하려면 <code>getRawVelocity()</code> 대신 <code>getCorrectedVelocity()</code>를 사용하세요.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* TwoWheelTrackingLocalizer.java 파일의 86-95줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getWheelVelocities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//TODO : 인코더 속도가 초당 32767 카운트를 초과할 경우, Encoder.getRawVelocity()를 Encoder.getCorrectedVelocity()로 변경하여 보정 메서드를 활성화하세요.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">parallelEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">()),</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">perpendicularEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="samplemecanumdrive에서-로컬라이저localizer-설정하기-1">SampleMecanumDrive에서 로컬라이저(Localizer) 설정하기<a href="#samplemecanumdrive에서-로컬라이저localizer-설정하기-1" class="anchor" aria-hidden="true">#</a> </h3>
+<p>로컬라이저 구성을 완료했다면, <code>SampleMecanumDrive.java</code> 파일로 돌아갑니다.</p>
+<p>대략 131번째 줄에서 &ldquo;<code>// TODO: if desired, use setLocalizer() to change the localization method</code>&ldquo;라는 주석을 찾을 수 있을 겁니다.</p>
+<p>이 주석 아래에 다음 줄을 추가하세요:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 약 131번째 줄 - SampleMecanumDrive.java */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// TODO: if desired, use setLocalizer() to change the localization method</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// for instance, setLocalizer(new ThreeTrackingWheelLocalizer(...));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">setLocalizer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StandardTrackingWheelLocalizer</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">));</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>이렇게 로컬라이저 설정을 완료할 수 있습니다.</p>
+<hr>
+<h3 id="imu-제거">IMU 제거<a href="#imu-제거" class="anchor" aria-hidden="true">#</a> </h3>
+<p>세 바퀴 오도메트리(Three-Wheel Odometry) 방식에서는 IMU가 필요하지 않습니다.
+따라서 <code>SampleMecanumDrive</code>에서 IMU 초기화를 제거하는 것이 좋습니다.
+IMU 초기화는 운영 모드(opmode) 초기화 시간을 2~3초 늘릴 수 있으며, 불필요한 시간이 소요될 수 있습니다.</p>
+<p><code>SampleMecanumDrive.java</code> 파일에서 다음 코드를 찾아 삭제하세요:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 약 134~137번째 줄 - SampleMecanumDrive.java */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// TODO: adjust the names of the following hardware devices to match your configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;imu&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">Parameters</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">Parameters</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">parameters</span><span class="p">.</span><span class="na">angleUnit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BNO055IMU</span><span class="p">.</span><span class="na">AngleUnit</span><span class="p">.</span><span class="na">RADIANS</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imu</span><span class="p">.</span><span class="na">initialize</span><span class="p">(</span><span class="n">parameters</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>그리고 안전을 위해, 아래 메서드들의 반환값을 0으로 변경하세요:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 약 393~396번째 줄 - SampleMecanumDrive.java */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getRawExternalHeading</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Double</span><span class="w"> </span><span class="nf">getExternalHeadingVelocity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">0</span><span class="p">.</span><span class="na">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="조율-tuning---오도메트리-두-개를-사용하는-경우-two-wheel-odometry">조율 (Tuning) - 오도메트리 두 개를 사용하는 경우 (Two-Wheel Odometry)<a href="#조율-tuning---오도메트리-두-개를-사용하는-경우-two-wheel-odometry" class="anchor" aria-hidden="true">#</a> </h2>
+<p>데드 휠(Dead Wheel)을 사용한 오도메트리의 튜닝은 매우 중요한 과정입니다.
+이 과정은 Road Runner뿐만 아니라 FTCLib 또는 직접 개발한 경로 추적 시스템에서도 중요한 역할을 합니다.
+이것의 목표는 로컬라이제이션(Localization)의 정확도를 최대화하는 것입니다.</p>
+<h3 id="바퀴-반지름-조정">바퀴 반지름 조정<a href="#바퀴-반지름-조정" class="anchor" aria-hidden="true">#</a> </h3>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>팁</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 과정이 모든 사용자에게 필수는 아니지만, 적용하면 약 1% 더 정확한 위치 추적이 가능합니다.
+예를 들어, 100인치 이동 시 1% 오차는 1인치 차이를 줄이는 데 도움이 됩니다.
+FTC Skystone 시즌(2019-2020) 동안, 4~5개의 돌을 옮기는 자율 주행 루틴은 100인치 이상을 이동하며,
+이런 차이가 큰 영향을 미칠 수 있었습니다.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>노트</p>
+
+      </div>
+    <div class="callout-body">
+      <p>아래의 과정이 적용된 전체 코드는 <a href="https://gist.github.com/NoahBres/02e83f8317f34d7b627170c2031b2ebf">예제 코드</a>를 참고하세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<ol>
+<li><code>TwoWheelTrackingLocalizer.java</code> 파일을 엽니다.</li>
+<li>클래스 내부에 두 개의 변수를 추가하세요:</li>
+</ol>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 약 46~47번째 줄 - TwoWheelTrackingLocalizer.java */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// X 방향 보정 계수</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">Y_MULTIPLIER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="n">방향</span><span class="w"> </span><span class="n">보정</span><span class="w"> </span><span class="n">계수</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ol start="3">
+<li>다음과 같이 <code>getWheelPositions()</code>와 <code>getWheelVelocities()</code> 함수에 보정 계수를 추가합니다:</li>
+</ol>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 약 77~97번째 줄 - TwoWheelTrackingLocalizer.java */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NonNull</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getWheelPositions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">parallelEncoder</span><span class="p">.</span><span class="na">getCurrentPosition</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">perpendicularEncoder</span><span class="p">.</span><span class="na">getCurrentPosition</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Y_MULTIPLIER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NonNull</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getWheelVelocities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// TODO: 인코더 속도가 초당 32767 카운트를 초과할 경우, Encoder.getRawVelocity()를 </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Encoder.getCorrectedVelocity()로 변경하여 보정 메서드를 활성화하세요.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">parallelEncoder</span><span class="p">.</span><span class="na">getRawVelocity</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">            </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">perpendicularEncoder</span><span class="p">.</span><span class="na">getRawVelocity</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Y_MULTIPLIER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>참고:</strong> <code>X_MULTIPLIER</code>는 수평 엔코더에 작용하는 값입니다. 왜냐하면 x는 로컬 좌표계를 향해 있기 때문입니다 (로봇 공학/항공/등 상황에서 흔히 사용됩니다).</p>
+<ol start="4">
+<li>물리적인 튜닝 과정을 진행합니다:</li>
+</ol>
+<ul>
+<li>로봇이 이동할 수 있는 직선 구간을 준비합니다. 경기장 타일을 직선 형태로 배치하면 좋습니다.</li>
+<li>로봇을 시작 지점에 두고 앞으로 직진하게 설정합니다.</li>
+<li><code>LocalizationTest</code> opmode를 실행합니다. 단, 컨트롤러는 사용하면 안 됩니다.</li>
+<li>손으로 로봇을 직선 구간을 따라 천천히 이동시킵니다. 가능한 똑바로 이동하도록 노력하세요. (로봇 옆에 테이프를 붙이고, 테이프와의 간격을 유지하면서 이동시키면 좋습니다.)</li>
+<li>이동이 끝나면 멈춘 후, 실제 이동한 거리와 텔레메트리(Telemetry)에 기록된 이동 거리를 확인하세요.</li>
+</ul>
+<ol start="5">
+<li>X 방향 보정 계수 계산:</li>
+</ol>
+<ul>
+<li><code>X_MULTIPLIER = 실제 이동 거리 / 텔레메트리 이동 거리</code><br>
+예: 텔레메트리가 89인치를 표시하고 실제로 90인치를 이동했다면, <code>X_MULTIPLIER</code>는 <code>1.01123596</code>입니다.</li>
+</ul>
+<ol start="6">
+<li>동일한 과정을 통해 Y 방향(스트레이프) 보정 계수도 계산하고 설정합니다.</li>
+</ol>
+<hr>
+<h3 id="재확인">재확인<a href="#재확인" class="anchor" aria-hidden="true">#</a> </h3>
+<ol>
+<li><code>LocalizationTest</code> opmode를 실행합니다.</li>
+<li>로봇의 RC에서 <code>192.168.49.1:8080/dash</code> 또는 Control Hub에서 <code>192.168.43.1:8080/dash</code>로 접속합니다.</li>
+<li>컨트롤러로 로봇을 이동시키면서 대시보드 상에서 로봇의 움직임이 실제 움직임과 일치하는지 확인합니다.</li>
+<li>X 좌표는 앞으로 이동 시 증가해야 하며, Y 좌표는 왼쪽으로 이동 시 증가해야 합니다.</li>
+</ol>
+<p>문제가 발생하면 문제 해결(Troubleshooting) 섹션을 참고하세요.</p>
+<hr>
+<h3 id="조율-tuning---오도메트리-세-개를-사용하는-경우-three-wheel-odometry">조율 (Tuning) - 오도메트리 세 개를 사용하는 경우 (Three-Wheel Odometry)<a href="#조율-tuning---오도메트리-세-개를-사용하는-경우-three-wheel-odometry" class="anchor" aria-hidden="true">#</a> </h3>
+<p>데드 휠의 튜닝은 매우 중요합니다.
+이는 Road Runner뿐만 아니라 FTCLib 또는 직접 제작한 경로 추적 시스템에도 적용됩니다.
+정확한 튜닝은 위치 및 거리 측정에서 발생하는 오류를 최소화하여 자율 주행 시 성능을 크게 향상시킬 수 있습니다.</p>
+<hr>
+<h3 id="바퀴-반지름-조정-1">바퀴 반지름 조정<a href="#바퀴-반지름-조정-1" class="anchor" aria-hidden="true">#</a> </h3>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>팁</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 단계는 선택 사항이지만 로컬라이제이션 정확도를 약 1% 정도 향상시킬 수 있습니다.
+1%가 별것 아닌 것처럼 보일 수 있지만, 100인치 이상의 주행 시 약 1인치 차이를 만들 수 있습니다.
+예를 들어 FTC Skystone(2019-2020) 시즌에서 4~5개의 스톤을 운반하는 자율 주행은 100인치 이상 이동해야 했으며,
+1인치의 추가 정확도가 큰 차이를 만들었을 수 있습니다.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>노트</p>
+
+      </div>
+    <div class="callout-body">
+      <p>아래의 과정이 적용된 전체 코드는 <a href="https://gist.github.com/NoahBres/9b9710eaa9f9fd23efa30a16de0f610e">예제 코드</a>를 참고하세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<ol>
+<li>
+<p><strong><code>StandardTrackingWheelLocalizer.java</code> 파일 열기</strong><br>
+해당 파일에서 아래 두 변수를 클래스에 선언합니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* StandardTrackingWheelLocalizer.java 파일의 약 37~38줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// X 방향 보정 계수</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">Y_MULTIPLIER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="n">방향</span><span class="w"> </span><span class="n">보정</span><span class="w"> </span><span class="n">계수</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+<li>
+<p><strong>보정 계수를 <code>getWheelPositions()</code> 및 <code>getWheelVelocities()</code> 함수에 추가</strong><br>
+아래와 같이 코드를 수정합니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* StandardTrackingWheelLocalizer.java 파일 약 67~103줄 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NonNull</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getWheelPositions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">leftEncoder</span><span class="p">.</span><span class="na">getCurrentPosition</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">rightEncoder</span><span class="p">.</span><span class="na">getCurrentPosition</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">frontEncoder</span><span class="p">.</span><span class="na">getCurrentPosition</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Y_MULTIPLIER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@NonNull</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getWheelVelocities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">leftEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">rightEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X_MULTIPLIER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">encoderTicksToInches</span><span class="p">(</span><span class="n">frontEncoder</span><span class="p">.</span><span class="na">getCorrectedVelocity</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Y_MULTIPLIER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>참고:</strong> X 방향 보정 계수는 X 좌표가 로컬 좌표계에서 앞쪽으로 향하기 때문에 <code>leftEncoder</code>와<code>rightEncoder</code>에 적용됩니다.</p>
+</li>
+<li>
+<p>물리적인 튜닝 과정을 진행합니다:</p>
+</li>
+</ol>
+<ul>
+<li>로봇이 이동할 수 있는 직선 구간을 준비합니다. 경기장 타일을 직선 형태로 배치하면 좋습니다.</li>
+<li>로봇을 시작 지점에 두고 앞으로 직진하게 설정합니다.</li>
+<li><code>LocalizationTest</code> opmode를 실행합니다. 단, 컨트롤러는 사용하면 안 됩니다.</li>
+<li>손으로 로봇을 직선 구간을 따라 천천히 이동시킵니다. 가능한 똑바로 이동하도록 노력하세요. (로봇 옆에 테이프를 붙이고, 테이프와의 간격을 유지하면서 이동시키면 좋습니다.)</li>
+<li>이동이 끝나면 멈춘 후, 실제 이동한 거리와 텔레메트리(Telemetry)에 기록된 이동 거리를 확인하세요.</li>
+</ul>
+<ol start="5">
+<li>
+<p>보정 계수를 계산합니다.
+보정 계수는 <code>실제 이동 거리 / 텔레메트리 이동 거리</code>로 계산됩니다.<br>
+예를 들어 텔레메트리가 89인치를 표시하고 실제 측정값이 90인치라면, 보정 계수는 <code>1.01123596</code>이 됩니다.</p>
+</li>
+<li>
+<p>이 과정을 X방향(앞으로 이동)으로 3번 반복해 평균값을 구한 후 <code>X_MULTIPLIER</code>에 설정합니다.</p>
+</li>
+<li>
+<p>Y방향(옆으로 이동)에서도 동일한 과정을 반복한 후, 계산된 Y 방향 계수를 <code>Y_MULTIPLIER</code>에 설정합니다.</p>
+</li>
+</ol>
+<hr>
+<h3 id="측면-거리-lateral-distance-조율">측면 거리 (Lateral Distance) 조율<a href="#측면-거리-lateral-distance-조율" class="anchor" aria-hidden="true">#</a> </h3>
+<p>측면 거리는 로컬라이제이션에서 방향 계산에 중요한 요소입니다.
+이 값을 잘못 설정하면 방향 오차가 누적되어 로컬라이제이션 성능이 크게 저하됩니다.</p>
+<ol>
+<li>
+<p><code>StandardTrackingWheelLocalizer.java</code> 파일의 <code>LATERAL_DISTANCE</code> 값 확인을 확인합니다.<br>
+해당 값을 실제 측정한 거리로 설정합니다. 이후 튜닝 과정에서 조율될 예정이니 정확하지 않더라도 괜찮습니다.</p>
+</li>
+<li>
+<p>로봇의 특정 지점(테이프 표시 등)을 기준으로 360° 회전 전후의 위치를 확인할 수 있도록 준비합니다.</p>
+</li>
+<li>
+<p><code>TrackingWheelLateralDistanceTuner</code> OpMode를 실행합니다.</p>
+</li>
+<li>
+<p>대시보드를 사용하면 로봇의 상태를 시각적으로 확인할 수 있습니다. RC의 WiFi에 연결한 뒤, 브라우저에서 <code>192.168.49.1:8080/dash</code> (RC 전화 사용 시) 또는 <code>192.168.43.1:8080/dash</code> (Control Hub 사용 시)로 접속하세요.</p>
+</li>
+<li>
+<p>OpMode를 실행한 후 게임패드의 오른쪽 조이스틱을 사용해 로봇을 <strong>반시계 방향</strong>으로 회전시킵니다.</p>
+</li>
+<li>
+<p>로봇을 <strong>10회 반시계 방향</strong>으로 회전시키고 완료되면 게임패드의 <code>Y</code> 버튼을 눌러 튜닝을 종료합니다. 이후 시작 지점과 동일하게 정렬되었는지 확인합니다.</p>
+</li>
+<li>
+<p>출력된 <code>LATERAL_DISTANCE</code> 값을 <code>StandardTrackingWheelLocalizer.java</code>에 입력합니다.</p>
+</li>
+<li>
+<p>만약 값이 부정확하다면 직접 조정하면서 반복 테스트합니다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="문제-해결-troubleshooting">문제 해결 (Troubleshooting)<a href="#문제-해결-troubleshooting" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="대시보드와-로봇-움직임-불일치-문제-해결">대시보드와 로봇 움직임 불일치 문제 해결:<a href="#대시보드와-로봇-움직임-불일치-문제-해결" class="anchor" aria-hidden="true">#</a> </h3>
+<ol>
+<li><strong>대시보드에서 로봇이 실제와 반대로 옆으로 이동할 경우</strong></li>
+</ol>
+<ul>
+<li>수직 인코더의 방향을 반대로 설정하세요.</li>
+</ul>
+<ol start="2">
+<li><strong>대시보드에서 로봇이 제자리에서 올바르게 회전하지 않을 경우</strong></li>
+</ol>
+<ul>
+<li>수직 휠의 위치가 잘못되어 회전 중심에 오프셋이 생긴 것입니다.<br>
+수직 휠의 위치 조정은 복잡할 수 있으니, 약간의 오프셋은 그대로 두어도 괜찮습니다.<br>
+이로 인해 로컬라이제이션 정확도는 영향을 받지 않으며, 단지 위치가 약간 이동하는 것뿐입니다.</li>
+</ul>
+<ol start="3">
+<li><strong>대시보드에서 로봇이 직진하는 동안 회전할 경우</strong></li>
+</ol>
+<ul>
+<li>수평 엔코더 중 하나가 반대로 설정되어 있는 것입니다.</li>
+</ul>
+<ol start="4">
+<li><strong>대시보드에서 로봇이 직진 및 스트레이프는 제대로 하지만, 회전 방향이 실제와 반대일 경우</strong></li>
+</ol>
+<ul>
+<li>좌측 및 우측 인코더가 서로 바뀌어 연결되어 있는 것입니다.</li>
+</ul>
+<ol start="5">
+<li><strong>시간이 지남에 따라 로컬라이제이션 정확도가 떨어질 경우</strong></li>
+</ol>
+<ul>
+<li>로봇을 천천히 움직이며 테스트하세요. 가속을 최소화하려고 노력합니다.
+<ul>
+<li>느린 속도에서도 로컬라이제이션이 부정확하다면, 설정 값을 다시 확인하세요.<br>
+헤딩(방향)이 정확한지 확인하고, 스트레이프 및 전진 움직임에서 측정된 거리와 실제 이동 거리가 일치하는지 확인하세요.</li>
+</ul>
+</li>
+<li>만약 느린 속도에서는 정확하지만, 빠른 속도에서 정확도가 떨어진다면 이는 하드웨어 문제일 가능성이 높습니다.
+<ul>
+<li>가장 흔한 원인은 데드 휠의 마찰력이 부족한 경우입니다. 데드 휠의 스프링 압력을 증가시켜 마찰력을 높이세요.</li>
+</ul>
+</li>
+</ul>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary"></div>
+					<a href="/docs/4-tuning/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%83%81%EC%88%98-%EC%84%A4%EC%A0%95-drive-constant/" class="stretched-link text-reset text-decoration-none">드라이브 상수 설정 (Drive Constant)</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary"></div>
+					<a href="/docs/4-tuning/%EC%A3%BC%ED%96%89-%ED%94%BC%EB%93%9C%ED%8F%AC%EC%9B%8C%EB%93%9C-%EC%A1%B0%EC%9C%A8-driving-feedforward-tuner/" class="stretched-link text-reset text-decoration-none">주행 피드포워드 조율 (Driving Feedforward Tuner)</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li><li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="https://talosftc.com/">Team TALOS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.603af475fbe5c472fb0f71bb46956a2acc0bd98f893ee7226e99f97b0c9ff23e.js"
+  integrity="sha256-YDr0dfvlxHL7D3G7RpVqKswL2Y&#43;JPucibpn5ewyf8j4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

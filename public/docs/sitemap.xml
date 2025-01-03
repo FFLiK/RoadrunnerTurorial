@@ -2,91 +2,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://localhost:1313/docs/1-about/</loc>
+      <loc>http://localhost:1313/docs/5-trajectory/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/10-turntesttuning/</loc>
+      <loc>http://localhost:1313/docs/7-tools/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/11-localizationtest/</loc>
+      <loc>http://localhost:1313/docs/1-about-roadrunner/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/12-followerpidtuner/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/13-splinetest/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/14-trajectoriesoverview/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/15-trajectorybuilderfunctionlist/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/16-makerguide/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/17-trajectorysequence/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/18-advancedtips/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/19-tools/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/2-before/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/20-furtherresources/</loc>
+      <loc>http://localhost:1313/docs/2-before-you-start/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -100,50 +37,22 @@
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/4-overview/</loc>
+      <loc>http://localhost:1313/docs/4-tuning/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/5-driveconstant/</loc>
+      <loc>http://localhost:1313/docs/8-further-resources/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/6-deadwheels/</loc>
+      <loc>http://localhost:1313/docs/6-advanced-tips/</loc>
       <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/7-feedforwardtuning/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/8-straighttesttuning/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/9-trackwidthtuning/</loc>
-      <lastmod>2023-09-07T16:06:50+02:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/docs/reference/</loc>
-      <lastmod>2023-09-07T16:12:37+02:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
@@ -155,128 +64,152 @@
       <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://localhost:1313/docs/1-about/example-guide/</loc>
+        <loc>http://localhost:1313/docs/5-trajectory/%EA%B0%9C%EC%9A%94/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/10-turntesttuning/example-guide/</loc>
+        <loc>http://localhost:1313/docs/5-trajectory/trajectorybuilder-%ED%95%A8%EC%88%98-%EB%AA%A9%EB%A1%9D/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/11-localizationtest/example-guide/</loc>
+        <loc>http://localhost:1313/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/12-followerpidtuner/example-guide/</loc>
+        <loc>http://localhost:1313/docs/5-trajectory/%EA%B2%BD%EB%A1%9C-%EC%84%9C%EC%97%B4-%EC%A0%95%ED%95%98%EA%B8%B0-trajectory-sequence/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/13-splinetest/example-guide/</loc>
+        <loc>http://localhost:1313/docs/7-tools/meepmeep/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/14-trajectoriesoverview/example-guide/</loc>
+        <loc>http://localhost:1313/docs/7-tools/roadrunner-gui/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/15-trajectorybuilderfunctionlist/example-guide/</loc>
+        <loc>http://localhost:1313/docs/7-tools/davids-rrpathvisualizer/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/16-makerguide/example-guide/</loc>
+        <loc>http://localhost:1313/docs/7-tools/rrpathgen/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/17-trajectorysequence/example-guide/</loc>
+        <loc>http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/18-advancedtips/example-guide/</loc>
+        <loc>http://localhost:1313/docs/1-about-roadrunner/%EC%9E%90%EC%A3%BC-%EB%AC%BB%EB%8A%94-%EC%A7%88%EB%AC%B8-faq/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/19-tools/example-guide/</loc>
+        <loc>http://localhost:1313/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/2-before/example-guide/</loc>
+        <loc>http://localhost:1313/docs/3-installation/%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%A4%80%EB%B9%84/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/20-furtherresources/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EA%B0%9C%EC%9A%94/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/3-installation/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%83%81%EC%88%98-%EC%84%A4%EC%A0%95-drive-constant/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/4-overview/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/5-driveconstant/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EC%A3%BC%ED%96%89-%ED%94%BC%EB%93%9C%ED%8F%AC%EC%9B%8C%EB%93%9C-%EC%A1%B0%EC%9C%A8-driving-feedforward-tuner/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/6-deadwheels/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EC%A3%BC%ED%96%89-%EC%86%8D%EB%8F%84-pid-%EC%A1%B0%EC%9C%A8-driving-velocity-pid-tuner/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/7-feedforwardtuning/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EC%A7%81%EC%A7%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-straight-test/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/8-straighttesttuning/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%EA%B2%BD%EB%A1%9C-%ED%8F%AD-%EC%A1%B0%EC%9C%A8-track-width-tuner/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/9-trackwidthtuning/example-guide/</loc>
+        <loc>http://localhost:1313/docs/4-tuning/%ED%9A%8C%EC%A0%84-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A1%B0%EC%9C%A8-turn-test-tuning/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/reference/example-reference/</loc>
-        <lastmod>2023-09-07T16:13:18+02:00</lastmod>
+        <loc>http://localhost:1313/docs/4-tuning/%EB%A1%9C%EC%BB%AC%EB%9D%BC%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-localization-test/</loc>
+        <lastmod>2023-09-07T16:04:48+02:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/docs/4-tuning/%ED%8C%94%EB%A1%9C%EC%9B%8C-pid-%EC%A1%B0%EC%9C%A8-follower-pid-tuner/</loc>
+        <lastmod>2023-09-07T16:04:48+02:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/docs/4-tuning/%EC%8A%A4%ED%94%8C%EB%9D%BC%EC%9D%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8-spline-test/</loc>
+        <lastmod>2023-09-07T16:04:48+02:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/docs/8-further-resources/%EC%B6%94%EA%B0%80-%EB%A6%AC%EC%86%8C%EC%8A%A4/</loc>
+        <lastmod>2023-09-07T16:04:48+02:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/docs/6-advanced-tips/%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EC%A0%95%EB%B3%B4/</loc>
+        <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
