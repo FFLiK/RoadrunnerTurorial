@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>사전 준비 on Roadrunner Tutorial</title>
+    <link>http://localhost:1313/docs/2-before-you-start/</link>
+    <description>Recent content in 사전 준비 on Roadrunner Tutorial</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <copyright>Copyright (c) 2025 TALOS 25309</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/2-before-you-start/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>시작하기 전에</title>
+      <link>http://localhost:1313/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/2-before-you-start/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

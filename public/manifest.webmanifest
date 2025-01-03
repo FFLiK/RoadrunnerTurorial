@@ -1,8 +1,8 @@
 
 {
-  "name": "My Docs",
-  "short_name": "My Docs",
-  "lang": "en",
+  "name": "Roadrunner Tutorial",
+  "short_name": "Roadrunner Tutorial",
+  "lang": "ko",
   "icons": [
     {
       "src": "/favicon-192x192.png",

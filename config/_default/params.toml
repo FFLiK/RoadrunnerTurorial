@@ -1,13 +1,10 @@
 # Hugo
-title = "My Docs"
-description = "Congrats on setting up a new Doks project!"
+title = "Roadrunner Tutorial"
+description = "FTC Roadrunner 한국어 가이드"
 images = ["cover.png"]
 
 # mainSections
 mainSections = ["docs"]
-
-[social]
-  twitter = "getdoks"
 
 # Doks (@thulite/doks-core)
 [doks]
@@ -22,7 +19,7 @@ mainSections = ["docs"]
   ## Button
   navBarButton = false # false (default) or true
   navBarButtonUrl = "/docs/prologue/introduction/"
-  navBarButtonText = "Get started"
+  navBarButtonText = "Docs"
 
   # FlexSearch
   flexSearch = true # true (default) or false
@@ -63,7 +60,7 @@ mainSections = ["docs"]
   backgroundDots = true # true (default) or false
 
   # Homepage
-  sectionFooter = false # false (default) or true
+  sectionFooter = true # false (default) or true
 
   # Blog
   relatedPosts = false # false (default) or true
@@ -74,7 +71,7 @@ mainSections = ["docs"]
   editPage = false # false (default) or true
   lastMod = false # false (default) or true
   repoHost = "GitHub" # GitHub (default), Gitea, GitLab, Bitbucket, or BitbucketServer
-  docsRepo = "https://github.com/h-enk/doks"
+  docsRepo = "https://github.com/FFLiK/RoadrunnerTurorial"
   docsRepoBranch = "main" # main (default), master, or <branch name>
   docsRepoSubPath = "" # "" (none, default) or <sub path>
 
