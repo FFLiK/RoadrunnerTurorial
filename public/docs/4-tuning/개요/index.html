@@ -617,22 +617,19 @@
   <h3></h3>
     <nav id="toc">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#feedforward란-무엇인가요"><strong>Feedforward란 무엇인가요?</strong></a></li>
-        <li><a href="#drivevelocitypid는-어디에-있나요"><strong>DriveVelocityPID는 어디에 있나요?</strong></a></li>
-        <li><a href="#drive-constants"><strong>Drive Constants</strong></a></li>
-        <li><a href="#dead-wheels"><strong>Dead Wheels</strong></a></li>
-        <li><a href="#localization-test"><strong>Localization Test*</strong></a></li>
-        <li><a href="#drivefeedforwardtuner"><strong>DriveFeedforwardTuner</strong></a></li>
-        <li><a href="#straight-test"><strong>Straight Test</strong></a></li>
-        <li><a href="#trackwidthtuner"><strong>TrackWidthTuner</strong></a></li>
-        <li><a href="#turn-test"><strong>Turn Test</strong></a></li>
-        <li><a href="#localization-test-1"><strong>Localization Test**</strong></a></li>
-        <li><a href="#followerpidtuner"><strong>FollowerPIDTuner</strong></a></li>
-        <li><a href="#spline-test"><strong>Spline Test</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#피드포워드feedforward란-무엇인가">피드포워드(Feedforward)란 무엇인가?</a></li>
+    <li><a href="#주행-속도-pid-drive-velocity-pid는-어디에-있나요">주행 속도 PID (Drive Velocity PID)는 어디에 있나요?</a></li>
+    <li><a href="#드라이브-상수-설정">드라이브 상수 설정</a></li>
+    <li><a href="#데드-휠-설정">데드 휠 설정</a></li>
+    <li><a href="#로컬라이제이션-테스트-1">로컬라이제이션 테스트 1</a></li>
+    <li><a href="#주행-피드포워드-조율">주행 피드포워드 조율</a></li>
+    <li><a href="#주행-속도-pid-조율-사용하지-않음">주행 속도 PID 조율 [사용하지 않음!]</a></li>
+    <li><a href="#직진-테스트">직진 테스트</a></li>
+    <li><a href="#경로-폭-조율">경로 폭 조율</a></li>
+    <li><a href="#회전-테스트">회전 테스트</a></li>
+    <li><a href="#로컬라이제이션-테스트-2">로컬라이제이션 테스트 2</a></li>
+    <li><a href="#팔로워-pid-조율">팔로워 PID 조율</a></li>
+    <li><a href="#스플라인-테스트">스플라인 테스트</a></li>
   </ul>
 </nav>
 </div>
@@ -648,22 +645,19 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#feedforward란-무엇인가요"><strong>Feedforward란 무엇인가요?</strong></a></li>
-        <li><a href="#drivevelocitypid는-어디에-있나요"><strong>DriveVelocityPID는 어디에 있나요?</strong></a></li>
-        <li><a href="#drive-constants"><strong>Drive Constants</strong></a></li>
-        <li><a href="#dead-wheels"><strong>Dead Wheels</strong></a></li>
-        <li><a href="#localization-test"><strong>Localization Test*</strong></a></li>
-        <li><a href="#drivefeedforwardtuner"><strong>DriveFeedforwardTuner</strong></a></li>
-        <li><a href="#straight-test"><strong>Straight Test</strong></a></li>
-        <li><a href="#trackwidthtuner"><strong>TrackWidthTuner</strong></a></li>
-        <li><a href="#turn-test"><strong>Turn Test</strong></a></li>
-        <li><a href="#localization-test-1"><strong>Localization Test**</strong></a></li>
-        <li><a href="#followerpidtuner"><strong>FollowerPIDTuner</strong></a></li>
-        <li><a href="#spline-test"><strong>Spline Test</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#피드포워드feedforward란-무엇인가">피드포워드(Feedforward)란 무엇인가?</a></li>
+    <li><a href="#주행-속도-pid-drive-velocity-pid는-어디에-있나요">주행 속도 PID (Drive Velocity PID)는 어디에 있나요?</a></li>
+    <li><a href="#드라이브-상수-설정">드라이브 상수 설정</a></li>
+    <li><a href="#데드-휠-설정">데드 휠 설정</a></li>
+    <li><a href="#로컬라이제이션-테스트-1">로컬라이제이션 테스트 1</a></li>
+    <li><a href="#주행-피드포워드-조율">주행 피드포워드 조율</a></li>
+    <li><a href="#주행-속도-pid-조율-사용하지-않음">주행 속도 PID 조율 [사용하지 않음!]</a></li>
+    <li><a href="#직진-테스트">직진 테스트</a></li>
+    <li><a href="#경로-폭-조율">경로 폭 조율</a></li>
+    <li><a href="#회전-테스트">회전 테스트</a></li>
+    <li><a href="#로컬라이제이션-테스트-2">로컬라이제이션 테스트 2</a></li>
+    <li><a href="#팔로워-pid-조율">팔로워 PID 조율</a></li>
+    <li><a href="#스플라인-테스트">스플라인 테스트</a></li>
   </ul>
 </nav>
     </div>
@@ -695,13 +689,19 @@
 
       </div>
     <div class="callout-body">
-      <p>이 페이지는 Road Runner 공식 퀵스타트의 튜닝 가이드를 바탕으로 작성되었으며, 개인 경험을 바탕으로 한 추가적인 팁을 포함하고 있습니다. 보다 자세한 내용은 <a href="https://acme-robotics.gitbook.io/road-runner/quickstart/tuning">공식 가이드</a>를 참고하세요.</p>
+      <p>이 페이지는 Road Runner 공식 퀵스타트의 조율 가이드를 바탕으로 작성되었으며,
+개인 경험을 바탕으로 한 추가적인 팁을 포함하고 있습니다.
+보다 자세한 내용은 <a href="https://acme-robotics.gitbook.io/road-runner/quickstart/tuning">공식 가이드</a>를
+참고하세요.</p>
 
     </div>
   </div>
 </div>
 
-<p>Road Runner는 복잡한 수학적 계산을 통해 로봇의 동작을 제어하지만, 로봇이 매끄럽게 작동하려면 반드시 튜닝이 필요합니다. 모터, 무게 등 로봇마다 다른 특성이 구동 방식에 영향을 미치기 때문에, 튜닝 가이드를 따라 각 로봇에 맞게 구동 체계를 조정해야 합니다.</p>
+<p>Road Runner는 복잡한 수학적 계산을 통해 로봇의 동작을 제어하지만,
+로봇이 매끄럽게 작동하려면 반드시 <strong>조율(Tuning) 과정</strong>이 필요합니다.
+모터, 무게 등 로봇마다 다른 특성이 구동 방식에 영향을 미치기 때문에,
+조율 가이드를 따라 각 로봇에 맞게 구동 체계를 조정해야 합니다.</p>
 <div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -726,7 +726,9 @@
 
       </div>
     <div class="callout-body">
-      <p>로봇에 무거운 부품을 추가하는 등 큰 변화가 있을 경우, 반드시 재튜닝이 필요합니다. 튜닝 과정은 이전보다 빠르게 진행될 수 있지만, 일관된 성능을 위해 권장됩니다.</p>
+      <p>로봇에 무거운 부품을 추가하는 등 큰 변화가 있을 경우,
+반드시 재튜닝이 필요합니다.
+조율 과정은 이전보다 빠르게 진행될 수 있지만, 일관된 성능을 위해 권장됩니다.</p>
 
     </div>
   </div>
@@ -735,57 +737,191 @@
 
 <img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-0" src="/_15116852863202036350.svg"><p><strong>각 단계를 완료한 후에 다음 단계로 진행하세요.</strong></p>
 <hr>
-<h3 id="feedforward란-무엇인가요"><strong>Feedforward란 무엇인가요?</strong><a href="#feedforward란-무엇인가요" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Feedforward 속도 제어는 주어진 구동 특성을 기반으로 전압을 속도로 변환하는 함수입니다. 이 과정은 실시간 피드백이 없다는 단점이 있지만, PID 제어를 통해 오차를 보정합니다.</p>
+<h2 id="피드포워드feedforward란-무엇인가">피드포워드(Feedforward)란 무엇인가?<a href="#피드포워드feedforward란-무엇인가" class="anchor" aria-hidden="true">#</a> </h2>
+<p>피드 포워드 속도 제어는 전압을 속도로 변환하는 함수를 생성하는 개방 루프 시스템입니다.
+이 과정에서 구동 중 실시간 피드백이 부족하다는 문제가 있지만,
+병진 이동 PID가 이를 보완하여 에러를 수정합니다.</p>
 <hr>
-<h3 id="drivevelocitypid는-어디에-있나요"><strong>DriveVelocityPID는 어디에 있나요?</strong><a href="#drivevelocitypid는-어디에-있나요" class="anchor" aria-hidden="true">#</a> </h3>
-<p>DriveVelocityPID는 더 이상 사용되지 않으며, Feedforward 방식을 사용해야 합니다.<br>
-Drive encoders나 odometry 여부와 관계없이 Feedforward를 사용하는 것이 권장됩니다.<br>
-자세한 내용은 <a href="/drive-velocity-pid-tuning.html#why-is-drivevelocitypid-not-used">여기</a>에서 확인하세요.</p>
+<h2 id="주행-속도-pid-drive-velocity-pid는-어디에-있나요">주행 속도 PID (Drive Velocity PID)는 어디에 있나요?<a href="#주행-속도-pid-drive-velocity-pid는-어디에-있나요" class="anchor" aria-hidden="true">#</a> </h2>
+<p>주행 속도 PID는 더 이상 사용되지 않습니다.
+그 이유는 <a href="/drive-velocity-pid-tuning.html#why-is-drivevelocitypid-not-used">여기</a>에서 확인할 수 있습니다.<br>
+드라이브 인코더 또는 오도메트리 사용 여부와 관계없이 피드포워드 방식을 사용하세요.</p>
 <hr>
-<h3 id="drive-constants"><strong>Drive Constants</strong><a href="#drive-constants" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Drive Constants 파일은 로봇의 물리적 특성(모터 최대 RPM, 휠 반지름 등)을 포함합니다.<br>
-튜닝 과정에서 발생하는 대부분의 큰 오류는 이 단계에서 나타납니다. 예를 들어, 로봇이 지정된 거리의 절반만 이동한다면, 이는 Drive Constants에 문제가 있을 가능성이 큽니다.</p>
-<p>자세한 내용은 <a href="/drive-constants">Drive Constants 페이지</a>에서 확인하세요.</p>
+<h2 id="드라이브-상수-설정">드라이브 상수 설정<a href="#드라이브-상수-설정" class="anchor" aria-hidden="true">#</a> </h2>
+<p>드라이브 상수(Drive Constants) 파일에는 로봇의 물리적 특성과 관련된 모든 정보가 포함됩니다.
+예를 들어, 모터의 최대 RPM, 바퀴 반지름 등이 포함됩니다.
+이 단계에서 발생하는 가장 심각한 오류는 보통 드라이브 상수에서 시작됩니다.<br>
+예를 들어, 로봇이 지정된 거리의 절반만 이동한다면, 이는 드라이브 상수의 문제일 가능성이 높습니다.</p>
+<p>드라이브 상수 사용에 대한 자세한 내용은 <a href="../%eb%93%9c%eb%9d%bc%ec%9d%b4%eb%b8%8c-%ec%83%81%ec%88%98-%ec%84%a4%ec%a0%95-drive-constant/">드라이브 상수 설정 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="dead-wheels"><strong>Dead Wheels</strong><a href="#dead-wheels" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Dead Wheels가 있는 경우, Drive Constants를 편집한 후 Dead Wheels를 설정해야 합니다. Dead Wheels가 없다면 이 단계를 건너뛰세요.<br>
-Dead Wheels의 개수(2개 또는 3개)에 따라 설정이 다릅니다. 이에 대한 차이는 <a href="/#what-is-the-difference-between-two-and-three-wheel-odometry">FAQ</a>를 참고하세요.</p>
-<p>자세한 내용은 <a href="/dead-wheels">Dead Wheels 페이지</a>에서 확인하세요.</p>
+<h2 id="데드-휠-설정">데드 휠 설정<a href="#데드-휠-설정" class="anchor" aria-hidden="true">#</a> </h2>
+<p>로봇에 데드 휠이 있다면, 드라이브 상수를 편집한 후 데드 휠을 설정해야 합니다.
+데드 휠이 없다면 이 단계를 무시하세요.<br>
+데드 휠에 대해 잘 모르겠다면 <a href="../../1-about-roadrunner/%ec%9e%90%ec%a3%bc-%eb%ac%bb%eb%8a%94-%ec%a7%88%eb%ac%b8-faq/#2-%eb%8d%b0%eb%93%9c-%ed%9c%a0%ec%98%a4%eb%8f%84%eb%a9%94%ed%8a%b8%eb%a6%ac%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80%ec%9a%94">FAQ</a>의 예제를 참고하세요.</p>
+<p>데드 휠 조율은 로컬라이제이션 테스트에서 수행됩니다. 데드 휠의 정확한 조율은
+로봇의 정확한 로컬라이제이션 및 경로 추적을 위해 매우 중요합니다.<br>
+로봇이 2개의 데드 휠을 사용하는지, 3개의 데드 휠을 사용하는지에 따라 설정이 달라집니다.
+차이를 모르겠다면 <a href="../../1-about-roadrunner/%ec%9e%90%ec%a3%bc-%eb%ac%bb%eb%8a%94-%ec%a7%88%eb%ac%b8-faq/#3-%eb%91%90-%eb%b0%94%ed%80%b4%ec%99%80-%ec%84%b8-%eb%b0%94%ed%80%b4-%ec%98%a4%eb%8f%84%eb%a9%94%ed%8a%b8%eb%a6%ac%ec%9d%98-%ec%b0%a8%ec%9d%b4%ec%a0%90%ec%9d%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80%ec%9a%94">FAQ</a>를 참고하세요.</p>
+<p>자세한 내용은 <a href="../%eb%8d%b0%eb%93%9c-%ed%9c%a0-%ec%84%a4%ec%a0%95-dead-wheels">데드 휠 설정 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="localization-test"><strong>Localization Test*</strong><a href="#localization-test" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Dead Wheels를 사용하는 경우, Localization Test를 통해 Dead Wheels의 위치 추적 정확도를 확인하세요. Dead Wheels를 사용하지 않는 경우, 이 단계를 건너뛰고 이후에 Localization Test를 수행하세요.</p>
-<p>자세한 내용은 <a href="/dead-wheels">Dead Wheels 페이지</a>에서 확인하세요.</p>
+<h2 id="로컬라이제이션-테스트-1">로컬라이제이션 테스트 1<a href="#로컬라이제이션-테스트-1" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>주의</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 첫 번째 로컬라이제이션 테스트는 데드 휠 로컬라이제이션을
+테스트 및 조율하기 위한 것입니다. 데드 휠를 사용하지 않기로 결정했다면 이 단계를 건너뛰세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>로컬라이제이션 테스트를 실행하고 로봇을 필드에서 이동시켜 로컬라이제이션과 관련된 문제를 찾으세요.
+데드 휠 로컬라이제이션은 데드 휠을 설정한 후 조율해야 합니다.<br>
+로컬라이제이션의 정확성은 경로 추적의 정확성에 큰 영향을 미칩니다.</p>
+<p>데드 휠을 사용하지 않는 경우, 이후 단계에서 로컬라이제이션 테스트를 수행합니다.</p>
+<p>자세한 내용은 <a href="../%eb%8d%b0%eb%93%9c-%ed%9c%a0-%ec%84%a4%ec%a0%95-dead-wheels">데드 휠 조절 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="drivefeedforwardtuner"><strong>DriveFeedforwardTuner</strong><a href="#drivefeedforwardtuner" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Feedforward 방식을 사용하는 경우, Feedforward 상수를 튜닝해야 합니다.<br>
-자동 및 수동 튜닝 방식이 제공되며, 개인적으로는 수동 튜닝 방식을 권장합니다.</p>
-<p>자세한 내용은 <a href="/feedforward-tuning">Feedforward Tuning 페이지</a>에서 확인하세요.</p>
+<h2 id="주행-피드포워드-조율">주행 피드포워드 조율<a href="#주행-피드포워드-조율" class="anchor" aria-hidden="true">#</a> </h2>
+<p>피드포워드 방식을 선택했다면 피드포워드 상수를 조율해야 합니다.<br>
+공식 Quickstart는 자동 튜너와 수동 튜너를 제공합니다. 하지만 일부 사용자는 자동 튜너가 최적의 결과를 제공하지 않는다고 느낄 수 있습니다.</p>
+<p><strong>자동 조율 과정</strong>은 다음과 같습니다(공식 문서에서 발췌):</p>
+<blockquote>
+<p><code>kV</code>와 <code>kStatic</code>을 찾기 위해 로봇은 전압을 천천히 증가시키는 정적 램프 테스트를 실행합니다. 이 과정에서 속도와 전압이 기록됩니다. 속도 대 전압 그래프에서 <code>kV</code>는 기울기, <code>kStatic</code>은 Y절편입니다.<br>
+다음으로 <code>kA</code>를 찾기 위해 로봇은 정지 상태에서 급가속을 시도합니다. 이 과정에서 가속도, 속도, 전압이 기록됩니다. 가속도 대 전압 그래프에서 기울기는 <code>kA</code>입니다.</p>
+</blockquote>
+<p>자동 튜너는 <code>kA</code> 값을 매우 낮게 산출하는 경향이 있습니다. 따라서 수동 조율 방식을 추천합니다.</p>
+<p>자세한 내용은 <a href="../%ec%a3%bc%ed%96%89-%ed%94%bc%eb%93%9c%ed%8f%ac%ec%9b%8c%eb%93%9c-%ec%a1%b0%ec%9c%a8-driving-feedforward-tuner">주행 피드포워드 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="straight-test"><strong>Straight Test</strong><a href="#straight-test" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Straight Test는 Feedforward 및 속도 PID 튜닝의 효과를 확인하는 데 사용됩니다.<br>
-로봇이 몇 번의 테스트에서 일관되게 동일한 거리(1~2인치 오차 범위 내)를 이동하면 튜닝이 성공적이었다고 볼 수 있습니다.</p>
-<p>자세한 내용은 <a href="/straight-test">Straight Test 페이지</a>에서 확인하세요.</p>
+<h2 id="주행-속도-pid-조율-사용하지-않음">주행 속도 PID 조율 [사용하지 않음!]<a href="#주행-속도-pid-조율-사용하지-않음" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 조율 방법을 따르지 마십시오. 피드 포워드 조율을 대신 사용하세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<p><code>DriveVelocityPIDTuner</code>는 Rev Hub의 내장 모터 속도 제어기(<code>RUN_USING_ENCODER</code> 모드)를 조율하는 데 사용됩니다.
+PIDF 계수를 최적화하여 일관된 동작을 보장하는 것이 중요합니다.<br>
+PIDF 계수는 로봇의 무게에 영향을 미치는 주요 변경 사항 이후에 반드시 조정해야 합니다.</p>
+<p>주행 속도 PID 조율 과정은 <a href="../%ec%a3%bc%ed%96%89-%ec%86%8d%eb%8f%84-pid-%ec%a1%b0%ec%9c%a8-driving-velocity-pid-tuner">주행 속도 PID Tuning 페이지</a>에 자세히 설명되어 있습니다.
+PIDF 값을 조정하여 원하는 동작을 얻을 수 있습니다.<br>
+공식 Roadrunner 문서에서는 &ldquo;약간의 진동이 발생하더라도 위상 지연을 제거하는 것을 우선시하라&quot;고 권장하지만,
+개인적으로는 특히 정지 상태에서 진동을 최소화하는 것이 더 낫다고 생각합니다.<br>
+위상 지연을 제거하면 고속에서 매우 불안정한 동작을 유발할 수 있습니다.
+이는 Rev Hub의 모터 제어 방식 때문일 가능성이 높습니다.<br>
+더 자세한 기술적 내용을 알고 싶다면 <a href="https://discord.gg/first-tech-challenge">FTC Discord</a>를 통해 문의하세요.<br>
+제 개인적인 조언은 진동을 최소화하고 병진 이동 PID를 통해 위상 지연 문제를 해결하는 것입니다.</p>
 <hr>
-<h3 id="trackwidthtuner"><strong>TrackWidthTuner</strong><a href="#trackwidthtuner" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Track Width(휠 간 거리)는 실제 측정값과 달라질 수 있습니다. 이를 보정하기 위해 TrackWidthTuner를 실행하여 경험적 Track Width를 계산하세요.</p>
-<p>자세한 내용은 <a href="/trackwidth-tuning">Track Width Tuning 페이지</a>에서 확인하세요.</p>
+<h2 id="직진-테스트">직진 테스트<a href="#직진-테스트" class="anchor" aria-hidden="true">#</a> </h2>
+<p>직진 테스트는 피드포워드/속도 PID 조율의 효과를 확인하는 데 사용됩니다.
+<code>StraightTest</code> OpMode를 여러 번 실행하여 로봇이 일정한 거리 내에서 안정적으로 이동하는지 확인하세요.<br>
+로봇이 매번 정확히 같은 위치에 도달하지 않아도 됩니다.
+이후 로컬라이제이션을 통해 폐쇄 루프 피드백이 활성화될 것입니다.</p>
+<p>데드 휠 없이 엔코더만 사용하는 경우, 이 단계에서 엔코더 로컬라이제이션을 튜닝하게 됩니다.</p>
+<p>자세한 내용은 <a href="../%ec%a7%81%ec%a7%84-%ed%85%8c%ec%8a%a4%ed%8a%b8-straight-test">직진 테스트 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="turn-test"><strong>Turn Test</strong><a href="#turn-test" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Turn Test를 실행하여 Track Width가 정확한지 확인하세요.</p>
-<p>자세한 내용은 <a href="/turn-test">Turn Test Tuning 페이지</a>에서 확인하세요.</p>
+<h2 id="경로-폭-조율">경로 폭 조율<a href="#경로-폭-조율" class="anchor" aria-hidden="true">#</a> </h2>
+<p>경로 폭(Track Width)는 한 바퀴에서 평행한 다른 바퀴까지의 거리입니다. 이는 물리적으로 측정할 수 있지만, 실제 경로 폭는 여러 요인으로 인해 물리적 측정값과 다를 수 있습니다.<br>
+이를 보정하기 위해 <code>TrackWidthTuner</code> OpMode를 실행하여 경험적 경로 폭를 계산합니다.</p>
+<p><code>TrackWidthTuner</code>는 원하는 경험적 경로 폭에 1인치 정도의 오차 범위 내에서 도달합니다. <code>TurnTest</code> OpMode를 실행하고 드라이브 상수에서 경로 폭를 수정하여 수동으로 조정해야 할 수도 있습니다.</p>
+<p>자세한 내용은 <a href="../%ea%b2%bd%eb%a1%9c-%ed%8f%ad-%ec%a1%b0%ec%9c%a8-track-width-tuner">Track Width Tuning 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="localization-test-1"><strong>Localization Test**</strong><a href="#localization-test-1" class="anchor" aria-hidden="true">#</a> </h3>
-<p>두 번째 Localization Test는 Drive Encoder Localization을 테스트하는 데 사용됩니다. Dead Wheels를 사용하여 Localization을 튜닝한 경우, 이 단계를 건너뛰세요.</p>
-<p>자세한 내용은 <a href="/localization-test-2">Localization Test 페이지</a>에서 확인하세요.</p>
+<h2 id="회전-테스트">회전 테스트<a href="#회전-테스트" class="anchor" aria-hidden="true">#</a> </h2>
+<p>회전 테스트를 실행하여 경로 폭가 올바른지 확인하세요.</p>
+<p>자세한 내용은 <a href="../%ed%9a%8c%ec%a0%84-%ed%85%8c%ec%8a%a4%ed%8a%b8-%ec%a1%b0%ec%9c%a8-turn-test-tuning">회전 테스트 조율 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="followerpidtuner"><strong>FollowerPIDTuner</strong><a href="#followerpidtuner" class="anchor" aria-hidden="true">#</a> </h3>
-<p>이 단계에서는 헤딩 PID와 이동 PID를 튜닝합니다. 이는 경로를 정확히 따라가기 위해 닫힌 루프 피드백 제어를 가능하게 합니다.</p>
-<p>자세한 내용은 <a href="/follower-pid-tuning">Follower PID Tuning 페이지</a>에서 확인하세요.</p>
+<h2 id="로컬라이제이션-테스트-2">로컬라이제이션 테스트 2<a href="#로컬라이제이션-테스트-2" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>주의</p>
+
+      </div>
+    <div class="callout-body">
+      <p>두 번째 로컬라이제이션 테스트는 엔코더를 사용하는 로컬라이제이션을 테스트하기 위한 것입니다. 엔코더를 사용하지 않기로 결정했다면 이 단계를 건너뛰세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>로컬라이제이션 테스트를 실행하고 로봇을 필드에서 이동시켜 엔코더를 사용하는 로컬라이제이션과 관련된 문제를 찾으세요.<br>
+엔코더를 사용하는 로컬라이제이션은 이전 단계에서 조율되어야 합니다. 로컬라이제이션의 정확성은 경로 추적의 정확성에 큰 영향을 미칩니다.</p>
+<p>두 번째 로컬라이제이션 테스트는 엔코더를 사용하는 구동의 정확성을 테스트하는 데 사용됩니다.<br>
+데드 휠을 사용하여 로컬라이제이션을 조율했다면 이 단계를 건너뛰세요.</p>
+<p>자세한 내용은 <a href="../%eb%a1%9c%ec%bb%ac%eb%9d%bc%ec%9d%b4%ec%a0%9c%ec%9d%b4%ec%85%98-%ed%85%8c%ec%8a%a4%ed%8a%b8-localization-test">로컬라이제이션 테스트 페이지</a>에서 확인할 수 있습니다.</p>
 <hr>
-<h3 id="spline-test"><strong>Spline Test</strong><a href="#spline-test" class="anchor" aria-hidden="true">#</a> </h3>
-<p>모든 튜닝이 완료된 후, 로봇이 Spline 경로를 정확히 따라가는지 확인하세요. 문제가 발생하면 해당 단계로 돌아가 재튜닝하세요.</p>
-<p>자세한 내용은 <a href="/spline-test">Spline Test 페이지</a>에서 확인하세요.</p>
+<h2 id="팔로워-pid-조율">팔로워 PID 조율<a href="#팔로워-pid-조율" class="anchor" aria-hidden="true">#</a> </h2>
+<p>이 단계에서는 회전 PID와 병진 이동 (x/y) PID 두 가지를 조율합니다.<br>
+이 PID는 폐쇄 루프 피드백 제어를 활성화하여 정확한 경로 추적을 보장합니다.<br>
+<code>BackAndForth</code> OpMode를 실행하여 회전 및 병진 이동 PID를 대략적으로 조율한 후, <code>FollowerPIDTuner</code> OpMode를 사용해 세부적으로 조정합니다.</p>
+<p>자세한 내용은 <a href="../%ed%8c%94%eb%a1%9c%ec%9b%8c-pid-%ec%a1%b0%ec%9c%a8-follower-pid-tuner">팔로워 PID 조율 페이지</a>에서 확인할 수 있습니다.</p>
+<hr>
+<h2 id="스플라인-테스트">스플라인 테스트<a href="#스플라인-테스트" class="anchor" aria-hidden="true">#</a> </h2>
+<p>모든 조율이 완료된 후, 로봇은 스플라인 경로를 정확하게 따라야 합니다.<br>
+스플라인 테스트가 실패하면 문제를 식별하고 해당 단계로 돌아가 다시 조율하세요.<br>
+어려움을 겪고 있다면 <a href="https://discord.gg/first-tech-challenge">FTC Discord</a>에서 도움을 요청하세요!</p>
+<p>자세한 내용은 <a href="../%ec%8a%a4%ed%94%8c%eb%9d%bc%ec%9d%b8-%ed%85%8c%ec%8a%a4%ed%8a%b8-spline-test">스플라인 테스트 페이지</a>에서 확인할 수 있습니다.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>

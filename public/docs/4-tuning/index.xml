@@ -77,7 +77,7 @@
       <link>http://localhost:1313/docs/4-tuning/%ED%8C%94%EB%A1%9C%EC%9B%8C-pid-%EC%A1%B0%EC%9C%A8-follower-pid-tuner/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
       <guid>http://localhost:1313/docs/4-tuning/%ED%8C%94%EB%A1%9C%EC%9B%8C-pid-%EC%A1%B0%EC%9C%A8-follower-pid-tuner/</guid>
-      <description></description>
+      <description>&lt;img alt=&#34;diagram&#34; class=&#34;diagram diagram-kroki diagram-kroki-plantuml&#34; id=&#34;h-rh-cb-kroki-0&#34; src=&#34;http://localhost:1313/_10924514805406677008.svg&#34;&gt;&lt;p&gt;현재 단계는 &lt;strong&gt;팔로워 PID 조율&lt;/strong&gt; 단계입니다.&lt;/p&gt;&#xA;&lt;p&gt;이 단계는 마지막 튜닝 단계로, 폐쇄 루프 피드백 컨트롤러를 조정하는 과정입니다.&#xA;이를 통해 경로 추적 성능이 크게 향상될 것입니다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

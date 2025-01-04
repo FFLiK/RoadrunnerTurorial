@@ -617,10 +617,14 @@
   <h3></h3>
     <nav id="toc">
   <ul>
-    <li><a href="#1-pure-pursuit와의-차이점"><strong>1. Pure Pursuit와의 차이점</strong></a></li>
-    <li><a href="#2-데드-휠오도메트리란-무엇인가요"><strong>2. 데드 휠/오도메트리란 무엇인가요?</strong></a></li>
-    <li><a href="#3-스플라인-경로란-무엇인가요"><strong>3. 스플라인 경로란 무엇인가요?</strong></a></li>
-    <li><a href="#4-기본-단위를-변경할-수-있나요"><strong>4. 기본 단위를 변경할 수 있나요?</strong></a></li>
+    <li><a href="#1-pure-pursuit와의-차이점">1. Pure Pursuit와의 차이점</a></li>
+    <li><a href="#2-데드-휠오도메트리란-무엇인가요">2. 데드 휠/오도메트리란 무엇인가요?</a>
+      <ul>
+        <li><a href="#3-두-바퀴와-세-바퀴-오도메트리의-차이점은-무엇인가요">3. 두 바퀴와 세 바퀴 오도메트리의 차이점은 무엇인가요?</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-스플라인-경로란-무엇인가요"><strong>4. 스플라인 경로란 무엇인가요?</strong></a></li>
+    <li><a href="#5-기본-단위를-변경할-수-있나요"><strong>5. 기본 단위를 변경할 수 있나요?</strong></a></li>
   </ul>
 </nav>
 </div>
@@ -636,17 +640,21 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-pure-pursuit와의-차이점"><strong>1. Pure Pursuit와의 차이점</strong></a></li>
-    <li><a href="#2-데드-휠오도메트리란-무엇인가요"><strong>2. 데드 휠/오도메트리란 무엇인가요?</strong></a></li>
-    <li><a href="#3-스플라인-경로란-무엇인가요"><strong>3. 스플라인 경로란 무엇인가요?</strong></a></li>
-    <li><a href="#4-기본-단위를-변경할-수-있나요"><strong>4. 기본 단위를 변경할 수 있나요?</strong></a></li>
+    <li><a href="#1-pure-pursuit와의-차이점">1. Pure Pursuit와의 차이점</a></li>
+    <li><a href="#2-데드-휠오도메트리란-무엇인가요">2. 데드 휠/오도메트리란 무엇인가요?</a>
+      <ul>
+        <li><a href="#3-두-바퀴와-세-바퀴-오도메트리의-차이점은-무엇인가요">3. 두 바퀴와 세 바퀴 오도메트리의 차이점은 무엇인가요?</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-스플라인-경로란-무엇인가요"><strong>4. 스플라인 경로란 무엇인가요?</strong></a></li>
+    <li><a href="#5-기본-단위를-변경할-수-있나요"><strong>5. 기본 단위를 변경할 수 있나요?</strong></a></li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<h2 id="1-pure-pursuit와의-차이점"><strong>1. Pure Pursuit와의 차이점</strong><a href="#1-pure-pursuit와의-차이점" class="anchor" aria-hidden="true">#</a> </h2>
+			<h2 id="1-pure-pursuit와의-차이점">1. Pure Pursuit와의 차이점<a href="#1-pure-pursuit와의-차이점" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Road Runner와 Pure Pursuit는 자주 비교되지만, 본질적으로 매우 다른 도구입니다.</p>
 <ul>
 <li><strong>Pure Pursuit</strong>: 비홀로노믹(Non-Holonomic) 드라이브 트레인을 위한 경로 추적 알고리즘으로, &ldquo;룩어헤드 포인트(Look-Ahead Point)&ldquo;를 사용해 다차원 경로를 따릅니다.</li>
@@ -654,13 +662,13 @@
 </ul>
 <p>특히, Pure Pursuit는 가속도 제어가 없기 때문에 데드 휠 오도메트리 설치가 필수입니다. 또한, FTC 로봇 대부분이 홀로노믹(메카넘) 드라이브를 사용하기 때문에 Pure Pursuit는 잘 맞지 않는 경우가 많습니다.</p>
 <hr>
-<h2 id="2-데드-휠오도메트리란-무엇인가요"><strong>2. 데드 휠/오도메트리란 무엇인가요?</strong><a href="#2-데드-휠오도메트리란-무엇인가요" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="2-데드-휠오도메트리란-무엇인가요">2. 데드 휠/오도메트리란 무엇인가요?<a href="#2-데드-휠오도메트리란-무엇인가요" class="anchor" aria-hidden="true">#</a> </h2>
 <p>데드 휠과 오도메트리는 종종 같은 의미로 사용되지만, 사실 차이가 있습니다.</p>
 <ul>
 <li><strong>오도메트리</strong>: 로봇의 위치를 계산하기 위해 센서를 사용하는 기술입니다.</li>
-<li><strong>데드 휠</strong>: 동력이 없는 옴니 휠로, 회전 인코더를 통해 이동 거리를 측정합니다. 이 데이터를 통해 로봇의 상대적 위치(x, y, 헤딩)를 계산할 수 있습니다.</li>
+<li><strong>데드 휠</strong>: 동력이 없는 옴니 휠로, 회전 인코더를 통해 이동 거리를 측정합니다. 이 데이터를 통해 로봇의 상대적 위치(x,y)와 방향을 계산할 수 있습니다.</li>
 </ul>
-<p>메카넘 드라이브에서는 데드 휠이 슬립을 줄여 정확도를 크게 향상시킵니다.</p>
+<p>데드 휠을 메카넘 휠에 비해 미끄러지는 정도가 작기에, 데드 휠을 사용할 경우 오차를 줄여 정확도를 크게 향상시킬 수 있습니다.</p>
 
 <figure>
   <img
@@ -677,8 +685,45 @@
     class="lazyload blur-up"
   ><figcaption>데드 휠의 예시</figcaption>
 </figure>
+<h3 id="3-두-바퀴와-세-바퀴-오도메트리의-차이점은-무엇인가요">3. 두 바퀴와 세 바퀴 오도메트리의 차이점은 무엇인가요?<a href="#3-두-바퀴와-세-바퀴-오도메트리의-차이점은-무엇인가요" class="anchor" aria-hidden="true">#</a> </h3>
+<p><strong>요약:</strong> 세 바퀴 구성은 루프 시간을 단축하여 드리프트를 줄이고 더 높은 정확도를 제공합니다.</p>
+<p>위에서 설명했듯이 표준 데드 휠(dead wheel) 구성은 여러 개의 무동력 옴니 휠(omni wheel)을 인코더와 연결하여
+사용하는 방식입니다. 그러나 두 개 또는 세 개의 옴니 휠을 선택적으로 사용할 수 있습니다.</p>
+<p><strong>두 바퀴 구성</strong>은 서로 수직으로 배치된 두 개의 데드 휠을 사용합니다.</p>
+<ul>
+<li>하나의 휠은 <strong>x 방향(앞쪽)</strong> 이동을 추적하고,</li>
+<li>다른 하나는 <strong>y 방향(옆쪽)</strong> 이동을 추적합니다.</li>
+<li>방향(heading)은 Rev Expansion/Control Hub IMU 또는 외부 센서를 통해 측정됩니다.</li>
+</ul>
+<p><strong>세 바퀴 구성</strong>은 두 개의 평행한 휠과 하나의 수직 휠을 사용합니다.</p>
+<ul>
+<li>두 평행 휠은 <strong>x 방향(앞쪽)</strong> 이동과 <strong>방향</strong>을 모두 추적합니다.<br>
+헤딩은 두 평행 휠의 오프셋을 통해 계산됩니다.</li>
+<li>수직 휠은 <strong>y 방향(옆쪽)</strong> 이동을 추적합니다.</li>
+</ul>
+<h4 id="왜-세-바퀴-구성을-선택해야-할까요">왜 세 바퀴 구성을 선택해야 할까요?<a href="#왜-세-바퀴-구성을-선택해야-할까요" class="anchor" aria-hidden="true">#</a> </h4>
+<p>추가 모듈 제작은 번거롭고, 비용이 약 30% 증가하기에 비효율적이라고 생각할 수 있지만, 현재로써는 세 바퀴 구성은 가장 정확한 옵션으로 평가받고 있습니다.</p>
+<p><strong>이유:</strong><br>
+Rev Expansion/Control Hub는 느린 I2C 구현을 사용하여 I2C 호출당 약 <strong>7ms</strong>의 지연 시간이 발생합니다.</p>
+<ul>
+<li>Rev Expansion/Control Hub에 내장된 BNO055 IMU는 I2C를 통해 통신하므로, 헤딩을 계산할 때 이 7ms 지연이 추가됩니다.</li>
+<li>데드 휠 데이터 읽기(대량 읽기 기준)에도 약 <strong>3ms</strong>가 소요되므로, 총 지연 시간은 약 <strong>10ms</strong>입니다.<br>
+이 지연은 두 바퀴 구성에서 IMU를 통해 헤딩을 계산할 때 발생합니다.</li>
+</ul>
+<p><strong>반면, 세 바퀴 구성</strong>에서는 두 평행 휠을 통해 헤딩을 계산하므로 <strong>7ms I2C 호출이 필요하지 않습니다.</strong></p>
+<ul>
+<li>세 개의 데드 휠 모두를 <strong>3ms</strong> 안에 읽을 수 있으므로(대량 읽기 기준, 모든 인코더가 동일한 Rev Hub에 연결된 경우), 루프 시간이 크게 단축됩니다.</li>
+<li>이로 인해 정확도가 향상되고 드리프트가 현저히 줄어드는 결과를 얻을 수 있습니다.</li>
+</ul>
+<p>향후 출시될 Control Hub는 Expansion Hub보다 3배 빠른 I/O 속도를 제공하므로, 두 구성 간의 차이가 줄어들 가능성이 있습니다.</p>
+<h4 id="데드-휠을-어떻게-제작하나요">데드 휠을 어떻게 제작하나요?<a href="#데드-휠을-어떻게-제작하나요" class="anchor" aria-hidden="true">#</a> </h4>
+<p>데드 휠 모듈 제작에는 여러 세부 사항과 선택지가 존재합니다. 현재 기준으로 데드 휠 모듈 제작에 대한 자료는 많지 않습니다.<br>
+모듈당 비용은 약 $30 이상이며, 세 바퀴 구성은 총 $100 이상의 비용이 들 수 있습니다.</p>
+<p>추가 정보를 원한다면 <a href="https://discord.gg/first-tech-challenge">FTC Discord</a>를 방문하세요.</p>
+<p><strong>추천 오픈 소스 데드 휠 설계 자료:</strong><br>
+<a href="https://openodometry.weebly.com/">https://openodometry.weebly.com/</a></p>
 <hr>
-<h2 id="3-스플라인-경로란-무엇인가요"><strong>3. 스플라인 경로란 무엇인가요?</strong><a href="#3-스플라인-경로란-무엇인가요" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="4-스플라인-경로란-무엇인가요"><strong>4. 스플라인 경로란 무엇인가요?</strong><a href="#4-스플라인-경로란-무엇인가요" class="anchor" aria-hidden="true">#</a> </h2>
 <p>스플라인 경로는 <a href="https://www.wikiwand.com/en/Spline_%28mathematics%29">스플라인 곡선</a>을 사용해 생성된 경로입니다.</p>
 <ul>
 <li>스플라인 곡선은 여러 점을 매끄럽게 연결하는 다항식 조각으로 이루어져 있습니다.</li>
@@ -686,7 +731,7 @@
 </ul>
 <p>Road Runner에서는 스플라인 경로를 자주 사용하며, 직선 경로를 단순히 연결하는 것보다 훨씬 부드러운 움직임을 제공합니다.</p>
 <hr>
-<h2 id="4-기본-단위를-변경할-수-있나요"><strong>4. 기본 단위를 변경할 수 있나요?</strong><a href="#4-기본-단위를-변경할-수-있나요" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="5-기본-단위를-변경할-수-있나요"><strong>5. 기본 단위를 변경할 수 있나요?</strong><a href="#5-기본-단위를-변경할-수-있나요" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Road Runner는 기본적으로 인치 단위를 사용합니다.</p>
 <ul>
 <li>공식 FAQ에 따르면, 기본 단위는 인치로 설정되어 있으며, 이를 변경하려면 Road Runner 인터페이스에 대한 래퍼를 직접 작성해야 합니다.</li>

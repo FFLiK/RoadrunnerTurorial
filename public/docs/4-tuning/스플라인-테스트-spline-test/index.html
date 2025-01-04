@@ -614,7 +614,14 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#스플라인-테스트">스플라인 테스트</a></li>
+    <li><a href="#문제-진단-팁">문제 진단 팁</a></li>
+    <li><a href="#튜닝-opmode-숨기기">튜닝 OpMode 숨기기</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +630,96 @@
 			<h1>스플라인 테스트 (Spline Test)</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#스플라인-테스트">스플라인 테스트</a></li>
+    <li><a href="#문제-진단-팁">문제 진단 팁</a></li>
+    <li><a href="#튜닝-opmode-숨기기">튜닝 OpMode 숨기기</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
 			
+<img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-0" src="/_5143612574631989375.svg"><p>현재 단계는 <strong>스플라인 테스트</strong> 단계입니다.</p>
+<hr>
+<h2 id="스플라인-테스트">스플라인 테스트<a href="#스플라인-테스트" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>병진 이동과 회전 PID가 조정되었으면, Spline Test를 실행하여 모든 것이 제대로 작동하는지 확인하세요.</li>
+<li>대시보드를 열어 로봇이 올바르게 경로를 따라가는지 확인하세요. 로봇은 S자 형태의 경로를 따라가야 하며, 대시보드에서도 해당 경로가 올바르게 표시되어야 합니다.</li>
+<li>만약 경로를 따르는 동안 약간의 **진동(oscillation)**이 발생한다면, <strong>속도 PID(velocity PID)</strong> 또는 **병진 이동/회전 PID(translational/heading PID)**의 P 값이 너무 높을 가능성이 있습니다. 이 문제를 해결하려면 해당 PID 값을 다시 낮춰보며 조정하세요.</li>
+<li>문제가 발생하면 원인을 진단하기 위해 다시 돌아가 문제를 분석하세요. **<a href="https://discord.gg/first-tech-challenge">FTC Discord</a>**에서 도움을 받을 수도 있습니다.</li>
+</ol>
+<p><small> 축하합니다! 모든 과정이 끝났습니다. 🎉 </small></p>
+<hr>
+<h2 id="문제-진단-팁">문제 진단 팁<a href="#문제-진단-팁" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li>
+<p><strong>대시보드를 열어 경로를 따라가는 동안 확인하세요.</strong></p>
+<ul>
+<li>X, Y, Heading 에러를 관찰하며, 에러가 로컬라이저(Localizer) 때문인지 아니면 기본 경로 추적기(Base Path Follower) 때문인지 확인하세요.</li>
+</ul>
+</li>
+<li>
+<p><strong>병진 이동 / 회전 (Translational/Heading) PID를 끄기</strong></p>
+<ul>
+<li>병진 이동 / 회전 PID의 계수를 0으로 설정하세요.</li>
+<li>병진 이동 / 회전 PID를 껐을 때 경로 추적이 정상적으로 이루어진다면, 문제는 로컬라이저에 있습니다.
+<ul>
+<li><code>LocalizationTest</code>를 실행하고 로컬라이저(대부분 <code>StandardTrackingWheelLocalizer</code>)를 수정하세요.</li>
+</ul>
+</li>
+<li>병진 이동 / 회전 PID를 껐는데도 문제가 계속된다면, 문제는 구동 모터 방향이나 구동 상수(drive constants)에 있을 가능성이 높습니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>모든 것을 차례로 끄면서 문제를 역추적하세요.</strong></p>
+<ul>
+<li>처음부터 하나씩 각 구성 요소를 확인하며 점진적으로 문제를 해결하면 더 빠르게 원인을 파악할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>포즈 히스토리 제한 해제</strong></p>
+<ul>
+<li>대시보드의 필드에서 파란 선(포즈 히스토리, Pose History)이 사라지는 것을 방지하려면, <code>SampleMecanumDrive</code>에서 <code>POSE_HISTORY_LIMIT</code> 값을 <code>-1</code>로 설정하세요.</li>
+<li>이는 디버깅에 유용할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>속도와 가속도 제한 낮추기</strong></p>
+<ul>
+<li><code>DriveConstants.java</code>에서 속도(Velocity)와 가속도(Acceleration) 제한을 낮추세요.</li>
+<li>실제 로봇이 달성할 수 있는 속도/가속도보다 높은 값을 설정하면, 로봇이 따라갈 수 없는 모션 프로파일이 생성되어 경로 추적이 실패할 수 있습니다.</li>
+<li>심각한 문제가 있다면 최대 속도와 가속도를 절반으로 줄이고, 각속도/각가속도 값을 약 <strong>60도/초</strong> 정도로 낮춰보세요.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="튜닝-opmode-숨기기">튜닝 OpMode 숨기기<a href="#튜닝-opmode-숨기기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Road Runner Quickstart에는 여러 튜닝 OpMode가 포함되어 있습니다.<br>
+사용자 정의 OpMode를 추가하면 RC의 OpMode 목록이 혼잡해질 수 있습니다.<br>
+튜닝 과정이 끝났다면, OpMode 클래스 선언 위에 <code>@Disabled</code> 주석을 추가해 숨길 수 있습니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Config</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w"></span><span class="nd">@Disabled</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Autonomous</span><span class="p">(</span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;drive&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DriveVelocityPIDTuner</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">LinearOpMode</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">DISTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">72</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">in</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>위와 같은 방식으로 간단히 비활성화하세요.</p>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">

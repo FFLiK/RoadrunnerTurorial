@@ -614,7 +614,17 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#조율-과정-tuning-process">조율 과정 (Tuning Process)</a></li>
+        <li><a href="#비공식-영상">비공식 영상</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +633,142 @@
 			<h1>팔로워 PID 조율 (Follower PID Tuner)</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#조율-과정-tuning-process">조율 과정 (Tuning Process)</a></li>
+        <li><a href="#비공식-영상">비공식 영상</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
 			
+<img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-0" src="/_10924514805406677008.svg"><p>현재 단계는 <strong>팔로워 PID 조율</strong> 단계입니다.</p>
+<p>이 단계는 마지막 튜닝 단계로, 폐쇄 루프 피드백 컨트롤러를 조정하는 과정입니다.
+이를 통해 경로 추적 성능이 크게 향상될 것입니다.</p>
+<p>이 과정을 위해 사용할 수 있는 두 가지 OpMode가 있습니다:</p>
+<ol>
+<li><code>BackAndForth</code></li>
+<li><code>FollowerPIDTuner</code></li>
+</ol>
+<p>먼저 <code>BackAndForth</code> 모드를 실행하여 대략적인 PID 게인을 설정한 뒤,
+<code>FollowerPIDTuner</code>를 사용해 세부적인 튜닝을 진행하는 것을 추천합니다.</p>
+<p><code>BackAndForth</code> 모드는 로봇이 직선으로 앞뒤로 이동하며,
+여기에서 병진 이동(Translation) 및 회전(Heading) PID의 주요 오류를 쉽게 확인할 수 있습니다.</p>
+<p><code>FollowerPIDTuner</code>는 로봇이 큰 사각형 경로를 따라 이동하도록 설정합니다.
+이때 각 코너에서 <strong>반시계 방향</strong>으로 회전합니다.
+방향 조정이 부정확하면 전체 경로가 어긋나며,
+로봇을 계속 초기화해야 하므로 과정이 다소 번거로울 수 있습니다.
+따라서 초기 튜닝은 <code>BackAndForth</code> 모드에서 진행하고, 이후 세부 조정은 <code>FollowerPIDTuner</code>를 활용하는 것이 좋습니다.</p>
+<hr>
+<h3 id="조율-과정-tuning-process">조율 과정 (Tuning Process)<a href="#조율-과정-tuning-process" class="anchor" aria-hidden="true">#</a> </h3>
+<ol>
+<li>
+<p><code>BackAndForth</code> OpMode를 RC(Remote Control)에서 실행한다.</p>
+</li>
+<li>
+<p>RC의 Wi-Fi 네트워크에 연결합니다.
+네트워크 비밀번호는 <code>Program and Manage</code> 메뉴에서 확인할 수 있습니다.</p>
+</li>
+<li>
+<p>브라우저에서 다음 주소로 이동합니다.</p>
+<ul>
+<li>RC 핸드폰 사용 시: <code>192.168.49.1:8080/dash</code></li>
+<li>Control Hub 사용 시: <code>192.168.43.1:8080/dash</code></li>
+</ul>
+</li>
+<li>
+<p>화면 우측 상단에서 <code>Field</code> 뷰를 선택했는지 확인합니다.</p>
+</li>
+<li>
+<p>두 개의 선과 원이 화면에 그려지는 것을 확인합니다.</p>
+<ul>
+<li>초록색 : 목표 위치</li>
+<li>파란색 : 로봇의 실제 위치</li>
+</ul>
+</li>
+<li>
+<p>우측 사이드바에서 <code>SampleMecanumDrive</code>를 찾고 드롭다운을 여십시오.
+<code>HEADING_PID</code>와 <code>TRANSLATION_PID</code> 두 가지 옵션이 표시됩니다.
+두 옵션 모두 <code>SampleMecanumDrive</code> 파일에 위치합니다.</p>
+</li>
+<li>
+<p>먼저 <code>HEADING_PID</code>를 먼저 엽니다.</p>
+<ul>
+<li><code>kP</code> 값을 점진적으로 증가시키며 로봇이 정확한 헤딩을 유지하도록 조정하세요.</li>
+<li>경험적으로 <code>kP</code> 값은 약 <strong>8</strong> 정도였지만, 환경에 따라 달라질 수 있습니다.</li>
+<li>일반적으로 <code>kD</code>와 <code>kI</code>는 조정할 필요가 없습니다.</li>
+</ul>
+</li>
+<li>
+<p><code>TRANSLATION_PID</code>를 엽니다.</p>
+<ul>
+<li>마찬가지로 <code>kP</code> 값을 점진적으로 증가시키며 로봇이 경로를 잘 따라가도록 조정하세요.</li>
+<li>이 값도 약 <strong>8</strong> 정도였지만, 환경에 따라 달라질 수 있습니다.</li>
+<li><code>kD</code>와 <code>kI</code>는 일반적으로 조정할 필요가 없습니다.</li>
+</ul>
+</li>
+<li>
+<p>튜닝이 완료되면, 값을 <code>SampleMecanumDrive.java</code> 파일의 PID 객체에 복사하십시오.
+대시보드에서 변경한 값이 코드에도 반영되도록 해야 합니다.</p>
+</li>
+<li>
+<p><code>FollowerPIDTuner</code>를 사용해 동일한 과정을 반복하며 추가적인 정밀 튜닝을 진행하세요.
+이는 더욱 정확한 결과를 얻기 위해 권장됩니다.</p>
+</li>
+<li>
+<p>튜닝이 완료되었으면 <code>SplineTest</code>를 실행해 경로 추적 정확도를 확인하세요.</p>
+</li>
+</ol>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>노트</p>
+
+      </div>
+    <div class="callout-body">
+      <ul>
+<li>일반적으로 <code>kI</code>와 <code>kD</code>는 필요하지 않다고 했지만, 이는 기본 가이드라인일 뿐입니다.</li>
+<li><code>kD</code>는 피드포워드(Feedforward)를 사용하는 경우 배터리 전압 변화에도 포즈 속도를 일정하게 유지하는 데 도움을 줄 수 있습니다. 이 경우 <code>kD</code> 값을 <strong>1 정도</strong>로 설정해보세요.</li>
+<li>단, 주행 속도 PID를 사용하는 경우 <code>kD</code>를 설정하면 두 PID가 서로 충돌할 수 있으므로 사용하지 마세요.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+<h3 id="비공식-영상">비공식 영상<a href="#비공식-영상" class="anchor" aria-hidden="true">#</a> </h3>
+<p>이 영상은 임시 영상입니다. 추후 업데이트될 예정입니다.</p>
+<div class="flex justify-center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/e6k_gP2YCmc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
