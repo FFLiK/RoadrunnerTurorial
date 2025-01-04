@@ -76,7 +76,7 @@
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
+        <loc>http://localhost:1313/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -112,7 +112,7 @@
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/</loc>
+        <loc>http://localhost:1313/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>

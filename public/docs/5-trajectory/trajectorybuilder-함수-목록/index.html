@@ -154,7 +154,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -254,7 +254,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -343,7 +343,7 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
-                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
+                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
               </li>
             </ul>
 
@@ -449,7 +449,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -549,7 +549,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -614,7 +614,20 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#기본-직선-이동"><strong>기본 직선 이동</strong></a></li>
+        <li><a href="#측면-이동"><strong>측면 이동</strong></a></li>
+        <li><a href="#지정된-좌표로-이동"><strong>지정된 좌표로 이동</strong></a></li>
+        <li><a href="#방향heading을-변경하며-이동"><strong>방향(Heading)을 변경하며 이동</strong></a></li>
+        <li><a href="#스플라인-경로를-따라-이동"><strong>스플라인 경로를 따라 이동</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +636,469 @@
 			<h1>TrajectoryBuilder 함수 목록</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#기본-직선-이동"><strong>기본 직선 이동</strong></a></li>
+        <li><a href="#측면-이동"><strong>측면 이동</strong></a></li>
+        <li><a href="#지정된-좌표로-이동"><strong>지정된 좌표로 이동</strong></a></li>
+        <li><a href="#방향heading을-변경하며-이동"><strong>방향(Heading)을 변경하며 이동</strong></a></li>
+        <li><a href="#스플라인-경로를-따라-이동"><strong>스플라인 경로를 따라 이동</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
-			
+			<p><strong>TrajectoryBuilder</strong> 함수 목록은 Road Runner에서 로봇 경로를 정의하고
+커스터마이징하기 위한 다양한 메소드를 제공합니다.
+아래는 주요 함수와 사용 사례의 요약입니다:</p>
+<hr>
+<h3 id="기본-직선-이동"><strong>기본 직선 이동</strong><a href="#기본-직선-이동" class="anchor" aria-hidden="true">#</a> </h3>
+<ol>
+<li>
+<p><strong>forward(distance: Double)</strong></p>
+<ul>
+<li>로봇을 지정된 거리(인치)만큼 앞으로 이동시킵니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">40</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/forward.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-0"
+/></p>
+</li>
+<li>
+<p><strong>back(distance: Double)</strong></p>
+<ul>
+<li>로봇을 지정된 거리(인치)만큼 뒤로 이동시킵니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">back</span><span class="p">(</span><span class="n">40</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/back.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-1"
+/></p>
+</li>
+</ol>
+<hr>
+<h3 id="측면-이동"><strong>측면 이동</strong><a href="#측면-이동" class="anchor" aria-hidden="true">#</a> </h3>
+<ol start="3">
+<li>
+<p><strong>strafeLeft(distance: Double)</strong></p>
+<ul>
+<li>로봇을 지정된 거리(인치)만큼 왼쪽으로 이동시킵니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeLeft</span><span class="p">(</span><span class="n">40</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/strafe-left.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-2"
+/></p>
+</li>
+<li>
+<p><strong>strafeRight(distance: Double)</strong></p>
+<ul>
+<li>로봇을 지정된 거리(인치)만큼 오른쪽으로 이동시킵니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeRight</span><span class="p">(</span><span class="n">40</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/strafe-right.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-3"
+/></p>
+</li>
+</ol>
+<hr>
+<h3 id="지정된-좌표로-이동"><strong>지정된 좌표로 이동</strong><a href="#지정된-좌표로-이동" class="anchor" aria-hidden="true">#</a> </h3>
+<ol start="5">
+<li>
+<p><strong>strafeTo(endPosition: Vector2d)</strong></p>
+<ul>
+<li>로봇이 지정된 좌표로 이동합니다. 이동 중 시작 시의 헤딩(방향)을 유지합니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/line-to.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-4"
+/></p>
+</li>
+<li>
+<p><strong>lineTo(endPosition: Vector2d)</strong></p>
+<ul>
+<li><code>strafeTo</code>와 동일하게 작동하며, 지정된 좌표로 이동하면서 시작 헤딩을 유지합니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">lineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/line-to.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-5"
+/></p>
+</li>
+<li>
+<p><strong>lineToConstantHeading(endPosition: Vector2d)</strong></p>
+<ul>
+<li><code>strafeTo</code> 및 <code>lineTo</code>와 기능적으로 동일합니다. 지정된 좌표로 이동하며 시작 헤딩을 유지합니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">lineToConstantHeading</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/line-to.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-6"
+/></p>
+</li>
+</ol>
+<hr>
+<h3 id="방향heading을-변경하며-이동"><strong>방향(Heading)을 변경하며 이동</strong><a href="#방향heading을-변경하며-이동" class="anchor" aria-hidden="true">#</a> </h3>
+<ol start="8">
+<li>
+<p><strong>lineToLinearHeading(endPose: Pose2d)</strong></p>
+<ul>
+<li>로봇이 지정된 좌표로 이동하며 시작 헤딩에서 끝 헤딩으로 선형적으로 변환합니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">lineToLinearHeading</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/line-to-linear-heading.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-7"
+/></p>
+</li>
+<li>
+<p><strong>lineToSplineHeading(endPose: Pose2d)</strong></p>
+<ul>
+<li>로봇이 지정된 좌표로 이동하며 시작 헤딩에서 끝 헤딩으로 곡선적으로 변환합니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">lineToSplineHeading</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/line-to-spline-heading.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-8"
+/></p>
+</li>
+</ol>
+<hr>
+<h3 id="스플라인-경로를-따라-이동"><strong>스플라인 경로를 따라 이동</strong><a href="#스플라인-경로를-따라-이동" class="anchor" aria-hidden="true">#</a> </h3>
+<ol start="10">
+<li>
+<p><strong>splineTo(endPosition: Vector2d, endTangent: Double)</strong></p>
+<ul>
+<li>로봇이 스플라인 경로를 따라 지정된 좌표로 이동하며 끝 방향을 지정합니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/spline-to.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-9"
+/></p>
+</li>
+<li>
+<p><strong>splineToConstantHeading(endPosition: Vector2d, endTangent: Double)</strong></p>
+<ul>
+<li>로봇이 스플라인 경로를 따라 이동하며 시작 헤딩을 유지합니다. 끝 방향은 스플라인 경로의 형태에 영향을 줍니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineToConstantHeading</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/spline-to-constant-heading.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-10"
+/></p>
+</li>
+<li>
+<p><strong>splineToLinearHeading(endPose: Pose2d, endTangent: Double)</strong></p>
+<ul>
+<li>로봇이 스플라인 경로를 따라 이동하며 헤딩은 선형적으로, 경로는 스플라인 형태로 변환됩니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineToLinearHeading</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">)),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/spline-to-linear-heading.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-11"
+/></p>
+</li>
+<li>
+<p><strong>splineToSplineHeading(endPose: Pose2d, endTangent: Double)</strong></p>
+<ul>
+<li>로봇이 스플라인 경로를 따라 이동하며 헤딩과 경로 모두 곡선적으로 변환됩니다.</li>
+<li>예시:
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineToSplineHeading</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">40</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">)),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ul>
+<p>
+
+<img
+  src="/videos/trajectory-builder-function/spline-to-spline-heading.gif"
+  width="798"
+  height="820"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt=""id="h-rh-i-12"
+/></p>
+</li>
+</ol>
+<hr>
+<p>위 함수들은 로봇의 경로를 정밀하게 제어할 수 있도록 설계되었습니다.
+필요에 따라 직선, 곡선, 방향 전환 등을 조합하여 다양한 경로를 생성할 수 있습니다.</p>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
@@ -651,7 +1124,7 @@
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary"></div>
-					<a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/" class="stretched-link text-reset text-decoration-none">메이터 (Maker) 가이드</a>
+					<a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/" class="stretched-link text-reset text-decoration-none">마커 (Maker) 가이드</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

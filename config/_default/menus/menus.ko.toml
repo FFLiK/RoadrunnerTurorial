@@ -1,6 +1,6 @@
 [[main]]
   name = "Docs"
-  url = "docs/1-about-roadrunner/로드러너에-대하여/"
+  url = "docs/1-about-roadrunner/road-runner에-대하여/"
 # url = "/docs/1.0/prologue/introduction/"
   weight = 10
 
@@ -24,7 +24,7 @@
 # Docs Sidebar
 
 [[sidebar_docs]]
-  name = "로드러너란?"
+  name = "Road Runner란?"
   pageRef = "/docs/1-about-roadrunner/"
   weight = 1
 

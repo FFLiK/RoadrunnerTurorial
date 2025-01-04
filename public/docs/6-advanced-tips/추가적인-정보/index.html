@@ -154,7 +154,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -254,7 +254,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -343,7 +343,7 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
-                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
+                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
               </li>
             </ul>
 
@@ -449,7 +449,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -549,7 +549,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -614,7 +614,41 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#teleop에서-road-runner-사용하기">TeleOp에서 Road Runner 사용하기</a>
+      <ul>
+        <li><a href="#로컬라이저localizer만-사용하는-방법">로컬라이저(Localizer)만 사용하는 방법</a></li>
+        <li><a href="#samplemecanumdrive-사용하기">SampleMecanumDrive 사용하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#opmode-간-위치-데이터-전송">OpMode 간 위치 데이터 전송</a>
+      <ul>
+        <li><a href="#이유">이유</a></li>
+        <li><a href="#posestorage-클래스-생성">PoseStorage 클래스 생성</a></li>
+        <li><a href="#자동-모드에서-위치-저장">자동 모드에서 위치 저장</a></li>
+        <li><a href="#텔레오프에서-위치-읽기">텔레오프에서 위치 읽기</a></li>
+        <li><a href="#전체-샘플-코드">전체 샘플 코드</a></li>
+        <li><a href="#주의-사항">주의 사항</a></li>
+        <li><a href="#필드-중심-주행field-centric-drive">필드 중심 주행(Field Centric Drive)</a></li>
+      </ul>
+    </li>
+    <li><a href="#특정-지점에-맞춰-정렬align-to-point">특정 지점에 맞춰 정렬(Align To Point)</a></li>
+    <li><a href="#비동기-경로-추적async-following">비동기 경로 추적(Async Following)</a></li>
+    <li><a href="#비동기-경로-연결하기chaining-async-trajectories">비동기 경로 연결하기(Chaining Async Trajectories)</a></li>
+    <li><a href="#유한-상태-기계finite-state-machine-추적">유한 상태 기계(Finite State Machine) 추적</a></li>
+    <li><a href="#허용-오차-및-타임아웃admissible-error-and-timeout">허용 오차 및 타임아웃(Admissible Error and Timeout)</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#180-회전-방향-설정-180-turn-direction">180° 회전 방향 설정 (180° Turn Direction)</a></li>
+    <li><a href="#경로-중단-interrupting-a-live-trajectory">경로 중단 (Interrupting a Live Trajectory)</a></li>
+    <li><a href="#텔레오프에서-자동-주행-사용">텔레오프에서 자동 주행 사용</a></li>
+    <li><a href="#옴니-휠-omni-wheels">옴니 휠 (Omni Wheels)</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +657,446 @@
 			<h1>추가적인 정보</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#teleop에서-road-runner-사용하기">TeleOp에서 Road Runner 사용하기</a>
+      <ul>
+        <li><a href="#로컬라이저localizer만-사용하는-방법">로컬라이저(Localizer)만 사용하는 방법</a></li>
+        <li><a href="#samplemecanumdrive-사용하기">SampleMecanumDrive 사용하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#opmode-간-위치-데이터-전송">OpMode 간 위치 데이터 전송</a>
+      <ul>
+        <li><a href="#이유">이유</a></li>
+        <li><a href="#posestorage-클래스-생성">PoseStorage 클래스 생성</a></li>
+        <li><a href="#자동-모드에서-위치-저장">자동 모드에서 위치 저장</a></li>
+        <li><a href="#텔레오프에서-위치-읽기">텔레오프에서 위치 읽기</a></li>
+        <li><a href="#전체-샘플-코드">전체 샘플 코드</a></li>
+        <li><a href="#주의-사항">주의 사항</a></li>
+        <li><a href="#필드-중심-주행field-centric-drive">필드 중심 주행(Field Centric Drive)</a></li>
+      </ul>
+    </li>
+    <li><a href="#특정-지점에-맞춰-정렬align-to-point">특정 지점에 맞춰 정렬(Align To Point)</a></li>
+    <li><a href="#비동기-경로-추적async-following">비동기 경로 추적(Async Following)</a></li>
+    <li><a href="#비동기-경로-연결하기chaining-async-trajectories">비동기 경로 연결하기(Chaining Async Trajectories)</a></li>
+    <li><a href="#유한-상태-기계finite-state-machine-추적">유한 상태 기계(Finite State Machine) 추적</a></li>
+    <li><a href="#허용-오차-및-타임아웃admissible-error-and-timeout">허용 오차 및 타임아웃(Admissible Error and Timeout)</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#180-회전-방향-설정-180-turn-direction">180° 회전 방향 설정 (180° Turn Direction)</a></li>
+    <li><a href="#경로-중단-interrupting-a-live-trajectory">경로 중단 (Interrupting a Live Trajectory)</a></li>
+    <li><a href="#텔레오프에서-자동-주행-사용">텔레오프에서 자동 주행 사용</a></li>
+    <li><a href="#옴니-휠-omni-wheels">옴니 휠 (Omni Wheels)</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
-			
+			<p>고급 코드 샘플은 <code>advanced-examples</code> 브랜치에서 확인할 수 있습니다.<br>
+<a href="https://github.com/NoahBres/road-runner-quickstart/tree/advanced-examples">https://github.com/NoahBres/road-runner-quickstart/tree/advanced-examples</a></p>
+<hr>
+<h2 id="teleop에서-road-runner-사용하기">TeleOp에서 Road Runner 사용하기<a href="#teleop에서-road-runner-사용하기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>TeleOp에서 Road Runner를 사용하는 데는 여러 이유가 있습니다.<br>
+예를 들어, 복잡한 자동화를 구현하고 싶을 수도 있습니다.<br>
+개인적으로는 <strong>텔레오프 자동화보다는 드라이브 연습에 투자하는 것이 훨씬 더 효율적</strong>이라고 생각합니다.<br>
+하지만, 원한다면 자유롭게 사용해 보세요.</p>
+<p><strong>TeleOp에서 Road Runner를 사용하는 주요 이유</strong>는 로컬라이제이션(localization) 기능을 재사용해 텔레오프 중 로봇의 위치를 실시간으로 추적하는 것입니다.<br>
+이 기능은 예를 들어 2020-21 Ultimate Goal 게임에서 링 슈터 속도를 자동 조정하는 데 활용할 수 있습니다.</p>
+<blockquote>
+<p>텔레오프 자동화와 관련하여 제가 추천하지 않는 것은 <strong>로봇이 자동으로 특정 위치로 이동해 작업을 수행하는 방식</strong>입니다. 숙련된 드라이버가 연습을 통해 더 빠르고 정확하게 수행할 수 있습니다.<br>
+하지만 <strong>특정 물리적 메커니즘(예: 인테이킹, 리프트)을 자동화하는 것</strong>은 매우 추천합니다.</p>
+</blockquote>
+<hr>
+<h3 id="로컬라이저localizer만-사용하는-방법">로컬라이저(Localizer)만 사용하는 방법<a href="#로컬라이저localizer만-사용하는-방법" class="anchor" aria-hidden="true">#</a> </h3>
+<p>로컬라이저를 사용해 로봇의 위치를 읽기만 하면 되는 경우, 불필요한 코드를 호출하지 않도록 로컬라이저만 초기화하는 것을 추천합니다.</p>
+<h4 id="로컬라이저-사용-코드-예제">로컬라이저 사용 코드 예제<a href="#로컬라이저-사용-코드-예제" class="anchor" aria-hidden="true">#</a> </h4>
+<p>다음은 텔레오프 OpMode에서 로컬라이저를 사용하는 코드입니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyTeleopOpmode</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">LinearOpMode</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">runOpMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 초기화 코드 삽입</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// StandardTrackingWheelLocalizer 사용</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">StandardTrackingWheelLocalizer</span><span class="w"> </span><span class="n">myLocalizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StandardTrackingWheelLocalizer</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 초기 위치 설정 (x: 10, y: 10, 방향: 90도)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">myLocalizer</span><span class="p">.</span><span class="na">setPoseEstimate</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">waitForStart</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opModeIsActive</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 반복 루프에서 항상 update() 호출</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">myLocalizer</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 현재 위치 가져오기</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Pose2d</span><span class="w"> </span><span class="n">myPose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myLocalizer</span><span class="p">.</span><span class="na">getPoseEstimate</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">myPose</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&#34;y&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">myPose</span><span class="p">.</span><span class="na">getY</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&#34;heading&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">myPose</span><span class="p">.</span><span class="na">getHeading</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// TeleOp 코드 삽입</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h4 id="완전한-샘플-코드">완전한 샘플 코드<a href="#완전한-샘플-코드" class="anchor" aria-hidden="true">#</a> </h4>
+<p>전체 샘플 코드는 <a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/TeleOpJustLocalizer.java">여기</a>에서 확인할 수 있습니다.<br>
+이 샘플에는 아래에서 설명할 <strong>정적 필드를 활용한 데이터 유지(persistence)</strong> 기능도 포함되어 있습니다.</p>
+<hr>
+<h3 id="samplemecanumdrive-사용하기">SampleMecanumDrive 사용하기<a href="#samplemecanumdrive-사용하기" class="anchor" aria-hidden="true">#</a> </h3>
+<p><code>SampleMecanumDrive</code>의 기능을 활용하고 싶다면, 다음과 같은 방식으로 TeleOp에 추가할 수 있습니다.</p>
+<h4 id="samplemecanumdrive-사용-코드-예제">SampleMecanumDrive 사용 코드 예제<a href="#samplemecanumdrive-사용-코드-예제" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyTeleopOpmode</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">LinearOpMode</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">runOpMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 초기화 코드 삽입</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// SampleMecanumDrive 사용</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SampleMecanumDrive</span><span class="w"> </span><span class="n">drive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SampleMecanumDrive</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 초기 위치 설정 (x: 10, y: 10, 방향: 90도)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">drive</span><span class="p">.</span><span class="na">setPoseEstimate</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">waitForStart</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opModeIsActive</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 반복 루프에서 항상 update() 호출</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">drive</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 현재 위치 가져오기</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Pose2d</span><span class="w"> </span><span class="n">myPose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">getPoseEstimate</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">myPose</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&#34;y&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">myPose</span><span class="p">.</span><span class="na">getY</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&#34;heading&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">myPose</span><span class="p">.</span><span class="na">getHeading</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 텔레오프 코드 삽입</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h4 id="완전한-샘플-코드-1">완전한 샘플 코드<a href="#완전한-샘플-코드-1" class="anchor" aria-hidden="true">#</a> </h4>
+<p>전체 샘플 코드는 <a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/TeleOpDrive.java">여기</a>에서 확인할 수 있습니다.<br>
+이 샘플은 <strong>정적 필드 데이터 유지 기능</strong>을 포함하며,
+<code>SampleMecanumDrive</code>를 활용해 게임패드를 통한 로봇 제어를 추가한 코드입니다.</p>
+<hr>
+<h2 id="opmode-간-위치-데이터-전송">OpMode 간 위치 데이터 전송<a href="#opmode-간-위치-데이터-전송" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="이유">이유<a href="#이유" class="anchor" aria-hidden="true">#</a> </h3>
+<p>텔레오프에서 로컬라이저를 활용하려면 <strong>초기 위치를 정확히 설정해야 합니다</strong>.<br>
+초기 위치를 설정하지 않으면 프로그램은 기본적으로 <code>x: 0</code>, <code>y: 0</code>, <code>heading: 0</code>으로 간주합니다.<br>
+따라서, <strong>자동 모드에서 끝난 위치를 텔레오프에 전달</strong>해야 합니다.<br>
+이 작업은 **Java의 정적 필드(static field)**를 사용해 해결할 수 있습니다.</p>
+<hr>
+<h3 id="posestorage-클래스-생성">PoseStorage 클래스 생성<a href="#posestorage-클래스-생성" class="anchor" aria-hidden="true">#</a> </h3>
+<p>먼저, 위치 데이터를 저장할 <code>PoseStorage</code> 클래스를 생성합니다.<br>
+아래 코드처럼 **정적 필드(static field)**를 활용합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PoseStorage</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// static 키워드를 사용하여 데이터 공유</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Pose2d</span><span class="w"> </span><span class="n">currentPose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="자동-모드에서-위치-저장">자동 모드에서 위치 저장<a href="#자동-모드에서-위치-저장" class="anchor" aria-hidden="true">#</a> </h3>
+<p>자동 모드의 마지막에 <code>PoseStorage.currentPose</code>에 현재 위치를 저장합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">PoseStorage</span><span class="p">.</span><span class="na">currentPose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">getPoseEstimate</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="텔레오프에서-위치-읽기">텔레오프에서 위치 읽기<a href="#텔레오프에서-위치-읽기" class="anchor" aria-hidden="true">#</a> </h3>
+<p>텔레오프 시작 시 저장된 위치를 읽어 초기 위치를 설정합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">myLocalizer</span><span class="p">.</span><span class="na">setPoseEstimate</span><span class="p">(</span><span class="n">PoseStorage</span><span class="p">.</span><span class="na">currentPose</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="전체-샘플-코드">전체 샘플 코드<a href="#전체-샘플-코드" class="anchor" aria-hidden="true">#</a> </h3>
+<p>다음 링크에서 전체 샘플을 확인할 수 있습니다:</p>
+<ul>
+<li><a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/TeleOpJustLocalizer.java">TeleOpJustLocalizer.java</a></li>
+<li><a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/AutoTransferPose.java">AutoTransferPose.java</a></li>
+<li><a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/PoseStorage.java">PoseStorage.java</a></li>
+</ul>
+<hr>
+<h3 id="주의-사항">주의 사항<a href="#주의-사항" class="anchor" aria-hidden="true">#</a> </h3>
+<ol>
+<li>
+<p><strong>앱 종료 시 데이터 손실</strong><br>
+앱이 갑자기 종료되면 데이터가 손실됩니다.<br>
+이를 방지하려면 데이터베이스 또는 파일에 위치 데이터를 저장할 수 있습니다.<br>
+하지만 일반적으로 이 정도로 복잡한 처리는 필요하지 않습니다.</p>
+</li>
+<li>
+<p><strong>실시간 업데이트 필요</strong><br>
+현재 코드에서는 Autonomous Period가 끝날 때 한 번만 데이터를 저장합니다.<br>
+만약 로봇이 외부 힘으로 밀리거나 프로그램이 충돌하면 위치 정보가 정확하지 않을 수 있습니다.<br>
+이를 방지하려면 <strong>업데이트 루프에서 정기적으로 데이터를 저장</strong>하도록 구현해야 합니다.</p>
+</li>
+<li>
+<p><strong>비동기 처리 활용</strong><br>
+정기적인 데이터 저장은 <strong>비동기 처리</strong>를 통해 구현할 수 있습니다.<br>
+자세한 내용은 <a href="#finite-state-machine-following">Finite State Machine Following</a> 샘플을 참고하세요.</p>
+</li>
+</ol>
+<hr>
+<h3 id="필드-중심-주행field-centric-drive">필드 중심 주행(Field Centric Drive)<a href="#필드-중심-주행field-centric-drive" class="anchor" aria-hidden="true">#</a> </h3>
+<p>표준 드라이브 코드 위에 필드 중심 주행을 구현하는 것은 매우 간단합니다.
+원하는 벡터를 가져와 로봇의 현재 방향(Heading)에 따라 회전시키기만 하면 됩니다.</p>
+<p>아래는 간단한 예제입니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 로봇의 현재 위치 읽기</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Pose2d</span><span class="w"> </span><span class="n">poseEstimate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">getPoseEstimate</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 게임패드 x/y 입력으로 벡터 생성</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 그런 다음, 해당 벡터를 현재 헤딩의 역방향으로 회전</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Vector2d</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">-</span><span class="n">gamepad1</span><span class="p">.</span><span class="na">left_stick_y</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">-</span><span class="n">gamepad1</span><span class="p">.</span><span class="na">left_stick_x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">).</span><span class="na">rotated</span><span class="p">(</span><span class="o">-</span><span class="n">poseEstimate</span><span class="p">.</span><span class="na">getHeading</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 회전된 입력 벡터와 오른쪽 스틱 값을 전달</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 회전 값은 회전된 입력 벡터에 포함되지 않으므로 별도로 전달해야 함</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">setWeightedDrivePower</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">input</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">input</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="o">-</span><span class="n">gamepad1</span><span class="p">.</span><span class="na">right_stick_x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>전체 샘플 코드는 <a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/TeleOpFieldCentric.java">여기</a>에서 확인할 수 있습니다.</p>
+<hr>
+<h2 id="특정-지점에-맞춰-정렬align-to-point">특정 지점에 맞춰 정렬(Align To Point)<a href="#특정-지점에-맞춰-정렬align-to-point" class="anchor" aria-hidden="true">#</a> </h2>
+<p>이 데모는 반드시 Road Runner의 핵심 기능(모션 프로파일링 등)에 의존하지는 않지만,
+Road Runner 유틸리티를 많이 활용합니다.
+이를 자신의 코드에 Road Runner 종속 없이 포팅하는 것은 비교적 간단합니다.</p>
+<p>이 데모는 드라이버가 &ldquo;특정 지점에 맞춰 정렬&rdquo; 모드로 전환하면 필드 중심 모드로 전환하고,
+지정된 지점에 로봇이 자동으로 헤딩을 조정하도록 OpMode가 헤딩 제어를 담당합니다.</p>
+<p>OpMode 코드는 <a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/TeleOpAlignWithPoint.java">여기</a>에서 확인할 수 있습니다.</p>
+<hr>
+<h2 id="비동기-경로-추적async-following">비동기 경로 추적(Async Following)<a href="#비동기-경로-추적async-following" class="anchor" aria-hidden="true">#</a> </h2>
+<p>기본적으로 Quickstart의 <code>followTrajectory()</code> 함수는 **동기적(synchronous)**으로 동작합니다.
+이는 해당 함수가 완료될 때까지 다음 줄의 코드가 실행되지 않음을 의미합니다.
+이러한 동기적 방식은 <code>Linear Opmode</code>에서 잘 동작합니다.</p>
+<p>하지만, 리프트의 높이를 일정하게 유지하기 위해 PID 컨트롤러를 백그라운드에서 실행하고 싶다면,
+모든 코드를 단일 루프 함수에서 처리하는 반복형 OpMode를 사용해야 합니다.
+이 경우 <code>followTrajectory()</code>의 차단(Blocking) 동작은 적합하지 않습니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// 비동기 추적 메서드 호출</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectoryAsync</span><span class="p">(</span><span class="n">trajectory</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// drive.update()를 호출하면 모든 경로 추적 로직이 처리됩니다.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// 리프트 PID 컨트롤러 업데이트 또는 기타 로직</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">lift</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="비동기-경로-연결하기chaining-async-trajectories">비동기 경로 연결하기(Chaining Async Trajectories)<a href="#비동기-경로-연결하기chaining-async-trajectories" class="anchor" aria-hidden="true">#</a> </h2>
+<p>경로를 비동기 방식으로 연결하려면 인라인 변위 마커를 사용하면 됩니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">trajectory1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Trajectory</span><span class="w"> </span><span class="n">trajectory2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Trajectory</span><span class="w"> </span><span class="n">trajectory3</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">trajectory1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">lineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">addDisplacementMarker</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectoryAsync</span><span class="p">(</span><span class="n">trajectory2</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">trajectory2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">trajectory1</span><span class="p">.</span><span class="na">end</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">lineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">addDisplacementMarker</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectoryAsync</span><span class="p">(</span><span class="n">trajectory3</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">trajectory3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">trajectory2</span><span class="p">.</span><span class="na">end</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">lineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// 초기화 시 첫 번째 경로를 설정</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectoryAsync</span><span class="p">(</span><span class="n">trajectory1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">lift</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w"> </span><span class="c1">// 백그라운드에서 리프트 PID 업데이트 또는 기타 작업</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>이 방법에는 몇 가지 단점이 있습니다:</p>
+<ol>
+<li>모션 프로파일 완료 후 위치를 교정하는 PID 제어가 건너뛰어집니다.</li>
+<li>이 방법으로는 지연(Delay) 또는 회전을 추가할 수 없습니다.</li>
+</ol>
+<p>더 나은 구현 방법은 유한 상태 기계(Finite State Machine, FSM)를 사용하는 것입니다.
+자세한 내용은 아래를 참고하세요.</p>
+<hr>
+<h2 id="유한-상태-기계finite-state-machine-추적">유한 상태 기계(Finite State Machine) 추적<a href="#유한-상태-기계finite-state-machine-추적" class="anchor" aria-hidden="true">#</a> </h2>
+<p>유한 상태 기계(Finite State Machines, FSM)는 매우 간단하면서도 놀라울 정도로 강력한 패턴으로, 복잡한 동작을 쉽게 조율할 수 있게 해줍니다.
+<a href="https://gm0.copperforge.cc/en/stable/docs/software/finite-state-machines.html">gm0의 FSM 문서</a>
+및 <a href="https://www.youtube.com/watch?v=Pu7PMN5NGkQ">관련 영상</a>을 참고하세요.</p>
+<p>이 <a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/AsyncFollowingFSM.java">샘플 코드</a>는 FSM을 사용해 여러 경로를 추적하며, 경로 간 대기 및 회전을 수행하는 방법을 보여줍니다.<br>
+FSM의 비동기적인 특성 덕분에 복잡한 서브시스템을 위한 여러 FSM을 병렬로 실행하거나 사용자의 자체 로직을 백그라운드에서 실행할 수 있습니다.
+또한 매 루프마다 <code>PoseStorage</code>에 현재 위치를 저장해, 이전에 OpMode간 포즈 전송에서 언급한 데이터를 지속적으로 업데이트하는 문제를 해결합니다.
+FSM을 사용하면 각 상태에서 수행할 작업과 상태 간 전환 조건을 명확하게 정의할 수 있어 로봇의 복잡한 동작을 구조적이고 확장 가능한 방식으로 관리할 수 있습니다.</p>
+<hr>
+<h2 id="허용-오차-및-타임아웃admissible-error-and-timeout">허용 오차 및 타임아웃(Admissible Error and Timeout)<a href="#허용-오차-및-타임아웃admissible-error-and-timeout" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Road Runner의 경로는 기본적으로 시간 기반입니다.
+따라서 경로 추적 완료 여부는 내부 타이머에 의해 결정됩니다.
+그러나 추적이 완벽하지 않을 수 있기 때문에, 시간 기반 종료 조건만으로는 충분하지 않을 수 있습니다.</p>
+<p>Road Runner의 기본 팔로워(Follower)는
+기본적으로 허용 오차(Admissible Error) 및 타임아웃(Timeout) 조건을 추가합니다.
+이는 운동 프로파일이 소진된 후 Road Runner가 추가적으로 x초를 제공하거나
+허용 오차 조건이 충족될 때까지 대기하도록 하여 경로 추적을 완료하도록 합니다.
+이 기간 동안에는 팔로워의 PID 제어기만이 로봇에 작용합니다.</p>
+<p>기본적으로 팔로워는 0.5초의 타임아웃과 x/y 방향에서 0.5인치,
+헤딩 방향에서 5도의 허용 오차를 제공합니다.
+즉, 경로 추적이 기본적으로 위치에서 0.5인치와 헤딩에서 5도의 오차를 허용하도록 설정되어 있습니다.</p>
+<p>정확도를 높이고 싶다면 타임아웃을 늘리고 허용 오차를 줄이는 방법을 고려할 수 있습니다.
+이러한 설정은 <code>SampleMecanumDrive</code> 클래스에서 팔로워가 초기화되는 부분에서 찾을 수 있습니다.
+두 번째에서 마지막 매개변수가 허용 오차이고, 마지막 매개변수가 타임아웃입니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* SampleMecanumDrive.java의 120-121행 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">follower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HolonomicPIDVAFollower</span><span class="p">(</span><span class="n">TRANSLATIONAL_PID</span><span class="p">,</span><span class="w"> </span><span class="n">TRANSLATIONAL_PID</span><span class="p">,</span><span class="w"> </span><span class="n">HEADING_PID</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="na">5</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">.</span><span class="na">5</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">5</span><span class="p">.</span><span class="na">0</span><span class="p">)),</span><span class="w"> </span><span class="n">0</span><span class="p">.</span><span class="na">5</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   ^^^</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w">       </span><span class="n">허용</span><span class="w"> </span><span class="nf">오차</span><span class="w"> </span><span class="p">(</span><span class="n">Pose</span><span class="p">)</span><span class="w">                   </span><span class="n">타임아웃</span><span class="w"> </span><span class="p">(</span><span class="n">초</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>허용 오차를 줄이고 타임아웃을 늘리면 정확도를 높일 수 있습니다.</p>
+<h4 id="trajectory-following-flow">Trajectory Following Flow<a href="#trajectory-following-flow" class="anchor" aria-hidden="true">#</a> </h4>
+
+<img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-9" src="/_1792269608024707020.svg"><hr>
+<h2 id="180-회전-방향-설정-180-turn-direction">180° 회전 방향 설정 (180° Turn Direction)<a href="#180-회전-방향-설정-180-turn-direction" class="anchor" aria-hidden="true">#</a> </h2>
+<p><code>drive.turn(angle)</code> 함수로 180° 회전을 수행할 때, 어느 방향으로 회전할지 지정할 수 있습니다.<br>
+다른 각도는 가장 짧은 경로로 회전하지만, 180°는 방향이 모호할 수 있습니다.
+이를 해결하려면 180°에 극소 값을 더하거나 빼서 방향을 지정합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 반시계 방향 회전</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1e</span><span class="o">-</span><span class="n">6</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 시계 방향 회전</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1e</span><span class="o">-</span><span class="n">6</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="경로-중단-interrupting-a-live-trajectory">경로 중단 (Interrupting a Live Trajectory)<a href="#경로-중단-interrupting-a-live-trajectory" class="anchor" aria-hidden="true">#</a> </h2>
+<p>경로를 임의로 중단해야 하는 상황이 발생할 수 있습니다.
+이러한 동작은 아래 예제에서만 적용하는 것이 적절합니다.
+이 동작을 구현하려면 <strong><code>SampleMecanumDrive</code></strong> 클래스를 수정하고
+로봇의 **<code>mode</code>**를 강제로 <strong><code>IDLE</code></strong> 상태로 변경하는 함수를 구현해야 합니다.</p>
+<ul>
+<li><a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/SampleMecanumDriveCancelable.java"><code>SampleMecanumDriveCancelable</code></a></li>
+<li><a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/AutoBreakTrajectory.java"><code>AutoBreakTrajectory</code></a></li>
+</ul>
+<p>이 수정된 클래스들은 단순히 <strong><code>breakFollowing()</code></strong> 함수를 구현하여 주행 경로를 중단할 수 있도록 합니다.
+이 클래스들을 여러분의 프로젝트에 복사하여 사용하세요.</p>
+<hr>
+<h2 id="텔레오프에서-자동-주행-사용">텔레오프에서 자동 주행 사용<a href="#텔레오프에서-자동-주행-사용" class="anchor" aria-hidden="true">#</a> </h2>
+<p><strong>경고</strong>: 이 샘플 코드는 Road Runner의 기능을 보여주는 데모일 뿐, 게임에서 권장되지 않습니다.</p>
+<p>이 <a href="https://github.com/NoahBres/road-runner-quickstart/blob/advanced-examples/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/advanced/TeleOpAugmentedDriving.java">샘플 코드</a>는
+TeleOp 중에 임의의 Road Runner 경로를 따라가는 방식으로 운전자 제어를 증강하는 방법을 시연합니다.
+그러나 이는 경로(Road Runner Trajectories)가 본래 의도된 목적에 부합하지 않으며,
+이와 같은 시나리오에서는 경로 추적(Path Follower)이 더 적합합니다.</p>
+<p>이 샘플은 Road Runner의 기능을 시연하기 위한 데모로 설계되었으며,
+복잡한 행동을 생성하기 위해 &ldquo;유한 상태 기계(Finite State Machine)&ldquo;샘플과
+&ldquo;실시간 경로 중단(Interrupting a Live Trajectory)&rdquo; 샘플을 결합하는 방법을 보여줍니다.</p>
+<p>해당 OpMode의 세부 설명은 주석에 작성되어 있습니다.</p>
+<hr>
+<h2 id="옴니-휠-omni-wheels">옴니 휠 (Omni Wheels)<a href="#옴니-휠-omni-wheels" class="anchor" aria-hidden="true">#</a> </h2>
+<p>사각형 로봇의 각 변에 옴니 휠을 하나씩 배치하면,
+이는 표준 GoBilda 방식으로 배열된 메카넘 휠과 동일한 방식으로 작동합니다.
+개념적으로, 로봇의 전면은 두 옴니 휠 사이의 중간 지점에 위치하게 됩니다.
+로봇의 모서리를 전면으로 정렬하면, 옴니 휠은 메카넘 휠과 동일한 기능을 수행하게 됩니다.</p>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">

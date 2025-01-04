@@ -20,7 +20,7 @@
 
 
 <title>개요  |  Roadrunner Tutorial</title>
-<meta name="description" content="로드러너를 사용해 자율 주행 경로를 설정하는 방법을 다룹니다.">
+<meta name="description" content="Road Runner를 사용해 자율 주행 경로를 설정하는 방법을 다룹니다.">
 
     
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -50,7 +50,7 @@
 <meta property="og:url" content="http://localhost:1313/docs/5-trajectory/%EA%B0%9C%EC%9A%94/">
   <meta property="og:site_name" content="Roadrunner Tutorial">
   <meta property="og:title" content="개요">
-  <meta property="og:description" content="로드러너를 사용해 자율 주행 경로를 설정하는 방법을 다룹니다.">
+  <meta property="og:description" content="Road Runner를 사용해 자율 주행 경로를 설정하는 방법을 다룹니다.">
   <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -61,7 +61,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
   <meta name="twitter:title" content="개요">
-  <meta name="twitter:description" content="로드러너를 사용해 자율 주행 경로를 설정하는 방법을 다룹니다.">
+  <meta name="twitter:description" content="Road Runner를 사용해 자율 주행 경로를 설정하는 방법을 다룹니다.">
 
     
     
@@ -154,7 +154,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -254,7 +254,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -343,7 +343,7 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
-                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
+                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
               </li>
             </ul>
 
@@ -449,7 +449,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -549,7 +549,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -614,7 +614,36 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#trajectory와-path의-차이점">Trajectory와 Path의 차이점</a></li>
+    <li><a href="#vector와-pose">Vector와 Pose</a>
+      <ul>
+        <li><a href="#vector2d"><strong>Vector2d</strong></a></li>
+        <li><a href="#pose2d"><strong>Pose2d</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#경로-trajectory-생성하기">경로 (Trajectory) 생성하기</a>
+      <ul>
+        <li><a href="#주요-단계-분석">주요 단계 분석</a></li>
+      </ul>
+    </li>
+    <li><a href="#불연속한-경로-오류-path-continuity-exception">불연속한 경로 오류 (Path Continuity Exception)</a>
+      <ul>
+        <li><a href="#불연속성-문제">불연속성 문제</a></li>
+        <li><a href="#해결-방법"><strong>해결 방법</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#pose-estimate-설정">Pose Estimate 설정</a></li>
+    <li><a href="#여러-trajectory-실행하기">여러 Trajectory 실행하기</a></li>
+    <li><a href="#trajectory와-turn의-차이점">Trajectory와 Turn의 차이점</a></li>
+    <li><a href="#후진하기">후진하기</a></li>
+    <li><a href="#turn-후-trajectory-실행">Turn 후 Trajectory 실행</a></li>
+    <li><a href="#trajectory-속도-줄이기">Trajectory 속도 줄이기</a></li>
+    <li><a href="#좌표-시스템">좌표 시스템</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +652,495 @@
 			<h1>개요</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#trajectory와-path의-차이점">Trajectory와 Path의 차이점</a></li>
+    <li><a href="#vector와-pose">Vector와 Pose</a>
+      <ul>
+        <li><a href="#vector2d"><strong>Vector2d</strong></a></li>
+        <li><a href="#pose2d"><strong>Pose2d</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#경로-trajectory-생성하기">경로 (Trajectory) 생성하기</a>
+      <ul>
+        <li><a href="#주요-단계-분석">주요 단계 분석</a></li>
+      </ul>
+    </li>
+    <li><a href="#불연속한-경로-오류-path-continuity-exception">불연속한 경로 오류 (Path Continuity Exception)</a>
+      <ul>
+        <li><a href="#불연속성-문제">불연속성 문제</a></li>
+        <li><a href="#해결-방법"><strong>해결 방법</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#pose-estimate-설정">Pose Estimate 설정</a></li>
+    <li><a href="#여러-trajectory-실행하기">여러 Trajectory 실행하기</a></li>
+    <li><a href="#trajectory와-turn의-차이점">Trajectory와 Turn의 차이점</a></li>
+    <li><a href="#후진하기">후진하기</a></li>
+    <li><a href="#turn-후-trajectory-실행">Turn 후 Trajectory 실행</a></li>
+    <li><a href="#trajectory-속도-줄이기">Trajectory 속도 줄이기</a></li>
+    <li><a href="#좌표-시스템">좌표 시스템</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
-			
+			<h2 id="trajectory와-path의-차이점">Trajectory와 Path의 차이점<a href="#trajectory와-path의-차이점" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Road Runner는 경로를 구성하기 위한 <strong>Path</strong>와 <strong>Trajectory</strong> 두 가지 데이터 구조를 제공합니다.</p>
+<ul>
+<li><strong>Paths</strong> : 사용자가 정의한 웨이포인트를 기반으로 생성된 전체 경로를 단순히 저장합니다. 이 경로는 직선일 수도 있고, 부드러운 스플라인(splines)일 수도 있습니다.</li>
+<li><strong>Trajectories</strong> : Path에 <strong>모션 프로파일링</strong>을 추가한 구조입니다. 즉, Trajectories는 로봇이 경로를 따라가면서 속도, 가속도, 각가속도 등을 제어할 수 있도록 합니다.</li>
+</ul>
+<p>현재 Road Runner는 홀로노믹 드라이브(holonomic drive)를 위한 경로 추적(path following)을 기본 제공하지 않습니다.
+대신, 탱크 드라이브(tank drive)를 위한 Ramsete 경로 추적을 포함하고 있습니다.<br>
+홀로노믹 드라이브를 지원하기 위해 벡터 필드 기반의 경로 추적 기능이 추가될 예정입니다.
+자세한 내용은 <a href="https://discord.gg/first-tech-challenge">FTC Discord</a>를 참고하세요.</p>
+<p>Road Runner는 PIDVA 기반의 Trajectory Followers를 홀로노믹 드라이브와 탱크 드라이브 모두에 대해 제공합니다.
+이는 기본적으로 Quickstart에서 사용됩니다.</p>
+<hr>
+<h2 id="vector와-pose">Vector와 Pose<a href="#vector와-pose" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Vector와 Pose는 Road Runner에서 자주 사용되는 두 가지 주요 클래스입니다.</p>
+<hr>
+<h3 id="vector2d"><strong>Vector2d</strong><a href="#vector2d" class="anchor" aria-hidden="true">#</a> </h3>
+<p>2D 벡터를 나타내며, X와 Y 좌표를 포함합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 좌표 (10, -5)에 벡터 생성</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Vector2d</span><span class="w"> </span><span class="n">myVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">5</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="pose2d"><strong>Pose2d</strong><a href="#pose2d" class="anchor" aria-hidden="true">#</a> </h3>
+<p>2D 로봇 자세(Pose)를 나타내며, X, Y 좌표와 방향(Heading)을 포함합니다.
+일반적으로 로봇의 위치와 방향을 나타냅니다.
+방향은 삼각함수의 단위 원(Unit Circle)처럼 반시계 방향으로 증가합니다.
+따라서 <code>turn</code> 함수는 반시계 방향으로 회전합니다.
+각도는 <strong>라디안</strong> 단위로 표현되며, <code>Math.toRadians()</code>를 사용해 도(Degree)를 라디안으로 변환합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 좌표 (10, -5)에서 90도 방향을 향하는 포즈 생성</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Pose2d</span><span class="w"> </span><span class="n">myPose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">));</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="경로-trajectory-생성하기">경로 (Trajectory) 생성하기<a href="#경로-trajectory-생성하기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>아래 내용부터는 Road Runner Quickstart를 사용한다고 가정하도록 하겠습니다.
+Quickstart를 사용하지 않더라도 기본적인 원리는 동일하며,
+<code>SampleMecanumDrive.java</code>와 같은 헬퍼 함수는 무시하면 됩니다.</p>
+<p>아래는 Trajectory를 생성하는 기본 예제입니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyOpmode</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">LinearOpMode</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">runOpMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">SampleMecanumDrive</span><span class="w"> </span><span class="n">drive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SampleMecanumDrive</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Trajectory</span><span class="w"> </span><span class="n">myTrajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">strafeRight</span><span class="p">(</span><span class="n">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">waitForStart</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isStopRequested</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">myTrajectory</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="주요-단계-분석">주요 단계 분석<a href="#주요-단계-분석" class="anchor" aria-hidden="true">#</a> </h3>
+<h4 id="1-드라이브-객체-생성"><strong>1. 드라이브 객체 생성</strong><a href="#1-드라이브-객체-생성" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">SampleMecanumDrive</span><span class="w"> </span><span class="n">drive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SampleMecanumDrive</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><code>SampleMecanumDrive</code> 객체를 선언하고, OpMode의 <code>hardwareMap</code>을 전달합니다.</p>
+<h4 id="2-trajectory-빌드"><strong>2. Trajectory 빌드</strong><a href="#2-trajectory-빌드" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">myTrajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeRight</span><span class="p">(</span><span class="n">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><strong><code>trajectoryBuilder()</code> 호출:</strong> <code>drive</code> 객체에서 호출되며, 기본 제약 조건(Constraints)을 전달합니다.</li>
+<li><strong>시작 포즈 설정:</strong> <code>new Pose2d()</code>는 <code>(0, 0, 0)</code>의 기본값을 가집니다.<br>
+예를 들어, 시작 위치를 <code>(5, -4)</code>로 설정하고 90도 방향을 향하도록 하려면 <code>new Pose2d(5, -4, Math.toRadians(90))</code>로 설정합니다.</li>
+<li><strong>메서드 체이닝:</strong> <code>.strafeRight(10)</code>은 10인치 오른쪽으로 이동, <code>.forward(5)</code>는 5인치 앞으로 이동을 의미합니다.</li>
+<li><strong><code>build()</code> 호출:</strong> <code>TrajectoryBuilder</code> 객체를 <code>Trajectory</code> 객체로 변환합니다.</li>
+</ul>
+<h4 id="3-trajectory-실행"><strong>3. Trajectory 실행</strong><a href="#3-trajectory-실행" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">waitForStart</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isStopRequested</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">myTrajectory</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><code>drive.followTrajectory(myTrajectory)</code>는 생성된 경로(Trajectory)를 로봇이 따라가도록 명령합니다.</p>
+<hr>
+<h2 id="불연속한-경로-오류-path-continuity-exception">불연속한 경로 오류 (Path Continuity Exception)<a href="#불연속한-경로-오류-path-continuity-exception" class="anchor" aria-hidden="true">#</a> </h2>
+<p>다음과 같은 Trajectory를 실행하려고 할 때:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeRight</span><span class="p">(</span><span class="n">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>프로그램이 충돌하며 <code>PathContinuityException</code> 오류가 발생할 수 있습니다.
+이는 경로가 **연속적(continuous)**이지 않기 때문입니다.</p>
+<hr>
+<h3 id="불연속성-문제">불연속성 문제<a href="#불연속성-문제" class="anchor" aria-hidden="true">#</a> </h3>
+<p>모션 프로파일링 시스템에서는 경로가 연속적이어야 합니다.
+불연속적인 경로는 물리적으로 실현 불가능하며, 순간적인 속도나 가속도의 급격한 변화가 필요하기 때문입니다.</p>
+<p><strong>문제 예시</strong></p>
+<p>아래 경로에서 로봇이 핑크색 선을 따라 이동하다가 오른쪽으로 순간적으로 방향을 바꾸는 것은 불가능합니다.
+로봇은 여전히 위쪽으로의 관성(momentum)을 가지고 있기 때문에, 실제로는 호(arc)를 그리며 움직이게 됩니다.</p>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAwCdASoQABYAP1mKtkspJKKYBACTFYT0gGUAEUoJSRMgjL/2GKuUAP7eme5kDMnHAyeiBH7jb19&#43;c1TUvHTuhjsimRBR2KYv/MLRaBs5qKQALOePidenkx8qL9p&#43;mNbbSoEw52&#43;KU/QgRVgAAA=="
+        data-srcset="/images/trajectory-overview/continuity-error-bot-quarter_hu4119414603040321464.webp 375w"
+        data-sizes="auto"
+    src="/images/trajectory-overview/continuity-error-bot-quarter_hu9481204941019199890.jpg"
+    width="375"
+    height="525"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="불연속적인 경로"
+    class="lazyload blur-up"
+  ><figcaption>PathContinuityException 예시</figcaption>
+</figure>
+<hr>
+<h3 id="해결-방법"><strong>해결 방법</strong><a href="#해결-방법" class="anchor" aria-hidden="true">#</a> </h3>
+<h4 id="1-경로를-두-개의-trajectory로-나누기">1. 경로를 두 개의 Trajectory로 나누기<a href="#1-경로를-두-개의-trajectory로-나누기" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeRight</span><span class="p">(</span><span class="n">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">traj1</span><span class="p">.</span><span class="na">end</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj2</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>이 방법은 간단하지만, 각 Trajectory가 끝날 때 로봇이 멈추고 다시 시작해야 하므로 매끄럽지 않을 수 있습니다.</p>
+<h4 id="2-스플라인spline을-사용해-연속성-유지하기">2. 스플라인(Spline)을 사용해 연속성 유지하기<a href="#2-스플라인spline을-사용해-연속성-유지하기" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">),</span><span class="w"> </span><span class="n">heading</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">),</span><span class="w"> </span><span class="n">heading</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>스플라인은 경로를 매끄럽게 이어주는 방법으로, 로봇이 자연스럽게 움직일 수 있도록 합니다.
+스플라인 경로는 시뮬레이션 도구를 사용해 결과를 확인하는 것이 좋습니다.</p>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACQAwCdASoQABYAP1mKtkspJKKYBACTFYT0gAAt6b0XHc4Rw04AAP7eetWEzBkdpFwNfWwk&#43;yoIyG/MSGK4Ezl7VvE6&#43;j58bMnG02AE8c7Spu6adeXylqiHqS4w3Sta7Xrd4Av7sD9cAAAA"
+        data-srcset="/images/trajectory-overview/continuity-error-fix-bot-quarter_hu6861580436548576782.webp 375w"
+        data-sizes="auto"
+    src="/images/trajectory-overview/continuity-error-fix-bot-quarter_hu16328566465266592540.jpg"
+    width="375"
+    height="525"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="스플라인 경로"
+    class="lazyload blur-up"
+  ><figcaption>스플라인을 사용한 연속적인 경로</figcaption>
+</figure>
+<hr>
+<h2 id="pose-estimate-설정">Pose Estimate 설정<a href="#pose-estimate-설정" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>자신만의 Opmode를 실행하기 전에 반드시 이 작업을 수행하세요!</p>
+
+    </div>
+  </div>
+</div>
+
+<p>OpMode에서 Trajectory를 실행하기 전에,
+로컬라이저(Localizer)의 위치가
+모션 프로파일(Motion Profile)의 시작 위치와 일치해야 합니다.</p>
+<p>기본적으로 로컬라이저의 위치는 <code>x: 0, y: 0</code>으로 설정됩니다.
+하지만 사용자 정의 시작 Pose를 모션 프로파일에 정의한 경우,
+로컬라이저의 위치가 일치하지 않아 이상한 움직임이 발생할 수 있습니다.
+로봇이 예상치 못한 방향으로 움직이거나, 위치 PID 및 헤딩 PID가 이를 보정하려 시도하면서
+비정상적인 동작을 보일 수 있습니다.</p>
+<p>따라서 <strong>첫 번째 모션 프로파일의 시작 위치에 맞춰 <code>drive.setPoseEstimate(new Pose2d())</code>를 OpMode에 추가</strong>해야 합니다.</p>
+<p>예시:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">runOpMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">SampleMecanumDrive</span><span class="w"> </span><span class="n">drive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SampleMecanumDrive</span><span class="p">(</span><span class="n">hardwareMap</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// 로봇을 x: 10, y: -8, heading: 90도에서 시작하려고 합니다.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Pose2d</span><span class="w"> </span><span class="n">startPose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">8</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">setPoseEstimate</span><span class="p">(</span><span class="n">startPose</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">startPose</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">20</span><span class="p">,</span><span class="w"> </span><span class="n">9</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">45</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">traj1</span><span class="p">.</span><span class="na">end</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">20</span><span class="p">,</span><span class="w"> </span><span class="n">9</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">45</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><code>drive.setPoseEstimate()</code>는 첫 번째 Trajectory를 실행하기 전에 한 번만 호출하면 됩니다.</p>
+<hr>
+<h2 id="여러-trajectory-실행하기">여러 Trajectory 실행하기<a href="#여러-trajectory-실행하기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>로봇이 연속적인 경로를 따르도록 설정했더라도,
+두 번째 Trajectory를 실행해야 할 경우가 있습니다. Trajectory는 연속적인 움직임을 나타내며,
+로봇이 멈추거나 방향을 전환할 때 종료됩니다.</p>
+<p><strong>여러 Trajectory를 실행하는 방법:</strong></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeRight</span><span class="p">(</span><span class="n">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">traj1</span><span class="p">.</span><span class="na">end</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="n">6</span><span class="p">),</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">9</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">10</span><span class="p">),</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">traj2</span><span class="p">.</span><span class="na">end</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">5</span><span class="p">,</span><span class="w"> </span><span class="n">6</span><span class="p">),</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">9</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">10</span><span class="p">),</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">robot</span><span class="p">.</span><span class="na">dropServo</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj3</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>중요 사항:</strong></p>
+<ol>
+<li>Trajectory가 연속적으로 호출될 경우, 다음 Trajectory의 시작 Pose는 이전 Trajectory의 <code>end()</code> 값이어야 합니다.</li>
+<li><code>followTrajectory()</code>를 호출하기 전에 모든 Trajectory를 미리 생성하세요. Trajectory 생성에는 약간의 시간이 소요되므로, 실시간으로 생성하면 경로 간에 약간의 지연이 발생할 수 있습니다.</li>
+<li><code>robot.dropServo()</code>와 같은 함수는 Trajectory 실행 후 호출됩니다. 각 <code>drive.followTrajectory()</code> 함수는 동기적으로 실행되므로, 현재 Trajectory가 완료되기 전까지 다음 라인으로 진행되지 않습니다.</li>
+</ol>
+<hr>
+<h2 id="trajectory와-turn의-차이점">Trajectory와 Turn의 차이점<a href="#trajectory와-turn의-차이점" class="anchor" aria-hidden="true">#</a> </h2>
+<p><code>SampleMecanumDrive.java</code> 클래스는 <code>turn()</code> 함수를 지원하지만, 이 함수는 Road Runner의 핵심 기능이 아닙니다.
+단순히 회전을 위한 모션 프로파일이며, Trajectory 내에서 호출할 수 없습니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="o">-</span><span class="n">270</span><span class="p">));</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="후진하기">후진하기<a href="#후진하기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>로봇을 후진시키고 싶다면, <code>TrajectoryBuilder</code>에서 간단히 설정할 수 있습니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line hl"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">trajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(),</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">36</span><span class="p">,</span><span class="w"> </span><span class="n">36</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>위의 <code>true</code>는 로봇이 경로를 후진으로 따르도록 설정합니다.</p>
+<hr>
+<h2 id="turn-후-trajectory-실행">Turn 후 Trajectory 실행<a href="#turn-후-trajectory-실행" class="anchor" aria-hidden="true">#</a> </h2>
+<p><code>drive.turn()</code> 호출 후 Trajectory를 실행할 경우,
+이전 Trajectory의 <code>end()</code> 값이 현재 Pose와 일치하지 않을 수 있습니다.
+이를 해결하려면, 적절한 회전을 Trajectory 시작 Pose에 추가해야 합니다.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">startPose</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 90도 회전을 traj1.end() Pose에 추가</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w"></span><span class="n">Trajectory</span><span class="w"> </span><span class="n">traj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectoryBuilder</span><span class="p">(</span><span class="n">traj1</span><span class="p">.</span><span class="na">end</span><span class="p">().</span><span class="na">plus</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))),</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">strafeLeft</span><span class="p">(</span><span class="n">10</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">drive</span><span class="p">.</span><span class="na">followTrajectory</span><span class="p">(</span><span class="n">traj2</span><span class="p">);</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="trajectory-속도-줄이기">Trajectory 속도 줄이기<a href="#trajectory-속도-줄이기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Trajectory의 특정 구간에서 속도를 줄이고 싶다면 다음과 같이 설정합니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">30</span><span class="p">,</span><span class="w"> </span><span class="n">30</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">  </span><span class="n">SampleMecanumDrive</span><span class="p">.</span><span class="na">getVelocityConstraint</span><span class="p">(</span><span class="n">slowerVelocity</span><span class="p">,</span><span class="w"> </span><span class="n">DriveConstants</span><span class="p">.</span><span class="na">MAX_ANG_VEL</span><span class="p">,</span><span class="w"> </span><span class="n">DriveConstants</span><span class="p">.</span><span class="na">TRACK_WIDTH</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line hl"><span class="cl"><span class="w">  </span><span class="n">SampleMecanumDrive</span><span class="p">.</span><span class="na">getAccelerationConstraint</span><span class="p">(</span><span class="n">DriveConstants</span><span class="p">.</span><span class="na">MAX_ACCEL</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="좌표-시스템">좌표 시스템<a href="#좌표-시스템" class="anchor" aria-hidden="true">#</a> </h2>
+<p>FTC 좌표 시스템은 필드의 중심을 <code>(0, 0)</code>으로 설정합니다.</p>
+<ul>
+<li><strong>X축:</strong> Red Alliance Station과 평행하며, 오른쪽으로 증가합니다.</li>
+<li><strong>Y축:</strong> Red Alliance Station과 수직이며, 필드 안쪽으로 증가합니다.</li>
+</ul>
+<p>아래 이미지는 2019/20 Skystone 필드의 좌표 시스템을 보여줍니다.</p>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQABAAAph8J7AAApwo0jwAAP7v4w7IEYVsqSU1FVXFIsCIavxgC&#43;hTBiyLRuRxh7uZ7b641BjFPDYGp4oKUZ3lwAA="
+        data-srcset="/images/trajectory-overview/field-w-axes-half_hu466199335709107565.webp 480w,/images/trajectory-overview/field-w-axes-half_hu15898619804525075549.webp 576w,/images/trajectory-overview/field-w-axes-half_hu11737811808478586101.webp 768w,/images/trajectory-overview/field-w-axes-half_hu11645645078382946496.webp 800w"
+        data-sizes="auto"
+    src="/images/trajectory-overview/field-w-axes-half_hu8986706604260877862.jpg"
+    width="800"
+    height="802"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="2019/20 Skystone 필드 좌표 시스템"
+    class="lazyload blur-up"
+  ><figcaption>2019/20 Skystone 필드 좌표 시스템</figcaption>
+</figure>
+<p>이 좌표 시스템의 명세는 <a href="https://github.com/ftctechnh/ftc_app/files/989938/FTC_FieldCoordinateSystemDefinition.pdf">여기</a>에서 확인할 수 있습니다.</p>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">

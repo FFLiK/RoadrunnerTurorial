@@ -20,7 +20,7 @@
 
 
 <title>데드 휠 설정 (Dead Wheels)  |  Roadrunner Tutorial</title>
-<meta name="description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+<meta name="description" content="Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
 
     
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -50,7 +50,7 @@
 <meta property="og:url" content="http://localhost:1313/docs/4-tuning/%EB%8D%B0%EB%93%9C-%ED%9C%A0-%EC%84%A4%EC%A0%95-dead-wheels/">
   <meta property="og:site_name" content="Roadrunner Tutorial">
   <meta property="og:title" content="데드 휠 설정 (Dead Wheels)">
-  <meta property="og:description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+  <meta property="og:description" content="Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
   <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -61,7 +61,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
   <meta name="twitter:title" content="데드 휠 설정 (Dead Wheels)">
-  <meta name="twitter:description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+  <meta name="twitter:description" content="Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
 
     
     
@@ -154,7 +154,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -254,7 +254,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -343,7 +343,7 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
-                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
+                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
               </li>
             </ul>
 
@@ -449,7 +449,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -549,7 +549,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -1332,9 +1332,9 @@ FTC Skystone 시즌(2019-2020) 동안, 4~5개의 돌을 옮기는 자율 주행 
 <p>문제가 발생하면 문제 해결(Troubleshooting) 섹션을 참고하세요.</p>
 <hr>
 <h3 id="조율-tuning---오도메트리-세-개를-사용하는-경우-three-wheel-odometry">조율 (Tuning) - 오도메트리 세 개를 사용하는 경우 (Three-Wheel Odometry)<a href="#조율-tuning---오도메트리-세-개를-사용하는-경우-three-wheel-odometry" class="anchor" aria-hidden="true">#</a> </h3>
-<p>데드 휠의 튜닝은 매우 중요합니다.
+<p>데드 휠의 조율은 매우 중요합니다.
 이는 Road Runner뿐만 아니라 FTCLib 또는 직접 제작한 경로 추적 시스템에도 적용됩니다.
-정확한 튜닝은 위치 및 거리 측정에서 발생하는 오류를 최소화하여 자율 주행 시 성능을 크게 향상시킬 수 있습니다.</p>
+정확한 조율은 위치 및 거리 측정에서 발생하는 오류를 최소화하여 자율 주행 시 성능을 크게 향상시킬 수 있습니다.</p>
 <hr>
 <h3 id="바퀴-반지름-조정-1">바퀴 반지름 조정<a href="#바퀴-반지름-조정-1" class="anchor" aria-hidden="true">#</a> </h3>
 <div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">

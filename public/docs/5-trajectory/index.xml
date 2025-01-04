@@ -14,28 +14,28 @@
       <link>http://localhost:1313/docs/5-trajectory/%EA%B0%9C%EC%9A%94/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
       <guid>http://localhost:1313/docs/5-trajectory/%EA%B0%9C%EC%9A%94/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;trajectory와-path의-차이점&#34;&gt;Trajectory와 Path의 차이점&lt;/h2&gt;&#xA;&lt;p&gt;Road Runner는 경로를 구성하기 위한 &lt;strong&gt;Path&lt;/strong&gt;와 &lt;strong&gt;Trajectory&lt;/strong&gt; 두 가지 데이터 구조를 제공합니다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Paths&lt;/strong&gt; : 사용자가 정의한 웨이포인트를 기반으로 생성된 전체 경로를 단순히 저장합니다. 이 경로는 직선일 수도 있고, 부드러운 스플라인(splines)일 수도 있습니다.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Trajectories&lt;/strong&gt; : Path에 &lt;strong&gt;모션 프로파일링&lt;/strong&gt;을 추가한 구조입니다. 즉, Trajectories는 로봇이 경로를 따라가면서 속도, 가속도, 각가속도 등을 제어할 수 있도록 합니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;현재 Road Runner는 홀로노믹 드라이브(holonomic drive)를 위한 경로 추적(path following)을 기본 제공하지 않습니다.&#xA;대신, 탱크 드라이브(tank drive)를 위한 Ramsete 경로 추적을 포함하고 있습니다.&lt;br&gt;&#xA;홀로노믹 드라이브를 지원하기 위해 벡터 필드 기반의 경로 추적 기능이 추가될 예정입니다.&#xA;자세한 내용은 &lt;a href=&#34;https://discord.gg/first-tech-challenge&#34;&gt;FTC Discord&lt;/a&gt;를 참고하세요.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TrajectoryBuilder 함수 목록</title>
       <link>http://localhost:1313/docs/5-trajectory/trajectorybuilder-%ED%95%A8%EC%88%98-%EB%AA%A9%EB%A1%9D/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
       <guid>http://localhost:1313/docs/5-trajectory/trajectorybuilder-%ED%95%A8%EC%88%98-%EB%AA%A9%EB%A1%9D/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;strong&gt;TrajectoryBuilder&lt;/strong&gt; 함수 목록은 Road Runner에서 로봇 경로를 정의하고&#xA;커스터마이징하기 위한 다양한 메소드를 제공합니다.&#xA;아래는 주요 함수와 사용 사례의 요약입니다:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;기본-직선-이동&#34;&gt;&lt;strong&gt;기본 직선 이동&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;forward(distance: Double)&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>메이터 (Maker) 가이드</title>
-      <link>http://localhost:1313/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</link>
+      <title>마커 (Maker) 가이드</title>
+      <link>http://localhost:1313/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</guid>
-      <description></description>
+      <guid>http://localhost:1313/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/</guid>
+      <description>&lt;p&gt;Trajectory를 다룰 줄 알게 되었다면, 이제 로봇 대회에서 승리하기 위해 한 단계 더 나아가야 합니다.&#xA;물론 정확한 자율 주행만으로도 높은 점수에 가까워질 수 있지만,&#xA;단순히 로봇이 주행하는 것만으로는 충분하지 않습니다.&#xA;모터를 켜고, 서보를 작동시키고, 다양한 요소와 상호작용해야 합니다. 그렇다면 이는 어떻게 구현할 수 있을까요?&lt;/p&gt;</description>
     </item>
     <item>
       <title>경로 서열 정하기 (Trajectory Sequence)</title>
       <link>http://localhost:1313/docs/5-trajectory/%EA%B2%BD%EB%A1%9C-%EC%84%9C%EC%97%B4-%EC%A0%95%ED%95%98%EA%B8%B0-trajectory-sequence/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
       <guid>http://localhost:1313/docs/5-trajectory/%EA%B2%BD%EB%A1%9C-%EC%84%9C%EC%97%B4-%EC%A0%95%ED%95%98%EA%B8%B0-trajectory-sequence/</guid>
-      <description></description>
+      <description>&lt;p&gt;2021년 5월 6일 기준,&#xA;&lt;a href=&#34;https://github.com/acmerobotics/road-runner-quickstart/tree/quickstart1&#34;&gt;Road Runner quickstart&lt;/a&gt;에는&#xA;&amp;ldquo;trajectory sequences&amp;quot;라는 유틸리티가 포함되어 있습니다.&lt;/p&gt;&#xA;&lt;p&gt;경로 서열(Trajectory Sequences)는 여러 경로를 하나로 이어붙이며,&#xA;자동으로 &lt;a href=&#34;http://localhost:1313/trajectories.html#path-continuity-exception&#34;&gt;경로 연속성 예외&lt;/a&gt;를 처리합니다.&#xA;또한, 회전(Turn) 및 대기(Wait)를 &amp;ldquo;1급(First-class)&amp;rdquo; 동작으로 전환합니다(최소한 Quickstart 내에서는).&#xA;이를 통해 여러 개의 서로 다른 Trajectory로 나누지 않고 하나의 경로 서열로 전체 자율 주행 경로를 실행할 수 있습니다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

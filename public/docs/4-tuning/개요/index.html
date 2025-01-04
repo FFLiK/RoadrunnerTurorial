@@ -20,7 +20,7 @@
 
 
 <title>개요  |  Roadrunner Tutorial</title>
-<meta name="description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+<meta name="description" content="Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
 
     
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -50,7 +50,7 @@
 <meta property="og:url" content="http://localhost:1313/docs/4-tuning/%EA%B0%9C%EC%9A%94/">
   <meta property="og:site_name" content="Roadrunner Tutorial">
   <meta property="og:title" content="개요">
-  <meta property="og:description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+  <meta property="og:description" content="Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
   <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -61,7 +61,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
   <meta name="twitter:title" content="개요">
-  <meta name="twitter:description" content="로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
+  <meta name="twitter:description" content="Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다.">
 
     
     
@@ -154,7 +154,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -254,7 +254,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -343,7 +343,7 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
-                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
+                <a class="nav-link active" href="http://localhost:1313/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/" aria-current="true">Docs</a>
               </li>
             </ul>
 
@@ -449,7 +449,7 @@
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/1-about-roadrunner/%EB%A1%9C%EB%93%9C%EB%9F%AC%EB%84%88%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">로드러너에 대하여</a>
+      <a href="/docs/1-about-roadrunner/road-runner%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/">Road Runner에 대하여</a>
   </li>
 
   <li>
@@ -549,7 +549,7 @@
   </li>
 
   <li>
-      <a href="/docs/5-trajectory/%EB%A9%94%EC%9D%B4%ED%84%B0-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">메이터 (Maker) 가이드</a>
+      <a href="/docs/5-trajectory/%EB%A7%88%EC%BB%A4-maker-%EA%B0%80%EC%9D%B4%EB%93%9C/">마커 (Maker) 가이드</a>
   </li>
 
   <li>
@@ -849,7 +849,7 @@ PIDF 계수를 최적화하여 일관된 동작을 보장하는 것이 중요합
 PIDF 계수는 로봇의 무게에 영향을 미치는 주요 변경 사항 이후에 반드시 조정해야 합니다.</p>
 <p>주행 속도 PID 조율 과정은 <a href="../%ec%a3%bc%ed%96%89-%ec%86%8d%eb%8f%84-pid-%ec%a1%b0%ec%9c%a8-driving-velocity-pid-tuner">주행 속도 PID Tuning 페이지</a>에 자세히 설명되어 있습니다.
 PIDF 값을 조정하여 원하는 동작을 얻을 수 있습니다.<br>
-공식 Roadrunner 문서에서는 &ldquo;약간의 진동이 발생하더라도 위상 지연을 제거하는 것을 우선시하라&quot;고 권장하지만,
+공식 Road Runner 문서에서는 &ldquo;약간의 진동이 발생하더라도 위상 지연을 제거하는 것을 우선시하라&quot;고 권장하지만,
 개인적으로는 특히 정지 상태에서 진동을 최소화하는 것이 더 낫다고 생각합니다.<br>
 위상 지연을 제거하면 고속에서 매우 불안정한 동작을 유발할 수 있습니다.
 이는 Rev Hub의 모터 제어 방식 때문일 가능성이 높습니다.<br>

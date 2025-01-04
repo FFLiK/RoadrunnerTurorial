@@ -1,6 +1,6 @@
 ---
 title: "드라이브 상수 설정 (Drive Constant)"
-description: "로드러너를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다."
+description: "Road Runner를 사용하기 전 로봇에 맞게 시스템을 조율하는 방법을 다룹니다."
 summary: ""
 date: 2023-09-07T16:04:48+02:00
 lastmod: 2023-09-07T16:04:48+02:00
@@ -171,7 +171,7 @@ src="images/drive-constants/wes-bot-edit-half.jpg"
 alt="트랙 폭은 한쪽 바퀴의 중심에서 다른 쪽 바퀴의 중심까지의 거리입니다."
 caption="2019/20 Skystone 시즌의 3658 Bosons 로봇"
 >}}
->
+
 
 ---
 
