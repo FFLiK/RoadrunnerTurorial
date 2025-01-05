@@ -19,7 +19,7 @@ seo:
 
 ##### Developers / 제작자
 - **[FFLiK](https://github.com/FFLiK)**     
-  <small> 25309 TALOS / KSA 22 </small>
+  <small> 25309 TALOS Programmer / KSA 22 </small>
 
 <small>
 이 웹사이트는 웹사이트 제작 엔진 <a href="https://github.com/thuliteio/thulite">Thulite</a>를 사용한 
@@ -59,6 +59,6 @@ Special thanks to NoahBres and other contributors of Learn Roadrunner.
 ---
 
 ### License / 라이센스
-<small> 이 웹사이트는 <a href="https://github.com/FFLiK/RoadrunnerTurorial/blob/main/LICENSE">MIT 라이선스</a>를 따릅니다. <br> 번역 오류 및 수정 사항, 혹은 건의 사항에 대한 모든 PR를 환영합니다.</small>
+<small> 이 웹사이트는 <a href="https://github.com/FFLiK/RoadrunnerTurorial/blob/main/LICENSE">MIT 라이센스</a>를 따릅니다. <br> 번역 오류 및 수정 사항, 혹은 건의 사항에 대한 모든 PR을 환영합니다.</small>
 
 <small> This website is licensed under the <a href="https://github.com/FFLiK/RoadrunnerTurorial/blob/main/LICENSE">MIT License</a>. <br> All PRs (Pull Requests) regarding translation errors, corrections, or suggestions are welcome.</small>

@@ -150,7 +150,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -445,7 +445,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -614,7 +614,18 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#주행-속도-pid-조율-drive-velocity-pid-tuning를-사용하지-않는-이유">주행 속도 PID 조율 (Drive Velocity PID Tuning)를 사용하지 않는 이유</a></li>
+    <li><a href="#drivevelocitypid-튜닝">DriveVelocityPID 튜닝</a></li>
+    <li><a href="#조율-과정-tuning">조율 과정 (Tuning)</a></li>
+    <li><a href="#문제-해결-troubleshooting">문제 해결 (Troubleshooting)</a></li>
+    <li><a href="#pid-튜닝-시뮬레이터">PID 튜닝 시뮬레이터</a></li>
+    <li><a href="#pid-컨트롤러-학습-자료">PID 컨트롤러 학습 자료</a></li>
+    <li><a href="#임시-비디오">임시 비디오</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,12 +634,389 @@
 			<h1>주행 속도 PID 조율 (Driving Velocity PID Tuner)</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
-			</nav>
-			
-<img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-0" src="/_8381636580440980473.svg"><p>현재 단계는 <strong>주행 피드포워드 조율</strong> 단계입니다.</p>
-<p>이 내용은 추후에 추가합니다.</p>
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#주행-속도-pid-조율-drive-velocity-pid-tuning를-사용하지-않는-이유">주행 속도 PID 조율 (Drive Velocity PID Tuning)를 사용하지 않는 이유</a></li>
+    <li><a href="#drivevelocitypid-튜닝">DriveVelocityPID 튜닝</a></li>
+    <li><a href="#조율-과정-tuning">조율 과정 (Tuning)</a></li>
+    <li><a href="#문제-해결-troubleshooting">문제 해결 (Troubleshooting)</a></li>
+    <li><a href="#pid-튜닝-시뮬레이터">PID 튜닝 시뮬레이터</a></li>
+    <li><a href="#pid-컨트롤러-학습-자료">PID 컨트롤러 학습 자료</a></li>
+    <li><a href="#임시-비디오">임시 비디오</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
 
+			</nav>
+			<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 페이지는 <strong>특별한 목적이 있는 경우를 제외하고는 사용하지 않는 것이 좋습니다</strong>.
+주행 속도 PID 조율 (Drive Velocity PID Tuning)은 <em><strong>로봇에서 사용하지 않는 것을 권장합니다</strong></em>.
+대신 <a href="../%ec%a3%bc%ed%96%89-%ed%94%bc%eb%93%9c%ed%8f%ac%ec%9b%8c%eb%93%9c-%ec%a1%b0%ec%9c%a8-driving-feedforward-tuner">Feedforward 제어</a>를 사용하세요.</p>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+<h2 id="주행-속도-pid-조율-drive-velocity-pid-tuning를-사용하지-않는-이유">주행 속도 PID 조율 (Drive Velocity PID Tuning)를 사용하지 않는 이유<a href="#주행-속도-pid-조율-drive-velocity-pid-tuning를-사용하지-않는-이유" class="anchor" aria-hidden="true">#</a> </h2>
+<p>주행 속도 PID 조율은 SDK의 내부 PID 컨트롤러를 사용하므로, 튜닝 과정이 매우 까다롭습니다.
+이 방법으로도 좋은 결과를 얻을 수 있지만, <a href="../%ec%a3%bc%ed%96%89-%ed%94%bc%eb%93%9c%ed%8f%ac%ec%9b%8c%eb%93%9c-%ec%a1%b0%ec%9c%a8-driving-feedforward-tuner">Feedforward</a>를 사용하는 것이
+훨씬 더 간단하며 동일한 정확도를 얻을 수 있습니다.
+DriveVelocityControl은 특히 방향 및 팔로워 PID를 통합할 때 수정할 수 없는 진동을 유발할 수 있으며,
+문제가 없더라도 튜닝에 더 많은 시간이 걸리는 경우가 많습니다.</p>
+<hr>
+<h2 id="drivevelocitypid-튜닝">DriveVelocityPID 튜닝<a href="#drivevelocitypid-튜닝" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>경고</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 섹션은 엔코더를 사용하지 않도록 선택한 경우 생략해야 합니다.</p>
+
+    </div>
+  </div>
+</div>
+
+
+<img alt="diagram" class="diagram diagram-kroki diagram-kroki-plantuml" id="h-rh-cb-kroki-0" src="/_8381636580440980473.svg"><p>현재 단계는 <strong>주행 피드포워드 조율</strong> 단계입니다.</p>
+<p>속도 PID 튜닝은 Road Runner에서 가장 까다로운 작업 중 하나일 수 있습니다.
+이는 정확한 경로 추적을 위해 필요합니다.
+하지만 PID 컨트롤러의 작동 원리에 대한 직관과 수행 방법을 이해하면 이러한 좌절감을 완화하고
+과정을 더 원활하게 진행할 수 있습니다.</p>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>팁</p>
+
+      </div>
+    <div class="callout-body">
+      <ul>
+<li>Xbox 및 Logitech 게임패드에서는 <strong>X 버튼</strong>을, PS4 DualShock에서는 <strong>□ 버튼</strong>을 눌러 튜닝 과정을 일시 중지하고 드라이버 제어로 전환할 수 있습니다.</li>
+<li>Xbox 및 Logitech 게임패드에서는 <strong>A 버튼</strong>을, PS4 DualShock에서는 <strong>X 버튼</strong>을 눌러 튜너에게 제어권을 다시 넘길 수 있습니다.</li>
+<li>로봇이 경로를 벗어나면 드라이버 제어로 전환하여 로봇을 초기 위치로 되돌리세요.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+<h2 id="조율-과정-tuning">조율 과정 (Tuning)<a href="#조율-과정-tuning" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li><strong>조율을 시작하기 전</strong></li>
+</ol>
+<ul>
+<li>RC 폰을 시작하고 Dashboard를 엽니다.</li>
+<li>RC 폰의 Wi-Fi 네트워크에 연결합니다. 네트워크 비밀번호는 <code>Program and Manage</code> 메뉴에서 확인할 수 있습니다.</li>
+</ul>
+<ol start="2">
+<li><strong>Dashboard 접속</strong></li>
+</ol>
+<ul>
+<li>RC 폰을 사용하는 경우, 브라우저에서 <code>192.168.49.1:8080/dash</code>로 이동하세요.</li>
+<li>Control Hub를 사용하는 경우, <code>192.168.43.1:8080/dash</code>로 이동하세요.</li>
+</ul>
+<ol start="3">
+<li><strong><code>MaxVelocityTuner</code> 실행</strong></li>
+</ol>
+<ul>
+<li>Velocity PID 튜닝을 시작하기 전에 <code>MaxVelocityTuner</code>를 실행해 경험적 <code>kF</code> 값과 최대 속도를 측정합니다.</li>
+<li><code>MaxVelocityTuner</code>는 지정된 <code>RUNTIME</code> 동안 최대 속도로 실행됩니다. 기본값은 <strong>2초</strong>입니다. 충분한 공간이 확보되었는지 확인하세요. <code>RUNTIME</code>은 코드나 Dashboard에서 조정할 수 있습니다.</li>
+</ul>
+<ol start="4">
+<li><strong><code>MaxVelocityTuner</code> 결과 확인</strong></li>
+</ol>
+<ul>
+<li>실행 후 &ldquo;Max Velocity&rdquo; 값과 &ldquo;Voltage Compensated kF&rdquo; 값이 출력됩니다.
+<ul>
+<li>&ldquo;Max Velocity&quot;는 로봇이 최대 부하와 배터리 수준에서 이동할 수 있는 최대 속도입니다. 이 값을 <code>DriveConstants</code>의 <code>MAX_VEL</code>로 설정하세요. 약간의 여유를 두기 위해 90-95% 값을 추천합니다.</li>
+<li>&ldquo;Voltage Compensated kF&rdquo; 값을 기록하세요.</li>
+</ul>
+</li>
+<li>만약 로봇이 원을 그리며 회전한다면, 드라이브 트레인의 모터 방향 설정이 잘못되었습니다. <a href="../%eb%93%9c%eb%9d%bc%ec%9d%b4%eb%b8%8c-%ec%83%81%ec%88%98-%ec%84%a4%ec%a0%95-drive-constant/">여기</a>를 참조하세요.</li>
+</ul>
+<ol start="5">
+<li><strong>Dashboard 설정</strong></li>
+</ol>
+<ul>
+<li>Dashboard 오른쪽의 <code>DriveConstants</code> 드롭다운에서 <code>MOTOR_VELO_PID</code>를 열고 <code>f</code> 필드에 &ldquo;Voltage Compensated kF&rdquo; 값을 입력합니다.</li>
+</ul>
+<ol start="6">
+<li><strong><code>DriveVelocityPIDTuner</code> 실행</strong></li>
+</ol>
+<ul>
+<li>로봇이 지정된 거리(기본값: 72인치)를 반복적으로 직선 이동합니다.</li>
+<li>충분한 공간(최소 72인치 + 1피트)을 확보하세요. 공간이 부족하다면 Dashboard 또는 파일에서 <code>DISTANCE</code> 값을 조정하세요.</li>
+<li>로봇이 직선에서 벗어나더라도 걱정하지 마세요. 나중에 헤딩 PID가 이를 보정합니다.</li>
+</ul>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAQCdASoQAAkAAph8J4wCw7EO&#43;CRGAAD&#43;56iu4ZJ24K0msfECJF8QG8VgAA=="
+        data-srcset="/images/drive-velocity-pid-tuning/example-dashboard-half_hu16244632345407602626.webp 480w,/images/drive-velocity-pid-tuning/example-dashboard-half_hu14440355723549704688.webp 576w,/images/drive-velocity-pid-tuning/example-dashboard-half_hu10745332758872196376.webp 768w,/images/drive-velocity-pid-tuning/example-dashboard-half_hu17178489266106456339.webp 961w"
+        data-sizes="auto"
+    src="/images/drive-velocity-pid-tuning/example-dashboard-half_hu2542359954024793777.jpg"
+    width="961"
+    height="515"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="브라우저에서 FTC 대시보드를 보여주는 이미지"
+    class="lazyload blur-up"
+  ><figcaption>예제 대시보드 (그래프 내용은 무시하세요. 이는 페이지 레이아웃의 예시일 뿐입니다.)</figcaption>
+</figure>
+<ol start="7">
+<li><strong>그래프 설정</strong></li>
+</ol>
+<ul>
+<li>프로그램 실행 후 Dashboard에서 그래프 버튼을 클릭하세요. 그래프가 표시되지 않고 체크박스가 나타나면 <code>targetVelocity</code>와 <code>velocity0</code> 체크박스를 활성화하세요.</li>
+</ul>
+<ol start="8">
+<li><strong><code>DISTANCE</code> 조정</strong></li>
+</ol>
+<ul>
+<li>그래프의 <code>targetVelocity</code> 선이 평평한 구간(Plateau)을 가지도록 <code>DISTANCE</code> 값을 조정하세요.</li>
+</ul>
+<ol start="9">
+<li><strong>PIDF 값 튜닝</strong></li>
+</ol>
+<ul>
+<li><code>velocity0</code> 그래프가 <code>targetVelocity</code> 선과 일치하도록 PIDF 값을 조정합니다.</li>
+</ul>
+<ol start="10">
+<li>
+<p><strong>튜닝 절차</strong></p>
+</li>
+<li>
+<p>모든 PID 값을 0으로 설정하고, <code>f</code>는 <code>MaxVelocityTuner</code>에서 얻은 값으로 설정합니다.</p>
+</li>
+<li>
+<p><code>velocity0</code>이 <code>targetVelocity</code>의 꼭대기에 도달하도록 <code>kF</code> 값을 조정합니다.</p>
+</li>
+<li>
+<p><code>p</code> 값을 서서히 증가시켜 그래프의 경사(slope)가 <code>targetVelocity</code>와 일치하도록 합니다.</p>
+</li>
+<li>
+<p><code>d</code> 값을 소량 조정하여 진동을 줄입니다.</p>
+</li>
+<li>
+<p><code>i</code> 값은 사용하지 않는 것이 좋습니다. 필요하다면 <code>f</code> 값을 증가시키세요.</p>
+</li>
+<li>
+<p>튜닝 후 Dashboard에서 설정한 값을 <code>DriveConstants.java</code> 파일에 복사하세요. Dashboard 설정은 임시로 저장되므로, 이를 잊지 마세요.</p>
+</li>
+<li>
+<p><strong>추가 팁</strong></p>
+</li>
+</ol>
+<ul>
+<li>진동을 최소화하는 것을 우선시하세요.</li>
+<li>완벽한 튜닝은 불가능하므로, 일정 수준의 편차를 허용하세요.</li>
+<li>튜닝 시뮬레이터를 활용해 각 PIDF 값이 동작에 미치는 영향을 확인하세요.</li>
+</ul>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>팁</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Velocity PID 컨트롤러에서는 <code>kD</code>가 반드시 필요한 것은 아니지만, FTC 로봇에서는 피드포워드와 모터 컨트롤러 특성 때문에 유용할 수 있습니다.<br>
+<code>i</code> 값을 사용하는 대신 <code>f</code> 값을 조정하는 것이 더 효과적입니다.</p>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+<h2 id="문제-해결-troubleshooting">문제 해결 (Troubleshooting)<a href="#문제-해결-troubleshooting" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>
+<p><strong><code>MaxVelocityTuner</code>가 뒤로 움직이는 경우</strong></p>
+<ul>
+<li>휠의 방향이 올바르게 설정되었는지 확인하세요. 디버깅 시 <a href="/drive-constants.html#samplemecanumdrive-motor-direction">goBILDA 메카넘 차트</a>를 참고하세요.</li>
+</ul>
+</li>
+<li>
+<p><strong>속도 선 중 하나가 <code>targetVelocity</code>와 반대로 움직이는 경우</strong></p>
+<ul>
+<li>모터의 극성이 잘못되었습니다. 인코더가 모터의 실제 회전 방향과 다르게 읽고 있습니다.
+<ul>
+<li>모터의 빨간색과 검은색 케이블을 교체하세요.</li>
+<li>또는 <code>SampleMecanumDrive</code>에서 인코더 값을 -1로 곱하세요.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>StraightTest</code> 또는 <code>DriveVelocityPID</code>가 계속 과도하게 움직이고 <code>DriveConstants.java</code> 변수 조정이 효과가 없는 경우</strong></p>
+<ul>
+<li><code>DriveConstants.java</code>에서 <code>MAX_VEL</code> 값을 낮춰보세요. 문제를 확인하기 위해 처음에는 아주 낮은 값으로 설정하세요.</li>
+</ul>
+</li>
+<li>
+<p><strong>기타 모터 방향 문제</strong></p>
+<ul>
+<li><a href="/drive-constants.html#samplemecanumdrive-motor-direction">모터 방향 설정</a>을 참조하세요.</li>
+<li>모터 설정 디버깅에 어려움이 있다면 <a href="https://github.com/acmerobotics/road-runner-quickstart/blob/quickstart1/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/MotorDirectionDebugger.java">Motor Direction Debugger opmode</a>를 사용하세요.
+<ul>
+<li>파일에서 <code>41</code>번째 줄의 <code>@Disabled</code>를 제거한 후, opmode 주석에 따라 실행하세요.</li>
+<li>각 모터를 하나씩 실행하여 문제를 진단하고 적절히 수정하세요.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="pid-튜닝-시뮬레이터">PID 튜닝 시뮬레이터<a href="#pid-튜닝-시뮬레이터" class="anchor" aria-hidden="true">#</a> </h2>
+<p>현재 이 웹사이트에서는 시뮬레이터를 직접적으로 지원하지 않습니다.
+대신, 아래 버튼을 클릭하여 시뮬레이터를 이용해볼 수 있습니다.</p>
+<p><a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="https://learnroadrunner.com/drive-velocity-pid-tuning.html#pid-tuning-simulator" role="button">시뮬레이션 바로가기</a></p>
+<p><strong>튜닝 예제</strong></p>
+<ul>
+<li>게인 값을 조정하며 그래프가 어떻게 변하는지 확인하세요.</li>
+<li>이 그래프는 실제 로봇 튜닝 시와 매우 유사하므로 사전에 이해를 돕는 데 유용합니다.</li>
+<li>새 게인 값을 입력한 후 <strong>Enter 키</strong>를 눌러 적용하세요.</li>
+</ul>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>팁</p>
+
+      </div>
+    <div class="callout-body">
+      <p>이 시뮬레이터는 매우 기본적인 수준의 &ldquo;시뮬레이터&quot;입니다.</p>
+<ul>
+<li>Rev Hub 모터 컨트롤러를 정확히 시뮬레이션하지는 않으며, 단순한 DC 모터 모델을 기반으로 동작합니다.</li>
+<li>실제 튜닝과 다를 수 있지만 기본적인 동작 원리를 이해하는 데 유용합니다.</li>
+<li>시뮬레이터의 <code>kF</code> 값은 매우 효과적이지만, 실제 로봇에서는 Rev Hub 모터 컨트롤러 특성 때문에 효과가 덜할 수 있습니다.</li>
+<li>버그가 있을 수 있으니, 문제가 발생하면 &ldquo;Reset&rdquo; 버튼을 사용하세요.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+<h2 id="pid-컨트롤러-학습-자료">PID 컨트롤러 학습 자료<a href="#pid-컨트롤러-학습-자료" class="anchor" aria-hidden="true">#</a> </h2>
+<p><strong>추천 영상</strong><br>
+PID 컨트롤러의 직관적인 이해를 돕는 몇 가지 좋은 영상입니다.</p>
+<ul>
+<li>첫 번째 영상은 초반 3-4분을 건너뛰고, 각 게인의 동작을 설명하는 후반부를 참고하세요.</li>
+<li>두 번째와 세 번째 영상도 게인의 동작을 설명합니다.</li>
+</ul>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=XfAt6hNV8XM">PID Control Explained</a></li>
+<li><a href="https://www.youtube.com/watch?v=6OH-wOsVVjg">Understanding PID Control</a></li>
+<li><a href="https://www.youtube.com/watch?v=0vqWyramGy8">PID Tuning Basics</a></li>
+</ol>
+<p><strong>추가 읽기 자료</strong></p>
+<ul>
+<li><a href="https://blog.wesleyac.com/posts/intro-to-control-part-one-pid">Intro to Control: Part One - PID</a></li>
+</ul>
+<hr>
+<h2 id="임시-비디오">임시 비디오<a href="#임시-비디오" class="anchor" aria-hidden="true">#</a> </h2>
+<p>편집된 영상이 준비되기 전 임시로 제공되는 비디오입니다. 화질은 좋지 않지만 도움이 될 수 있습니다.</p>
+<div class="flex justify-center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/2UkeLsQuCOw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
@@ -683,7 +1071,7 @@
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li><li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">

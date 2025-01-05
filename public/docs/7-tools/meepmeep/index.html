@@ -150,7 +150,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -445,7 +445,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -614,7 +614,25 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#개요">개요</a>
+      <ul>
+        <li><a href="#meepmeep의-기능들">MeepMeep의 기능들:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#설치-방법">설치 방법</a></li>
+    <li><a href="#사용-방법">사용 방법</a></li>
+    <li><a href="#다중-봇-추가하기">다중 봇 추가하기</a></li>
+    <li><a href="#사용-가능한-필드-이미지">사용 가능한 필드 이미지</a></li>
+    <li><a href="#사용자-정의-색상-테마-만들기">사용자 정의 색상 테마 만들기</a></li>
+    <li><a href="#사용자-정의-엔티티-추가">사용자 정의 엔티티 추가</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +641,211 @@
 			<h1>MeepMeep</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#개요">개요</a>
+      <ul>
+        <li><a href="#meepmeep의-기능들">MeepMeep의 기능들:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#설치-방법">설치 방법</a></li>
+    <li><a href="#사용-방법">사용 방법</a></li>
+    <li><a href="#다중-봇-추가하기">다중 봇 추가하기</a></li>
+    <li><a href="#사용-가능한-필드-이미지">사용 가능한 필드 이미지</a></li>
+    <li><a href="#사용자-정의-색상-테마-만들기">사용자 정의 색상 테마 만들기</a></li>
+    <li><a href="#사용자-정의-엔티티-추가">사용자 정의 엔티티 추가</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
-			
+			<h2 id="개요">개요<a href="#개요" class="anchor" aria-hidden="true">#</a> </h2>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoQAAgAAph8J5wC7AEVjbpE65QAAP7ZN72yk2JfjCeK3nAmmLV7uxI6hgAwjMpuOaCAAA=="
+        data-srcset="/images/tools/meepmeep-half-compressed_hu5373179298104281157.webp 480w,/images/tools/meepmeep-half-compressed_hu18134599536546129.webp 576w,/images/tools/meepmeep-half-compressed_hu1753677762979794587.webp 768w,/images/tools/meepmeep-half-compressed_hu13307085915505785444.webp 1025w,/images/tools/meepmeep-half-compressed_hu2323883879628139220.webp 1200w,/images/tools/meepmeep-half-compressed_hu11817789698136829004.webp 1440w,/images/tools/meepmeep-half-compressed_hu11616499022062982380.webp 1692w"
+        data-sizes="auto"
+    src="/images/tools/meepmeep-half-compressed_hu14159671817007263713.jpg"
+    width="1692"
+    height="885"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="MeepMeep의 스크린샷"
+    class="lazyload blur-up"
+  ><figcaption>MeepMeep</figcaption>
+</figure>
+<p>이 글을 작성하는 시점에서 MeepMeep은 Road Runner를 위한 가장 기능이 풍부한 경로 시각화 도구입니다.
+MeepMeep은 객관적으로 가장 많은 기능을 지원하며,
+<code>TrajectorySequence</code> API와 마커를 지원하는 유일한 시각화 도구입니다.</p>
+<p>LearnRoadRunner에서 사용된 모든 스크린샷과 gif는 MeepMeep으로 생성되었습니다.</p>
+<h3 id="meepmeep의-기능들">MeepMeep의 기능들:<a href="#meepmeep의-기능들" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li><strong>마커 시각화</strong></li>
+<li><strong>타임라인 스크러빙</strong></li>
+<li><strong><code>TrajectorySequence</code> 지원</strong></li>
+<li><strong>커스터마이징 가능한 GUI</strong>
+<ul>
+<li>필드 이미지, 색상 테마 등을 변경 가능</li>
+<li>개발 중인 드래그 앤 드롭 경로 생성기</li>
+<li>다크 모드 색상 테마</li>
+</ul>
+</li>
+<li><strong>Android Studio에서 실행 가능</strong>
+<ul>
+<li>기존 시즌 코드와 함께 사용</li>
+</ul>
+</li>
+<li><strong>직관적인 필드 좌표</strong></li>
+</ul>
+<hr>
+<h1 id="meepmeep">MeepMeep</h1>
+<p>MeepMeep은 2021년 5월 6일부터 적용된 Road Runner 경로 시퀀스 API에 맞게 설계된 경로 시각화 도구입니다. 경로 시퀀스에 대한 자세한 내용은 <a href="/trajectory-sequence/">여기</a>에서 확인할 수 있습니다.</p>
+<p>LearnRoadRunner에 있는 모든 스크린샷과 GIF는 MeepMeep을 사용하여 생성되었습니다.</p>
+<hr>
+<h2 id="설치-방법">설치 방법<a href="#설치-방법" class="anchor" aria-hidden="true">#</a> </h2>
+<p>설치 과정은 Android 앱 개발 및 Gradle 모듈에 대한 지식이 필요하여 직관적이지 않을 수 있습니다. 아래 설치 영상을 참고하세요.</p>
+<div class="flex justify-center my-8">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/vdn1v404go8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<blockquote>
+<p><strong>참고:</strong> MeepMeep 2.x.x 이후 API 변경으로 인해 영상 후반부에 설명된 코드는 유효하지 않습니다. 이 API 변경은 다중 봇 지원을 보다 잘 처리할 수 있게 하기 위함입니다.</p>
+</blockquote>
+<hr>
+<h2 id="사용-방법">사용 방법<a href="#사용-방법" class="anchor" aria-hidden="true">#</a> </h2>
+<p>위 영상 후반부에서 기본적인 사용법을 다룹니다.<br>
+MeepMeep을 사용하려면 경로 시퀀스의 작동 방식에 대한 이해가 필요합니다. <a href="/trajectory-sequence/">경로 시퀀스 페이지</a>에서 API를 숙지하시기 바랍니다.</p>
+<p>MeepMeep은 별도의 모듈에서 실행되므로, 일반적인 <code>TeamCode</code> SDK 코드에서 실행할 수 없습니다. 이는 경로 자체에는 영향을 주지 않으나, 마커 내에서 실행되는 로봇 제어 코드에는 영향을 줄 수 있습니다. 아래와 같이 주석 처리를 권장합니다:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MeepMeepTesting</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// MeepMeep 인스턴스 선언</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 필드 크기를 800 픽셀로 설정</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">MeepMeep</span><span class="w"> </span><span class="n">meepMeep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MeepMeep</span><span class="p">(</span><span class="n">800</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">RoadRunnerBotEntity</span><span class="w"> </span><span class="n">myBot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DefaultBotBuilder</span><span class="p">(</span><span class="n">meepMeep</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 필수: 로봇의 제약 설정 (최대 속도, 최대 가속도, 최대 각속도 등)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setConstraints</span><span class="p">(</span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">),</span><span class="w"> </span><span class="n">15</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 선택 사항: 테마 설정. 기본값은 ColorSchemeRedDark()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setColorScheme</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ColorSchemeRedDark</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">followTrajectorySequence</span><span class="p">(</span><span class="n">drive</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectorySequenceBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">addDisplacementMarker</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                    </span><span class="cm">/* 마커 콜백 안의 모든 내용은 주석 처리하세요 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                    </span><span class="c1">// bot.shooter.shoot()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                    </span><span class="c1">// bot.wobbleArm.lower()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">splineTo</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">15</span><span class="p">),</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 필드 이미지 설정</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">meepMeep</span><span class="p">.</span><span class="na">setBackground</span><span class="p">(</span><span class="n">MeepMeep</span><span class="p">.</span><span class="na">Background</span><span class="p">.</span><span class="na">FIELD_FREIGHTFRENZY_ADI_DARK</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setDarkMode</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 배경 불투명도 (0~1)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setBackgroundAlpha</span><span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="na">95f</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">addEntity</span><span class="p">(</span><span class="n">myBot</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="다중-봇-추가하기">다중 봇 추가하기<a href="#다중-봇-추가하기" class="anchor" aria-hidden="true">#</a> </h2>
+<p>MeepMeep 2.x 버전은 새로운 API와 엔티티 처리 방식을 도입하여 여러 경로를 동시에 실행하고 조율할 수 있습니다. 새로운 <code>RoadRunnerBotEntity</code>를 선언하고, <code>MeepMeep#addEntity(Entity)</code>를 통해 추가하세요.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MeepMeepTesting</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">MeepMeep</span><span class="w"> </span><span class="n">meepMeep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MeepMeep</span><span class="p">(</span><span class="n">800</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 첫 번째 봇 선언</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">RoadRunnerBotEntity</span><span class="w"> </span><span class="n">myFirstBot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DefaultBotBuilder</span><span class="p">(</span><span class="n">meepMeep</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 봇 색상을 파란색으로 설정</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setColorScheme</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ColorSchemeBlueDark</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setConstraints</span><span class="p">(</span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">),</span><span class="w"> </span><span class="n">15</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">followTrajectorySequence</span><span class="p">(</span><span class="n">drive</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectorySequenceBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 두 번째 봇 선언</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">RoadRunnerBotEntity</span><span class="w"> </span><span class="n">mySecondBot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DefaultBotBuilder</span><span class="p">(</span><span class="n">meepMeep</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 봇 색상을 빨간색으로 설정</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setColorScheme</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ColorSchemeRedDark</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setConstraints</span><span class="p">(</span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="n">60</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">),</span><span class="w"> </span><span class="n">15</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">followTrajectorySequence</span><span class="p">(</span><span class="n">drive</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">drive</span><span class="p">.</span><span class="na">trajectorySequenceBuilder</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pose2d</span><span class="p">(</span><span class="n">30</span><span class="p">,</span><span class="w"> </span><span class="n">30</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">180</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">forward</span><span class="p">(</span><span class="n">30</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">turn</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">90</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">meepMeep</span><span class="p">.</span><span class="na">setBackground</span><span class="p">(</span><span class="n">MeepMeep</span><span class="p">.</span><span class="na">Background</span><span class="p">.</span><span class="na">FIELD_FREIGHTFRENZY_ADI_DARK</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setDarkMode</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setBackgroundAlpha</span><span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="na">95f</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 선언한 두 봇 추가</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">addEntity</span><span class="p">(</span><span class="n">myFirstBot</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">addEntity</span><span class="p">(</span><span class="n">mySecondBot</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="사용-가능한-필드-이미지">사용 가능한 필드 이미지<a href="#사용-가능한-필드-이미지" class="anchor" aria-hidden="true">#</a> </h2>
+<p><em>🚧 작업 중 🚧</em></p>
+<p><a href="https://github.com/NoahBres/MeepMeep/tree/master/src/main/resources/background">GitHub 폴더</a>에서 사용할 수 있는 이미지를 확인하고, <a href="https://github.com/NoahBres/MeepMeep/blob/72034792df9d3221e73923447ccade94bcb38ca8/src/main/kotlin/com/noahbres/meepmeep/MeepMeep.kt#L434">Background 클래스</a>에서 클래스 이름을 확인하세요.</p>
+<hr>
+<h2 id="사용자-정의-색상-테마-만들기">사용자 정의 색상 테마 만들기<a href="#사용자-정의-색상-테마-만들기" class="anchor" aria-hidden="true">#</a> </h2>
+<p><em>🚧 작업 중 🚧</em></p>
+<p>제공된 색상 테마는 <a href="https://github.com/NoahBres/MeepMeep/blob/master/src/main/kotlin/com/noahbres/meepmeep/core/colorscheme/scheme/ColorSchemeRedLight.kt">여기</a>를 참고하세요.</p>
+<hr>
+<h2 id="사용자-정의-엔티티-추가">사용자 정의 엔티티 추가<a href="#사용자-정의-엔티티-추가" class="anchor" aria-hidden="true">#</a> </h2>
+<p><em>🚧 작업 중: Heno에게 개선된 링 엔티티 샘플 요청 🚧</em></p>
+<p>또는 <a href="https://gist.github.com/NoahBres/4136d6617e2870b9e76c5d965f923afd">여기</a>를 참조하세요.</p>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
@@ -680,7 +900,7 @@
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li><li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">

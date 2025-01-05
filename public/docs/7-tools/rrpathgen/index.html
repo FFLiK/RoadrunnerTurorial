@@ -150,7 +150,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -445,7 +445,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -614,7 +614,19 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#설치-방법-jar-파일">설치 방법 (Jar 파일)</a></li>
+    <li><a href="#설치-방법-intellij">설치 방법<code> (IntelliJ)</code></a></li>
+    <li><a href="#사용-방법">사용 방법</a>
+      <ul>
+        <li><a href="#-설정-복구">⚠️ 설정 복구</a></li>
+      </ul>
+    </li>
+    <li><a href="#감사의-말">감사의 말</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +635,171 @@
 			<h1>RRPathGen</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#설치-방법-jar-파일">설치 방법 (Jar 파일)</a></li>
+    <li><a href="#설치-방법-intellij">설치 방법<code> (IntelliJ)</code></a></li>
+    <li><a href="#사용-방법">사용 방법</a>
+      <ul>
+        <li><a href="#-설정-복구">⚠️ 설정 복구</a></li>
+      </ul>
+    </li>
+    <li><a href="#감사의-말">감사의 말</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
-			
+			<p>
+
+<img
+  src="/images/tools/RRPathGen.gif"
+  width="1280"
+  height="700"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="21511이 개발한 RRPathGen"id="h-rh-i-0"
+/></p>
+<p>RRPathGen은 팀이 GUI를 통해 경로를 빠르게 생성할 수 있도록 돕는 프로그램입니다. 주요 기능은 다음과 같습니다:</p>
+<ul>
+<li>경로를 가져와 시각화</li>
+<li>GUI 또는 텍스트 필드에서 값을 변경하여 경로 수정</li>
+<li>Java 코드 형식으로 경로 내보내기</li>
+<li>로봇의 길이와 너비 사용자 지정</li>
+<li>다양한 화면 크기 및 해상도 지원</li>
+<li>필드의 다른 위치에서 로봇이 시작하도록 경로를 뒤집는 기능</li>
+<li>MeepMeep과 동일한 필드 좌표계 사용</li>
+<li>곧 <code>TrajectorySequence</code> 지원 예정</li>
+</ul>
+<hr>
+<h2 id="설치-방법-jar-파일">설치 방법 (Jar 파일)<a href="#설치-방법-jar-파일" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>
+<p><a href="https://github.com/Jarhead20/RRPathGen/releases">릴리즈 페이지</a>에서 <code>.jar</code> 파일 다운로드</p>
+</li>
+<li>
+<p>최소 Java 8 이상이 설치되었는지 확인</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java --version</span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+<li>
+<p><code>.jar</code> 파일을 실행</p>
+<ul>
+<li>더블 클릭으로 실행하거나, 명령줄에서 실행</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> java -jar RRPathGen-X.X.X.jar</span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ol>
+<hr>
+<h2 id="설치-방법-intellij">설치 방법<code> (IntelliJ)</code><a href="#설치-방법-intellij" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>저장소 클론
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/Jarhead20/RRPathGen.git</span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+<li>실행 구성 설정 : IntelliJ에서 <code>Run Configuration</code> 생성</li>
+<li>앱 실행</li>
+</ol>
+<hr>
+<h2 id="사용-방법">사용 방법<a href="#사용-방법" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>아래 키 바인딩을 사용해 경로 생성</li>
+<li>생성이 완료되면 <strong>내보내기(export)</strong> 버튼 클릭</li>
+<li>내보낸 경로를 복사하여 자율 주행 프로그램에 붙여넣기</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th>키 바인드</th>
+          <th>동작</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Left Click</strong></td>
+          <td>새 포인트 추가</td>
+      </tr>
+      <tr>
+          <td><strong>Left Drag (Point)</strong></td>
+          <td>선택한 포인트 드래그</td>
+      </tr>
+      <tr>
+          <td><strong>Alt + Left Click</strong></td>
+          <td>헤딩(heading) 변경</td>
+      </tr>
+      <tr>
+          <td><strong>Left Arrow</strong></td>
+          <td>다음 경로로 이동</td>
+      </tr>
+      <tr>
+          <td><strong>Right Arrow</strong></td>
+          <td>이전 경로로 이동</td>
+      </tr>
+      <tr>
+          <td><strong>R</strong></td>
+          <td>로봇 방향 반전</td>
+      </tr>
+      <tr>
+          <td><strong>Delete</strong></td>
+          <td>선택한 노드 삭제</td>
+      </tr>
+      <tr>
+          <td><strong>Ctrl + Z</strong></td>
+          <td>이전 작업 실행 취소</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="-설정-복구">⚠️ 설정 복구<a href="#-설정-복구" class="anchor" aria-hidden="true">#</a> </h3>
+<ul>
+<li>설정 파일을 잘못 변경한 경우, 아래 경로에서 파일 삭제:
+<ul>
+<li><strong>Windows</strong>: <code>%appdata%/RRPathGen</code></li>
+<li><strong>MacOS</strong>: <code>~/Library/Application Support/RRPathGen/config.properties</code></li>
+<li><strong>Linux</strong>: <code>~/.RRPathGen/config.properties</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="감사의-말">감사의 말<a href="#감사의-말" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li><strong>프로젝트 영감</strong>: Technic Bots의 <a href="https://technicbots.com/Blitz">Blitz 앱</a>에서 영감을 받음</li>
+<li><strong>필드 이미지</strong>: <a href="https://github.com/NoahBres/MeepMeep">MeepMeep</a>에서 제공</li>
+<li><strong>스플라인 구현 지원</strong>: <a href="https://github.com/rbrott">Ryan Brott</a></li>
+</ul>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
@@ -680,7 +854,7 @@
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li><li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">

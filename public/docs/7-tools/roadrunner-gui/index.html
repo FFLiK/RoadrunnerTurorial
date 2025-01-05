@@ -150,7 +150,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -445,7 +445,7 @@
 
   <li>
     <details open>
-      <summary>로드러너란?</summary>
+      <summary>Road Runner란?</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
@@ -614,7 +614,14 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  
+  <h3></h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#개요">개요</a></li>
+    <li><a href="#설치-방법">설치 방법</a></li>
+    <li><a href="#사용-방법">사용 방법</a></li>
+  </ul>
+</nav>
 </div>
 
 		</nav>
@@ -623,9 +630,100 @@
 			<h1>RoadRunner GUI</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				
+				<details>
+    <summary></summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#개요">개요</a></li>
+    <li><a href="#설치-방법">설치 방법</a></li>
+    <li><a href="#사용-방법">사용 방법</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
 			</nav>
-			
+			<h2 id="개요">개요<a href="#개요" class="anchor" aria-hidden="true">#</a> </h2>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoQAA0AAph8J6QAAvkOl06dwAD&#43;6EnjAQU1CXstY30w2krEFAA="
+        data-srcset="/images/tools/rr-gui-half-compressed_hu4418386867891617173.webp 480w,/images/tools/rr-gui-half-compressed_hu13701704809434719958.webp 576w,/images/tools/rr-gui-half-compressed_hu1781813075678529082.webp 768w,/images/tools/rr-gui-half-compressed_hu17560801330649918971.webp 1025w,/images/tools/rr-gui-half-compressed_hu17056912392404265612.webp 1044w"
+        data-sizes="auto"
+    src="/images/tools/rr-gui-half-compressed_hu2855696403400083119.jpg"
+    width="1044"
+    height="837"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="Road Runner 경로 생성 GUI를 보여주는 스크린샷"
+    class="lazyload blur-up"
+  ><figcaption>Road Runner 공식 GUI</figcaption>
+</figure>
+<p>Road Runner는 경로를 설계하기 위한 공식 GUI 플러그인을 제공합니다. 이 GUI는 경로를 yaml 파일로 내보낼 수 있으며, 해당 파일은 Road Runner 라이브러리가 읽을 수 있습니다.<br>
+하지만, 이 GUI는 스플라인 경로만 생성할 수 있습니다. <code>lineTo</code>나 상대 이동(<code>strafe()</code>, <code>forward()</code> 등)은 지원하지 않습니다. 또한, 경로가 yaml 파일로 내보내지기 때문에 마커를 지원하지 않습니다.<br>
+공식 GUI를 사용하기로 결정했다면, GUI에서 경로를 생성한 뒤 이를 Java 코드로 변환하여 사용하는 것을 권장합니다.</p>
+<hr>
+<h2 id="설치-방법">설치 방법<a href="#설치-방법" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li><a href="https://github.com/acmerobotics/road-runner/releases/tag/v0.5.6">Road Runner 최신 릴리즈 페이지</a>로 이동합니다.</li>
+<li><strong>Assets</strong> 드롭다운 메뉴를 펼치고 <code>road-runner-gui-x.x.x.jar</code> 파일을 찾습니다.</li>
+<li>파일 이름을 클릭하여 <code>.jar</code> 파일을 다운로드합니다.</li>
+<li>다운로드한 <code>.jar</code> 파일을 터미널에서 실행합니다:</li>
+</ol>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -jar road-runner-gui-x.x.x.jar</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="사용-방법">사용 방법<a href="#사용-방법" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>다운로드한 <code>.jar</code> 파일을 실행합니다.</li>
+<li>&ldquo;Select the location for your project&quot;라는 작은 창이 나타납니다.</li>
+<li><strong>Browse</strong> 버튼을 클릭하고, FTC 코드가 있는 폴더를 선택합니다.</li>
+<li>아래와 같은 창이 나타납니다:</li>
+</ol>
+
+<figure>
+  <img
+    srcset="data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoQAA0AAph8J6QAAtz/EMZHAAD&#43;6Eni1ijIvbaOSerkA6AA"
+        data-srcset="/images/road-runner-gui/step-4-half-compressed_hu17930158005171141465.webp 480w,/images/road-runner-gui/step-4-half-compressed_hu8381220224721990142.webp 576w,/images/road-runner-gui/step-4-half-compressed_hu17438043403025238937.webp 768w,/images/road-runner-gui/step-4-half-compressed_hu6329300466774420138.webp 1025w,/images/road-runner-gui/step-4-half-compressed_hu3287830196120976478.webp 1200w,/images/road-runner-gui/step-4-half-compressed_hu823227520004553572.webp 1440w,/images/road-runner-gui/step-4-half-compressed_hu18012645151808579103.webp 2092w"
+        data-sizes="auto"
+    src="/images/road-runner-gui/step-4-half-compressed_hu10795596295878922864.jpg"
+    width="2092"
+    height="1668"
+    decoding="async"
+    fetchpriority="auto"
+    loading="lazy"
+    alt="Road Runner GUI 메인 창"
+    class="lazyload blur-up"
+  ><figcaption>Road Runner GUI 메인 창</figcaption>
+</figure>
+<ol start="5">
+<li>왼쪽 상단의 <strong>Add</strong> 버튼을 클릭하여 경로에 이름을 지정합니다.</li>
+<li>오른쪽 하단의 <strong>Add</strong> 버튼을 클릭하여 더 많은 웨이포인트를 추가합니다.
+<ul>
+<li>웨이포인트의 좌표를 수정하세요.</li>
+</ul>
+</li>
+<li>다양한 기능을 실험해 보세요:
+<ul>
+<li><strong>Interp</strong> 드롭다운 메뉴를 통해 각 웨이포인트의 헤딩 보간(interpolation) 유형을 변경할 수 있습니다.</li>
+<li><strong>Config</strong> 탭에서는 로봇의 물리적 속성과 제약 조건을 변경할 수 있습니다.</li>
+</ul>
+</li>
+<li>필드 위로 커서를 올리면, 로봇이 경로를 따라 움직이는 애니메이션을 확인할 수 있습니다.</li>
+<li><strong>Save</strong> 버튼을 클릭하면 경로가 YAML 파일로 내보내집니다.</li>
+</ol>
+
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
@@ -680,7 +778,7 @@
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li><li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/credit/">Credit</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">
