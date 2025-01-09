@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "D:/KSA/Group & Circle/Research Group/KROS/2025/Roadrunner/RoadrunnerTutorial_KR",
+	"sourceRoot": "D:/KSA/KROS/2025/Roadrunner/RoadrunnerTutorial_KR",
 	"sources": [
 		"node_modules/@thulite/doks-core/assets/scss/app.scss",
 		"node_modules/bootstrap/scss/_functions.scss",

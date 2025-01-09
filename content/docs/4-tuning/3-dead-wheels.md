@@ -438,7 +438,7 @@ public List<Double> getWheelVelocities() {
 
 ---
 
-### 조율 (Tuning) - 오도메트리 세 개를 사용하는 경우 (Three-Wheel Odometry)
+## 조율 (Tuning) - 오도메트리 세 개를 사용하는 경우 (Three-Wheel Odometry)
 
 데드 휠의 조율은 매우 중요합니다.
 이는 Road Runner뿐만 아니라 FTCLib 또는 직접 제작한 경로 추적 시스템에도 적용됩니다.
@@ -504,7 +504,7 @@ public List<Double> getWheelVelocities() {
 - 이동이 끝나면 멈춘 후, 실제 이동한 거리와 텔레메트리(Telemetry)에 기록된 이동 거리를 확인하세요.
 
 5. 보정 계수를 계산합니다.
-   보정 계수는 `실제 이동 거리 / 텔레메트리 이동 거리`로 계산됩니다.  
+   보정 계수는 `실제 이동 거리 / 텔레메트리(Telemetry) 이동 거리`로 계산됩니다.  
    예를 들어 텔레메트리가 89인치를 표시하고 실제 측정값이 90인치라면, 보정 계수는 `1.01123596`이 됩니다.
 
 9. 이 과정을 X방향(앞으로 이동)으로 3번 반복해 평균값을 구한 후 `X_MULTIPLIER`에 설정합니다.
